@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Colors from "../Colors";
+import Colors from "Components/Colors";
 
 export const Contianer = styled.div`
   display: grid;
   grid-template-columns: min-content minmax(min-content, 1fr) min-content;
-  height: 80px;
 `;
 
 export const Logo = styled.div`
@@ -26,20 +25,23 @@ export const Menu = styled.div`
 
 export const List = styled.div`
   display: grid;
-  grid-column-gap: 15px;
-  grid-template-columns: repeat(5, minmax(min-content, max-content));
-  height: 100%;
+  width: 100%;
+  /* height: 100%; */
+  grid-column-gap: 10px;
+  grid-template-columns: repeat(5, minmax(min-content, 130px));
+  place-content: center center;
 `;
 
 export const Item = styled(Link)<{ current: string }>`
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 130px;
+  flex-direction: row;
   padding: 15px;
   border-bottom: 4px solid
     ${(props) => (props.current === "true" ? Colors.primary : "transparent")};
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
   span {
     width: max-content;
     color: ${(props) =>
@@ -54,13 +56,17 @@ export const Item = styled(Link)<{ current: string }>`
     font-size: 16px;
   }
   &:last-child {
+    border-bottom: 4px solid
+      ${(props) =>
+        props.current === "true" ? Colors.secondary : "transparent"};
+    transition: all 0.3s ease-in-out;
     span {
       color: ${(props) =>
-        props.current === "true" ? Colors.primary : Colors.secondary};
+        props.current === "true" ? Colors.secondary : Colors.secondary};
     }
     i {
       color: ${(props) =>
-        props.current === "true" ? Colors.primary : Colors.secondary};
+        props.current === "true" ? Colors.secondary : Colors.secondary};
       font-size: 10px;
     }
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "src/App";
+import App from "App";
+import "dotenv/config";
 
 ReactDOM.render(
   <React.StrictMode>

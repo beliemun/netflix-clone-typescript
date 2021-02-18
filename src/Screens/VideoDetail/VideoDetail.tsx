@@ -1,3 +1,8 @@
 import React from "react";
+import { RouteComponentProps } from "react-router-dom";
 
-export default () => "VideoDetail";
+const VideoDetail: React.FunctionComponent<RouteComponentProps> = () => (
+  <>VideoDetail</>
+);
+
+export default VideoDetail;

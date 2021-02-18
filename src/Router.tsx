@@ -4,30 +4,24 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import Header from "./Components/Header";
-import Home from "src/Screens/Home";
-import Moive from "src/Screens/Moive";
-import TV from "src/Screens/TV";
-import People from "src/Screens/People";
-import Search from "src/Screens/Search";
-import VideoDetail from "src/Screens/VideoDetail";
-import PeopleDetail from "src/Screens/PeopleDetail";
-import About from "src/Screens/About";
+import Header from "Components/Header";
+import Home from "Screens/Home";
+import Moive from "Screens/Movie";
+import TV from "Screens/TV";
+import People from "Screens/People";
+import Search from "Screens/Search";
+import PeopleDetail from "Screens/PeopleDetail";
+import About from "Screens/About";
 
 export default () => (
   <Router>
     <Header />
-    <Switch>
-      <Route path="/" exact render={Home} />
-      <Route path="/movie" exact render={Moive} />
-      <Route path="/movie/:id" exact render={VideoDetail} />
-      <Route path="/tv" exact render={TV} />
-      <Route path="/tv/:id" exact render={VideoDetail} />
-      <Route path="/people" exact render={People} />
-      <Route path="/people/:id" exact render={PeopleDetail} />
-      <Route path="/about/" exact render={About} />
-      <Route path="/search" exact render={Search} />
-      <Redirect to="/" from="*" />
-    </Switch>
+    <Route path="/" component={Home} />
+    <Route path="/movie" component={Moive} />
+    <Route path="/tv" render={TV} exact />
+    <Route path="/people" render={People} />
+    <Route path="/people/:id" render={PeopleDetail} />
+    <Route path="/about" render={About} />
+    <Route path="/search" render={Search} />
   </Router>
 );
