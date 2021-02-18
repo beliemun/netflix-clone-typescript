@@ -11,7 +11,8 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Roboto', sans-serif;
         font-size: 14px;
         color: ${Colors.text.primary};
-        background-color:${Colors.bg.primary}
+        background-color:${Colors.bg.primary};
+        padding-top: 80px;
     }
     a {
         text-decoration:none;

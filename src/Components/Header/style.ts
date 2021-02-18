@@ -3,15 +3,21 @@ import styled from "styled-components";
 import Colors from "Components/Colors";
 
 export const Contianer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: grid;
   grid-template-columns: min-content minmax(min-content, 1fr) min-content;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(7px);
 `;
 
 export const Logo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 20px;
   img {
     width: 100px;
   }
@@ -26,7 +32,6 @@ export const Menu = styled.div`
 export const List = styled.div`
   display: grid;
   width: 100%;
-  /* height: 100%; */
   grid-column-gap: 10px;
   grid-template-columns: repeat(5, minmax(min-content, 130px));
   place-content: center center;
@@ -38,7 +43,7 @@ export const Item = styled(Link)<{ current: string }>`
   align-items: center;
   width: 130px;
   flex-direction: row;
-  padding: 15px;
+  padding: 24px 10px;
   border-bottom: 4px solid
     ${(props) => (props.current === "true" ? Colors.primary : "transparent")};
   transition: all 0.3s ease-in-out;
@@ -76,7 +81,7 @@ export const Search = styled.div<{ current: string }>`
   display: felx;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 20px;
   i {
     color: ${(props) =>
       props.current === "true" ? Colors.primary : Colors.text.emphasis};

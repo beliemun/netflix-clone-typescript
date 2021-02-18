@@ -8,32 +8,30 @@ const Movie: React.FunctionComponent<RouteComponentProps> = ({
   location: { pathname },
 }) => {
   return (
-    <>
-      <Container>
-        <List>
-          <Item to="/movie" current={(pathname === "/movie").toString()}>
-            Popular
-          </Item>
-          <Item
-            to="/movie/now-playing"
-            current={(pathname === "/movie/now-playing").toString()}
-          >
-            Now Playing
-          </Item>
-          <Item
-            to="/movie/upcoming"
-            current={(pathname === "/movie/upcoming").toString()}
-          >
-            Up Coming
-          </Item>
-          <Item
-            to="/movie/top-rated"
-            current={(pathname === "/movie/top-rated").toString()}
-          >
-            Top Rated
-          </Item>
-        </List>
-      </Container>
+    <Container>
+      <List>
+        <Item to="/movie" current={(pathname === "/movie").toString()}>
+          Popular
+        </Item>
+        <Item
+          to="/movie/now-playing"
+          current={(pathname === "/movie/now-playing").toString()}
+        >
+          Now Playing
+        </Item>
+        <Item
+          to="/movie/upcoming"
+          current={(pathname === "/movie/upcoming").toString()}
+        >
+          Up Coming
+        </Item>
+        <Item
+          to="/movie/top-rated"
+          current={(pathname === "/movie/top-rated").toString()}
+        >
+          Top Rated
+        </Item>
+      </List>
       <Switch>
         <Route path="/movie" component={VideoList} exact />
         <Route path="/movie/now-playing" component={VideoList} exact />
@@ -41,7 +39,7 @@ const Movie: React.FunctionComponent<RouteComponentProps> = ({
         <Route path="/movie/top-rated" component={VideoList} />
         <Route path="/movie/:id" component={VideoDetail} />
       </Switch>
-    </>
+    </Container>
   );
 };
 
