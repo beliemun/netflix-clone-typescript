@@ -1,18 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Route, RouteComponentProps, RouteProps } from "react-router-dom";
-import { Container } from "./style";
+import { RouteComponentProps } from "react-router-dom";
+import {} from "./style";
 import Loader from "Components/Loader";
-import { moiveApi } from "Components/Api";
-
-interface Popular {
-  title: string;
-}
 
 const Home: React.FunctionComponent<RouteComponentProps> = () => {
   const [loading, setLoading] = useState(true);
-  const [popular, setPopular] = useState([]);
-  const [upComing, setUpComing] = useState([]);
-  const [topRated, setTopRate] = useState([]);
 
   useEffect(() => {
     loadMoives();
@@ -21,10 +13,6 @@ const Home: React.FunctionComponent<RouteComponentProps> = () => {
   const loadMoives = async () => {
     try {
       setLoading(true);
-      const {
-        data: { results },
-      } = await moiveApi.popluar();
-      setPopular(results);
     } catch (e) {
       console.log(e);
     } finally {

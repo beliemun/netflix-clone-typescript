@@ -1,9 +1,4 @@
-import {
-  HashRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import Header from "Components/Header";
 import Home from "Screens/Home";
 import Moive from "Screens/Movie";
@@ -13,8 +8,8 @@ import Search from "Screens/Search";
 import PeopleDetail from "Screens/PeopleDetail";
 import About from "Screens/About";
 
-export default () => (
-  <Router>
+const Router = () => (
+  <HashRouter>
     <Header />
     <Route path="/" component={Home} />
     <Route path="/movie" component={Moive} />
@@ -23,5 +18,7 @@ export default () => (
     <Route path="/people/:id" render={PeopleDetail} />
     <Route path="/about" render={About} />
     <Route path="/search" render={Search} />
-  </Router>
+  </HashRouter>
 );
+
+export default Router;

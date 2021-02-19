@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Colors from "Components/Colors";
 
 export const Container = styled.div`
-  height: 1000vh;
+  height: 200vh;
 `;
 
 export const List = styled.div`

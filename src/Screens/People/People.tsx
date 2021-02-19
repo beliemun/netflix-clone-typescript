@@ -1,3 +1,5 @@
 import React from "react";
 
-export default () => "People";
+const People = () => <>People</>;
+
+export default People;

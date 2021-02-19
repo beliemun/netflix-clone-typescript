@@ -1,4 +1,4 @@
-export default {
+const Colors = {
   primary: "#e50914",
   primaryHover: "#bf000a",
   secondary: "#f1c40f",
@@ -12,3 +12,5 @@ export default {
     emphasis: "white",
   },
 };
+
+export default Colors;

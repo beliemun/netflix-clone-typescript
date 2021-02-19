@@ -23,7 +23,7 @@ const Movie: React.FunctionComponent<RouteComponentProps> = ({
           to="/movie/upcoming"
           current={(pathname === "/movie/upcoming").toString()}
         >
-          Up Coming
+          Upcoming
         </Item>
         <Item
           to="/movie/top-rated"

@@ -1,3 +1,5 @@
 import React from "react";
 
-export default () => "PeopleDetail";
+const PeopleDetail = () => <>PeopleDetail</>;
+
+export default PeopleDetail;

@@ -8,7 +8,7 @@ const Header: React.FunctionComponent<RouteComponentProps> = ({
   <Contianer>
     <Logo>
       <Link to="/">
-        <img src={require("assets/title.png").default} />
+        <img src={require("assets/title.png").default} alt={"logo"} />
       </Link>
     </Logo>
     <Menu>
