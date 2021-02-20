@@ -30,7 +30,14 @@ const Stars: React.FunctionComponent<IRateProps> = ({ rate }) => {
   const getRate = (rate: number) =>
     React.createElement("span", { key: rate }, rate / 2);
 
-  return <Container>{[getStarsElements(rate), getRate(rate)]}</Container>;
+  return (
+    <Container>
+      {[
+        getStarsElements(rate),
+        rate === 0 ? <span key={rate}>(Not Rated)</span> : getRate(rate),
+      ]}
+    </Container>
+  );
 };
 
 export default Stars;

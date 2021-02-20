@@ -11,6 +11,7 @@ export const Contianer = styled.div`
   grid-template-columns: min-content minmax(min-content, 1fr) min-content;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(7px);
+  z-index: 100;
 `;
 
 export const Logo = styled.div`

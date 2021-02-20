@@ -34,6 +34,7 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
     const LoadVideos = async (page: number) => {
       try {
         setLoading(true);
+
         const {
           data: { results },
         } = await ApiLoader(pathname, page + 1);
@@ -59,11 +60,16 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
         LoadVideos(page);
       }
     };
-    checkTouchBottom();
 
+    if (videos.length === 0) checkTouchBottom();
     document.addEventListener("scroll", checkTouchBottom);
     return () => document.removeEventListener("scroll", checkTouchBottom);
-  }, [pathname, page, loading]);
+  }, [pathname, page, loading, videos]);
+
+  useEffect(() => {
+    setVideos([]);
+    setPage(0);
+  }, [pathname]);
 
   return (
     <Container>

@@ -7,11 +7,11 @@ const ApiLoader = async (
 ): Promise<AxiosResponse<any | []>> => {
   if (pathname.includes("movie")) {
     if (pathname.includes("now-playing")) {
-      return await movieApi.nowPlaying();
+      return await movieApi.nowPlaying(page);
     } else if (pathname.includes("upcoming")) {
-      return await movieApi.upComing();
+      return await movieApi.upComing(page);
     } else if (pathname.includes("top-rated")) {
-      return await movieApi.topRated();
+      return await movieApi.topRated(page);
     } else {
       return await movieApi.popular(page);
     }

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Colors from "Components/Colors";
+import "./style.css";
 
 export const Container = styled.div`
   display: grid;
@@ -10,6 +11,7 @@ export const Container = styled.div`
 
 export const Item = styled.div`
   margin: 20px;
+  animation: FadeIn 1s ease-in-out forwards;
 `;
 
 export const Poster = styled.div<{ bgUrl: string }>`
