@@ -1,8 +1,9 @@
 import { AxiosResponse } from "axios";
 import { movieApi, tvApi } from "Components/Api";
 
-const useVideos = async (
-  pathname: string
+const ApiLoader = async (
+  pathname: string,
+  page: number
 ): Promise<AxiosResponse<any | []>> => {
   if (pathname.includes("movie")) {
     if (pathname.includes("now-playing")) {
@@ -12,7 +13,7 @@ const useVideos = async (
     } else if (pathname.includes("top-rated")) {
       return await movieApi.topRated();
     } else {
-      return await movieApi.popular();
+      return await movieApi.popular(page);
     }
   } else if (pathname.includes("tv")) {
     if (pathname.includes("airing_today")) {
@@ -28,4 +29,4 @@ const useVideos = async (
   return [] as any;
 };
 
-export default useVideos;
+export default ApiLoader;

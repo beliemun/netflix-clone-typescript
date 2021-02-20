@@ -2,9 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Colors from "Components/Colors";
 
-export const Container = styled.div`
-  height: 200vh;
-`;
+export const Container = styled.div``;
 
 export const List = styled.div`
   display: grid;

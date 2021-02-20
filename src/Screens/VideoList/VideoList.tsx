@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import { movieApi } from "Components/Api";
-import Loader from "Components/Loader";
-import { Container, Item, Poster, Title, Genres, Rate } from "./style";
-import { AxiosResponse } from "axios";
+import { Container, Item, Poster, Title, Genres } from "./style";
 import ApiLoader from "Components/ApiLoader";
+import RatingStars from "Components/RatingStars";
+// import { checkTouchBottom } from "functions/eventHandler";
 
 interface IGenreCode {
   id: number;
@@ -25,29 +25,47 @@ interface IVideo {
 const VideoList: React.FunctionComponent<RouteComponentProps> = ({
   location: { pathname },
 }) => {
-  const [videos, setVideos] = useState([]);
-  const [genreCodes, setGenreCodes] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [videos, setVideos] = useState<Array<IVideo>>([]);
+  const [genreCodes, setGenreCodes] = useState<Array<IGenreCode>>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(0);
 
   useEffect(() => {
-    const LoadVideos = async () => {
-      setLoading(true);
-      const {
-        data: { results },
-      } = await ApiLoader(pathname);
-      setVideos(results);
-      const {
-        data: { genres },
-      } = await movieApi.getGenres();
-      setGenreCodes(genres);
-      setLoading(false);
+    const LoadVideos = async (page: number) => {
+      try {
+        setLoading(true);
+        const {
+          data: { results },
+        } = await ApiLoader(pathname, page + 1);
+        setVideos((prev) => prev.concat(results));
+        const {
+          data: { genres },
+        } = await movieApi.getGenres();
+        setGenreCodes(genres);
+      } catch (e) {
+        console.log(e);
+      } finally {
+        setLoading(false);
+        setPage((prev) => prev + 1);
+      }
     };
-    LoadVideos();
-  }, [pathname]);
 
-  return loading ? (
-    <Loader />
-  ) : (
+    const checkTouchBottom = () => {
+      const scrollHeight = document.documentElement.scrollHeight;
+      const scrollTop = document.documentElement.scrollTop;
+      const clientHeight = document.documentElement.clientHeight;
+
+      if (scrollTop + clientHeight >= scrollHeight && !loading) {
+        LoadVideos(page);
+      }
+    };
+    checkTouchBottom();
+
+    document.addEventListener("scroll", checkTouchBottom);
+    return () => document.removeEventListener("scroll", checkTouchBottom);
+  }, [pathname, page, loading]);
+
+  return (
     <Container>
       {videos.map((video: IVideo) => (
         <Item key={video.id}>
@@ -66,7 +84,7 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
               )
             )}
           </Genres>
-          <Rate>{video.vote_average}</Rate>
+          <RatingStars rate={video.vote_average} />
         </Item>
       ))}
     </Container>

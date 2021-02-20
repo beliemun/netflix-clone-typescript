@@ -44,10 +44,3 @@ export const Genres = styled.h5`
   text-overflow: ellipsis;
   white-space: nowrap;
 `;
-
-export const Rate = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5px;
-`;
