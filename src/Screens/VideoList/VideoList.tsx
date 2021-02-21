@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import { movieApi } from "Components/Api";
-import { Container, Item, Poster, Title, Genres } from "./style";
+import { Container, Item, Poster, Title, Genres, GoToTopButton } from "./style";
 import ApiLoader from "Components/ApiLoader";
 import RatingStars from "Components/RatingStars";
+import useScrollTop from "hooks/useScollTop";
 // import { checkTouchBottom } from "functions/eventHandler";
 
 interface IGenreCode {
@@ -29,6 +30,7 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
   const [genreCodes, setGenreCodes] = useState<Array<IGenreCode>>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [page, setPage] = useState<number>(0);
+  const { elementRef, onClick } = useScrollTop();
 
   useEffect(() => {
     const LoadVideos = async (page: number) => {
@@ -37,7 +39,7 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
 
         const {
           data: { results },
-        } = await ApiLoader(pathname, page + 1);
+        } = await ApiLoader(pathname, page);
         setVideos((prev) => prev.concat(results));
         const {
           data: { genres },
@@ -47,7 +49,7 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
         console.log(e);
       } finally {
         setLoading(false);
-        setPage((prev) => prev + 1);
+        setPage(page);
       }
     };
 
@@ -57,7 +59,7 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
       const clientHeight = document.documentElement.clientHeight;
 
       if (scrollTop + clientHeight >= scrollHeight && !loading) {
-        LoadVideos(page);
+        LoadVideos(page + 1);
       }
     };
 
@@ -76,7 +78,11 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
       {videos.map((video: IVideo) => (
         <Item key={video.id}>
           <Poster
-            bgUrl={`https://image.tmdb.org/t/p/original${video.poster_path}`}
+            bgUrl={
+              video.poster_path
+                ? `https://image.tmdb.org/t/p/w300${video.poster_path}`
+                : require("assets/no-image.jpg").default
+            }
           />
           <Title>{video.title}</Title>
           <Genres>
@@ -93,6 +99,9 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
           <RatingStars rate={video.vote_average} />
         </Item>
       ))}
+      <GoToTopButton ref={elementRef} onClick={onClick}>
+        <i className="fas fa-angle-double-up"></i>
+      </GoToTopButton>
     </Container>
   );
 };

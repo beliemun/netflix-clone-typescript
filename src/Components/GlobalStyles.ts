@@ -18,6 +18,11 @@ const GlobalStyles = createGlobalStyle`
         text-decoration:none;
         color:inherit;
     }
+    button {
+        &:focus {
+            outline: none;
+        }
+    }
 `;
 
 export default GlobalStyles;
