@@ -4,6 +4,7 @@ const Colors = {
   secondary: "#f1c40f",
   bg: {
     primary: "#191919",
+    secondary: "#5f27cd",
     emphasis: "black",
   },
   text: {

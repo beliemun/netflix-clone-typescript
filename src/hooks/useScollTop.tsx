@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { hideElementFormScrollTop } from "functions/eventHandler";
 
 const useScrollTop = () => {
@@ -8,6 +8,11 @@ const useScrollTop = () => {
     document.addEventListener("scroll", () =>
       hideElementFormScrollTop(elementRef, 500)
     );
+
+    return () =>
+      document.removeEventListener("scroll", () =>
+        hideElementFormScrollTop(elementRef, 500)
+      );
   }, []);
 
   const onClick = () => {

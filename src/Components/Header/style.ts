@@ -12,6 +12,11 @@ export const Contianer = styled.div`
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(7px);
   z-index: 100;
+  @media (max-width: 700px) {
+    display: flex;
+    justify-content: center;
+    grid-template-columns: 1fr min-content;
+  }
 `;
 
 export const Logo = styled.div`
@@ -21,6 +26,15 @@ export const Logo = styled.div`
   padding: 20px;
   img {
     width: 100px;
+  }
+  @media (max-width: 1000px) {
+    padding: 15px;
+    img {
+      width: 70px;
+    }
+  }
+  @media (max-width: 700px) {
+    display: none;
   }
 `;
 
@@ -32,10 +46,24 @@ export const Menu = styled.div`
 
 export const List = styled.div`
   display: grid;
-  width: 100%;
+  place-content: center center;
   grid-column-gap: 10px;
   grid-template-columns: repeat(5, minmax(min-content, 130px));
-  place-content: center center;
+  .menu-icon-sr {
+    display: none;
+  }
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(5, minmax(min-content, 100px));
+  }
+  @media (max-width: 700px) {
+    grid-template-columns: repeat(5, 1fr);
+    .menu-icon-wr {
+      display: none;
+    }
+    .menu-icon-sr {
+      display: inline;
+    }
+  }
 `;
 
 export const Item = styled(Link)<{ current: string }>`
@@ -76,6 +104,26 @@ export const Item = styled(Link)<{ current: string }>`
       font-size: 10px;
     }
   }
+
+  @media (max-width: 1000px) {
+    width: 100px;
+    padding: 24px 0px;
+    span {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    width: 70px;
+    i {
+      font-size: 20px;
+    }
+    &:last-child {
+      i {
+        font-size: 20px;
+      }
+    }
+  }
 `;
 
 export const Search = styled.div<{ current: string }>`
@@ -85,7 +133,13 @@ export const Search = styled.div<{ current: string }>`
   padding: 20px;
   i {
     color: ${(props) =>
-      props.current === "true" ? Colors.primary : Colors.text.emphasis};
+      props.current === "true" ? Colors.primary : Colors.text.secondary};
     font-size: 20px;
+  }
+  @media (max-width: 1000px) {
+    padding: 20px;
+    i {
+      font-size: 15px;
+    }
   }
 `;

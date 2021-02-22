@@ -5,7 +5,6 @@ import { Container, Item, Poster, Title, Genres, GoToTopButton } from "./style";
 import ApiLoader from "Components/ApiLoader";
 import RatingStars from "Components/RatingStars";
 import useScrollTop from "hooks/useScollTop";
-// import { checkTouchBottom } from "functions/eventHandler";
 
 interface IGenreCode {
   id: number;
@@ -33,6 +32,7 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
   const { elementRef, onClick } = useScrollTop();
 
   useEffect(() => {
+    console.log(elementRef);
     const LoadVideos = async (page: number) => {
       try {
         setLoading(true);
@@ -80,10 +80,10 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
           <Poster
             bgUrl={
               video.poster_path
-                ? `https://image.tmdb.org/t/p/w300${video.poster_path}`
+                ? `https://image.tmdb.org/t/p/w500${video.poster_path}`
                 : require("assets/no-image.jpg").default
             }
-          />
+          ></Poster>
           <Title>{video.title}</Title>
           <Genres>
             {video.genre_ids.map((video_genre_id: number, index) =>
