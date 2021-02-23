@@ -1,10 +1,9 @@
 export const hideElementFormScrollTop = (
   elementRef: React.MutableRefObject<HTMLButtonElement>,
-  rate: number
+  limit: number
 ) => {
   const scrollTop = document.documentElement.scrollTop;
-  console.log(elementRef);
-  if (scrollTop > rate) {
+  if (scrollTop > limit) {
     elementRef.current.style.opacity = "1";
   } else {
     elementRef.current.style.opacity = "0";

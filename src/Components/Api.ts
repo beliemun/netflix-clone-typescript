@@ -47,6 +47,7 @@ export const tvApi = {
         query: encodeURIComponent(term),
       },
     }),
+  getGenres: () => api.get("/genre/tv/list"),
 };
 
 export const peopleApi = {

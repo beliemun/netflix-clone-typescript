@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import { movieApi } from "Components/Api";
-import { Container, Item, Poster, Title, Genres, GoToTopButton } from "./style";
+import { Container, GoToTopButton } from "./style";
 import ApiLoader from "Components/ApiLoader";
-import RatingStars from "Components/RatingStars";
+import VideoItem from "Components/VideoItem";
 import useScrollTop from "hooks/useScollTop";
 
 interface IGenreCode {
@@ -77,32 +77,13 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
   return (
     <Container>
       {videos.map((video: IVideo, index: number) => (
-        <Item
+        <VideoItem
           key={video.id}
           index={index}
-          to={isMovie ? `/movie/${video.id}` : `/tv/${video.id}`}
-        >
-          <Poster
-            bgUrl={
-              video.poster_path
-                ? `https://image.tmdb.org/t/p/w500${video.poster_path}`
-                : require("assets/no-image.jpg").default
-            }
-          ></Poster>
-          <Title>{isMovie ? video.title : video.name}</Title>
-          <Genres>
-            {video.genre_ids.map((video_genre_id: number, index) =>
-              genreCodes.map((code: IGenreCode) =>
-                code.id === video_genre_id
-                  ? video.genre_ids.length - 1 === index
-                    ? code.name
-                    : code.name + " • "
-                  : ""
-              )
-            )}
-          </Genres>
-          <RatingStars rate={video.vote_average} />
-        </Item>
+          video={video}
+          isMovie={isMovie}
+          genreCodes={genreCodes}
+        />
       ))}
       <GoToTopButton ref={elementRef} onClick={onClick}>
         <i className="fas fa-angle-double-up"></i>

@@ -5,14 +5,9 @@ const useScrollTop = () => {
   const elementRef = useRef() as React.MutableRefObject<HTMLButtonElement>;
 
   useEffect(() => {
-    document.addEventListener("scroll", () =>
-      hideElementFormScrollTop(elementRef, 500)
-    );
-
-    return () =>
-      document.removeEventListener("scroll", () =>
-        hideElementFormScrollTop(elementRef, 500)
-      );
+    const handler = () => hideElementFormScrollTop(elementRef, 500);
+    document.addEventListener("scroll", handler);
+    return () => document.removeEventListener("scroll", handler);
   }, []);
 
   const onClick = () => {

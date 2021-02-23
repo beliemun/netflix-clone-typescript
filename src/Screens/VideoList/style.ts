@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Colors from "Components/Colors";
-import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   display: grid;
@@ -10,55 +9,6 @@ export const Container = styled.div`
   @media (max-width: 534px) {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
-`;
-
-export const Item = styled(Link)<{ index: number }>`
-  @keyframes FadeIn {
-    from {
-      transform: scale(1.05) translateY(25px);
-    }
-    to {
-      transform: scale(1) translateY(0px);
-      opacity: 1;
-    }
-  }
-  margin: 20px;
-  opacity: 0;
-  animation: FadeIn 1s ease-in forwards;
-  animation-delay: ${(props) => props.index * 30}ms;
-`;
-
-export const Poster = styled.div<{ bgUrl: string }>`
-  width: auto;
-  height: 320px;
-  background-image: url(${(props) => props.bgUrl});
-  background-position: center center;
-  background-size: cover;
-  border-radius: 20px;
-`;
-
-export const Title = styled.h3`
-  color: ${Colors.text.emphasis};
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1.5;
-  text-align: center;
-  margin-top: 5px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-`;
-
-export const Genres = styled.h5`
-  color: ${Colors.text.secondary};
-  font-size: 13px;
-  font-weight: 300;
-  text-align: center;
-  vertical-align: middle;
-  margin-top: 5px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 `;
 
 export const GoToTopButton = styled.button`
