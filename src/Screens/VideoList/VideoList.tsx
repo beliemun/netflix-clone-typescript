@@ -13,18 +13,21 @@ interface IGenreCode {
 
 interface IVideo {
   id: number;
-  title: string;
+  title?: string;
+  name?: string;
   overview: string;
   poster_path: string;
   backdrop_path: string;
   genre_ids: number[];
-  release_date: string;
+  release_date?: string;
+  first_air_date?: string;
   vote_average: number;
 }
 
 const VideoList: React.FunctionComponent<RouteComponentProps> = ({
   location: { pathname },
 }) => {
+  const isMovie = pathname.includes("movie");
   const [videos, setVideos] = useState<Array<IVideo>>([]);
   const [genreCodes, setGenreCodes] = useState<Array<IGenreCode>>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -32,11 +35,9 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
   const { elementRef, onClick } = useScrollTop();
 
   useEffect(() => {
-    console.log(elementRef);
     const LoadVideos = async (page: number) => {
       try {
         setLoading(true);
-
         const {
           data: { results },
         } = await ApiLoader(pathname, page);
@@ -58,7 +59,7 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
       const scrollTop = document.documentElement.scrollTop;
       const clientHeight = document.documentElement.clientHeight;
 
-      if (scrollTop + clientHeight >= scrollHeight * 0.5 && !loading) {
+      if (scrollTop + clientHeight >= scrollHeight * 0.7 && !loading) {
         LoadVideos(page + 1);
       }
     };
@@ -76,7 +77,11 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
   return (
     <Container>
       {videos.map((video: IVideo, index: number) => (
-        <Item key={video.id} index={index}>
+        <Item
+          key={video.id}
+          index={index}
+          to={isMovie ? `/movie/${video.id}` : `/tv/${video.id}`}
+        >
           <Poster
             bgUrl={
               video.poster_path
@@ -84,7 +89,7 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
                 : require("assets/no-image.jpg").default
             }
           ></Poster>
-          <Title>{video.title}</Title>
+          <Title>{isMovie ? video.title : video.name}</Title>
           <Genres>
             {video.genre_ids.map((video_genre_id: number, index) =>
               genreCodes.map((code: IGenreCode) =>

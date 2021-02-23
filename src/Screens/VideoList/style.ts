@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Colors from "Components/Colors";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   display: grid;
@@ -11,7 +12,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Item = styled.div<{ index: number }>`
+export const Item = styled(Link)<{ index: number }>`
   @keyframes FadeIn {
     from {
       transform: scale(1.05) translateY(25px);
@@ -82,13 +83,13 @@ export const GoToTopButton = styled.button`
   border-radius: 30px;
   border: 2px solid ${Colors.text.emphasis};
   opacity: 0;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   animation: Bounce 2s ease-in-out infinite;
   cursor: pointer;
   i {
     color: ${Colors.text.emphasis};
     font-size: 20px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
   &:hover {
     width: 60px;

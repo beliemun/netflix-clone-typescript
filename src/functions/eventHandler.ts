@@ -3,11 +3,10 @@ export const hideElementFormScrollTop = (
   rate: number
 ) => {
   const scrollTop = document.documentElement.scrollTop;
+  console.log(elementRef);
   if (scrollTop > rate) {
     elementRef.current.style.opacity = "1";
-    elementRef.current.style.transform = "translateY(-20px)";
   } else {
     elementRef.current.style.opacity = "0";
-    elementRef.current.style.transform = "translateY(0px)";
   }
 };

@@ -20,7 +20,7 @@ const Home: React.FunctionComponent<RouteComponentProps> = () => {
     }
   };
 
-  return loading ? <Loader /> : <></>;
+  return loading ? <Loader /> : <>HOME</>;
 };
 
 export default Home;

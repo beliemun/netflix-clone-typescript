@@ -26,6 +26,7 @@ export const Logo = styled.div`
   padding: 20px;
   img {
     width: 100px;
+    transition: all 0.3s ease-in-out;
   }
   @media (max-width: 1000px) {
     padding: 15px;
@@ -35,7 +36,9 @@ export const Logo = styled.div`
   }
   @media (max-width: 700px) {
     display: none;
+    transition: all 0.5s ease-in-out;
   }
+  transition: all 0.5s ease-in-out;
 `;
 
 export const Menu = styled.div`
@@ -49,11 +52,13 @@ export const List = styled.div`
   place-content: center center;
   grid-column-gap: 10px;
   grid-template-columns: repeat(5, minmax(min-content, 130px));
+  transition: all 0.3s ease-in-out;
   .menu-icon-sr {
     display: none;
   }
   @media (max-width: 1000px) {
     grid-template-columns: repeat(5, minmax(min-content, 100px));
+    transition: all 0.3s ease-in-out;
   }
   @media (max-width: 700px) {
     grid-template-columns: repeat(5, 1fr);
@@ -63,6 +68,7 @@ export const List = styled.div`
     .menu-icon-sr {
       display: inline;
     }
+    transition: all 0.3s ease-in-out;
   }
 `;
 
@@ -93,7 +99,6 @@ export const Item = styled(Link)<{ current: string }>`
     border-bottom: 4px solid
       ${(props) =>
         props.current === "true" ? Colors.secondary : "transparent"};
-    transition: all 0.3s ease-in-out;
     span {
       color: ${(props) =>
         props.current === "true" ? Colors.secondary : Colors.secondary};
@@ -135,11 +140,13 @@ export const Search = styled.div<{ current: string }>`
     color: ${(props) =>
       props.current === "true" ? Colors.primary : Colors.text.secondary};
     font-size: 20px;
+    transition: all 0.3s ease-in-out;
   }
   @media (max-width: 1000px) {
     padding: 20px;
     i {
       font-size: 15px;
+      transition: all 0.3s ease-in-out;
     }
   }
 `;

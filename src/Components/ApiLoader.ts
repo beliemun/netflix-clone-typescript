@@ -16,14 +16,14 @@ const ApiLoader = async (
       return await movieApi.popular(page);
     }
   } else if (pathname.includes("tv")) {
-    if (pathname.includes("airing_today")) {
-      return await tvApi.airingToday();
-    } else if (pathname.includes("on_the_air")) {
-      return await tvApi.onTv();
-    } else if (pathname.includes("top_rated")) {
-      return await tvApi.topRated();
+    if (pathname.includes("airing-today")) {
+      return await tvApi.airingToday(page);
+    } else if (pathname.includes("on-the-air")) {
+      return await tvApi.onTv(page);
+    } else if (pathname.includes("top-rated")) {
+      return await tvApi.topRated(page);
     } else {
-      return tvApi.popular();
+      return tvApi.popular(page);
     }
   }
   return [] as any;
