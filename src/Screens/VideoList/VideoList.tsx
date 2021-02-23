@@ -58,7 +58,7 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
       const scrollTop = document.documentElement.scrollTop;
       const clientHeight = document.documentElement.clientHeight;
 
-      if (scrollTop + clientHeight >= scrollHeight && !loading) {
+      if (scrollTop + clientHeight >= scrollHeight * 0.5 && !loading) {
         LoadVideos(page + 1);
       }
     };
@@ -75,8 +75,8 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
 
   return (
     <Container>
-      {videos.map((video: IVideo) => (
-        <Item key={video.id}>
+      {videos.map((video: IVideo, index: number) => (
+        <Item key={video.id} index={index}>
           <Poster
             bgUrl={
               video.poster_path

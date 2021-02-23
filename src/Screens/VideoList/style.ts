@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Colors from "Components/Colors";
-// import "./style.css";
 
 export const Container = styled.div`
   display: grid;
@@ -12,8 +11,20 @@ export const Container = styled.div`
   }
 `;
 
-export const Item = styled.div`
+export const Item = styled.div<{ index: number }>`
+  @keyframes FadeIn {
+    from {
+      transform: scale(1.05) translateY(25px);
+    }
+    to {
+      transform: scale(1) translateY(0px);
+      opacity: 1;
+    }
+  }
   margin: 20px;
+  opacity: 0;
+  animation: FadeIn 1s ease-in forwards;
+  animation-delay: ${(props) => props.index * 30}ms;
 `;
 
 export const Poster = styled.div<{ bgUrl: string }>`
