@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "./style";
+import { Item, Poster, Detail } from "./style";
 
 interface IKnowFor {
   id: string;
@@ -17,6 +17,8 @@ interface IPerson {
   id: number;
   name: string;
   know_for: Array<IKnowFor>;
+  known_for_department: string;
+  profile_path: string;
 }
 
 interface IProps {
@@ -25,7 +27,18 @@ interface IProps {
 }
 
 const PersonItem: React.FunctionComponent<IProps> = ({ person, index }) => {
-  return <Container>{person.name}</Container>;
+  return (
+    <Item key={index} index={index} to={`/person/${person.id}`}>
+      <Poster
+        bgUrl={
+          person.profile_path
+            ? `https://image.tmdb.org/t/p/w500${person.profile_path}`
+            : require("assets/no-image.jpg").default
+        }
+      />
+      <Detail>{person.name}</Detail>
+    </Item>
+  );
 };
 
 export default PersonItem;

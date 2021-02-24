@@ -22,6 +22,8 @@ interface IPerson {
   id: number;
   name: string;
   know_for: Array<IKnowFor>;
+  known_for_department: string;
+  profile_path: string;
 }
 
 const PeopleList: React.FunctionComponent<RouteComponentProps> = ({
