@@ -28,14 +28,14 @@ interface IVideo {
   vote_average: number;
 }
 
-interface Props {
+interface IProps {
   video: IVideo;
   index: number;
   isMovie: boolean;
   genreCodes: Array<IGenreCode>;
 }
 
-const VideoItem: React.FunctionComponent<Props> = ({
+const VideoItem: React.FunctionComponent<IProps> = ({
   video,
   index,
   isMovie,

@@ -28,11 +28,16 @@ export const Poster = styled.div<{ bgUrl: string }>`
   background-position: center center;
   background-size: cover;
   border-radius: 20px;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   &:hover {
     transform: scale(1.1);
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    box-shadow: rgba(136, 165, 191, 0.2) 6px 2px 16px 0px,
+      rgba(255, 255, 255, 0.2) -6px -2px 16px 0px;
+  }
+  @media (max-width: 700px) {
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 `;
 
@@ -40,13 +45,13 @@ export const PosterCover = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 100%;
   border-radius: inherit;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(3px);
-  transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   &:hover {
     opacity: 1;
   }

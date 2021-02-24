@@ -31,8 +31,8 @@ const Header: React.FunctionComponent<RouteComponentProps> = ({
           <i className="fas fa-tv menu-icon-sr"></i>
         </Item>
         <Item
-          to="/people"
-          current={(pathname.slice(0, 7) === "/people").toString()}
+          to="/person"
+          current={(pathname.slice(0, 7) === "/person").toString()}
         >
           <span className="menu-icon-wr">PEOPLE</span>
           <i className="fas fa-users menu-icon-sr"></i>

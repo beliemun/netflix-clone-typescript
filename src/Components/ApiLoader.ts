@@ -1,5 +1,5 @@
 import { AxiosResponse } from "axios";
-import { movieApi, tvApi } from "Components/Api";
+import { movieApi, tvApi, peopleApi } from "Components/Api";
 
 const ApiLoader = async (
   pathname: string,
@@ -25,6 +25,8 @@ const ApiLoader = async (
     } else {
       return tvApi.popular(page);
     }
+  } else if (pathname.includes("person")) {
+    return peopleApi.popular(page);
   }
   return [] as any;
 };

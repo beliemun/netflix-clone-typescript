@@ -51,7 +51,7 @@ export const tvApi = {
 };
 
 export const peopleApi = {
-  popular: () => api.get("/person/popular"),
+  popular: (page: number) => api.get("/person/popular", { params: { page } }),
   poepleDetail: (person_id: string) => api.get(`/person/${person_id}`),
   search: (term: string) =>
     api.get("/search/person", {

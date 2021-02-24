@@ -1,57 +1,51 @@
 import React, { useEffect, useState } from "react";
-import { RouteComponentProps } from "react-router-dom";
-import { movieApi } from "Components/Api";
 import { Container } from "./style";
-import ApiLoader from "Components/ApiLoader";
-import VideoItem from "Components/VideoItem";
 import useScrollTop from "hooks/useScollTop";
+import { RouteComponentProps } from "react-router-dom";
 import Base from "Components/Base";
+import ApiLoader from "Components/ApiLoader";
+import PersonItem from "Components/PersonItem";
 
-interface IGenreCode {
-  id: number;
-  name: string;
-}
-
-interface IVideo {
-  id: number;
+interface IKnowFor {
+  id: string;
   title?: string;
   name?: string;
-  overview: string;
-  poster_path: string;
-  backdrop_path: string;
-  genre_ids: number[];
+  poster_path: string | null;
+  vote_average: number;
   release_date?: string;
   first_air_date?: string;
-  vote_average: number;
+  original_language: string;
+  media_type: "movie" | "tv";
 }
 
-const VideoList: React.FunctionComponent<RouteComponentProps> = ({
+interface IPerson {
+  id: number;
+  name: string;
+  know_for: Array<IKnowFor>;
+}
+
+const PeopleList: React.FunctionComponent<RouteComponentProps> = ({
   location: { pathname },
 }) => {
-  const isMovie = pathname.includes("movie");
-  const [videos, setVideos] = useState<Array<IVideo>>([]);
-  const [genreCodes, setGenreCodes] = useState<Array<IGenreCode>>([]);
+  const [people, setPeople] = useState<Array<IPerson>>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [page, setPage] = useState<number>(0);
   const { elementRef, onClick } = useScrollTop();
 
   useEffect(() => {
-    const LoadVideos = async (page: number) => {
+    const LoadPeople = async (page: number) => {
       try {
         setLoading(true);
         const {
           data: { results },
         } = await ApiLoader(pathname, page);
-        setVideos((prev) => prev.concat(results));
-        const {
-          data: { genres },
-        } = await movieApi.getGenres();
-        setGenreCodes(genres);
+        console.log(results);
+        setPeople((prev) => prev.concat(results));
       } catch (e) {
         console.log(e);
       } finally {
-        setPage(page);
         setLoading(false);
+        setPage(page);
       }
     };
 
@@ -60,31 +54,25 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
       const scrollTop = document.documentElement.scrollTop;
       const clientHeight = document.documentElement.clientHeight;
 
-      if (scrollTop + clientHeight >= scrollHeight * 0.7) {
-        LoadVideos(page + 1);
+      if (scrollTop + clientHeight >= scrollHeight * 0.7 && !loading) {
+        LoadPeople(page + 1);
       }
     };
 
-    if (videos.length === 0) checkTouchBottom();
+    if (people.length === 0) checkTouchBottom();
     document.addEventListener("scroll", checkTouchBottom);
     return () => document.removeEventListener("scroll", checkTouchBottom);
-  }, [pathname, page, loading, videos]);
+  }, [pathname, page, loading, people]);
 
   useEffect(() => {
-    setVideos([]);
+    setPeople([]);
     setPage(0);
   }, [pathname]);
 
   return (
     <Container>
-      {videos.map((video: IVideo, index: number) => (
-        <VideoItem
-          key={index}
-          index={index}
-          video={video}
-          isMovie={isMovie}
-          genreCodes={genreCodes}
-        />
+      {people.map((person, index) => (
+        <PersonItem key={index} index={index} person={person} />
       ))}
       <Base.ScrollUpButton ref={elementRef} onClick={onClick}>
         <i className="fas fa-angle-double-up"></i>
@@ -93,4 +81,4 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
   );
 };
 
-export default VideoList;
+export default PeopleList;
