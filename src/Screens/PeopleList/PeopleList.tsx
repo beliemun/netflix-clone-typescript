@@ -21,7 +21,7 @@ interface IKnowFor {
 interface IPerson {
   id: number;
   name: string;
-  know_for: Array<IKnowFor>;
+  known_for: Array<IKnowFor>;
   known_for_department: string;
   profile_path: string;
 }
@@ -41,7 +41,6 @@ const PeopleList: React.FunctionComponent<RouteComponentProps> = ({
         const {
           data: { results },
         } = await ApiLoader(pathname, page);
-        console.log(results);
         setPeople((prev) => prev.concat(results));
       } catch (e) {
         console.log(e);

@@ -1,5 +1,18 @@
 import React from "react";
-import { Item, Poster, Detail } from "./style";
+import {
+  Item,
+  Poster,
+  Detail,
+  ItemCover,
+  Title,
+  Department,
+  VideoItem,
+  VideoPoster,
+  VideoDetail,
+  VideoCreatedAt,
+  VideoTitle,
+  KnownFor,
+} from "./style";
 
 interface IKnowFor {
   id: string;
@@ -16,7 +29,7 @@ interface IKnowFor {
 interface IPerson {
   id: number;
   name: string;
-  know_for: Array<IKnowFor>;
+  known_for: Array<IKnowFor>;
   known_for_department: string;
   profile_path: string;
 }
@@ -29,6 +42,7 @@ interface IProps {
 const PersonItem: React.FunctionComponent<IProps> = ({ person, index }) => {
   return (
     <Item key={index} index={index} to={`/person/${person.id}`}>
+      <ItemCover />
       <Poster
         bgUrl={
           person.profile_path
@@ -36,7 +50,32 @@ const PersonItem: React.FunctionComponent<IProps> = ({ person, index }) => {
             : require("assets/no-image.jpg").default
         }
       />
-      <Detail>{person.name}</Detail>
+      <Detail>
+        <Title>{person.name}</Title>
+        <Department>{person.known_for_department}</Department>
+        <KnownFor>Known For</KnownFor>
+        {person.known_for.map((video, index) => (
+          <VideoItem key={index}>
+            <VideoPoster
+              src={
+                video.poster_path
+                  ? `https://image.tmdb.org/t/p/w200${video.poster_path}`
+                  : require("assets/no-image.jpg").default
+              }
+            />
+            <VideoDetail>
+              <VideoTitle>
+                {video.media_type === "movie" ? video.title : video.name}
+              </VideoTitle>
+              <VideoCreatedAt>
+                {video.media_type === "movie"
+                  ? `Movie • ${video.release_date}`
+                  : `TV • ${video.first_air_date}`}
+              </VideoCreatedAt>
+            </VideoDetail>
+          </VideoItem>
+        ))}
+      </Detail>
     </Item>
   );
 };
