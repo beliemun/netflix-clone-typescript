@@ -1,7 +1,7 @@
 import React from "react";
 import { RouteComponentProps } from "react-router-dom";
-import { Menu, Item, Header, Title, Description } from "./style";
-import Base from "Components/Base";
+import { Menu, Item } from "./style";
+import CategoryHeader from "Components/CategoryHeader";
 
 interface IItem {
   pathname: string;
@@ -19,11 +19,12 @@ const Category: React.FunctionComponent<IProps & RouteComponentProps> = ({
 }) => (
   <>
     {items.map((item, index) => (
-      <Header key={index} current={(pathname === item.pathname).toString()}>
-        <Title>{item.title}</Title>
-        <Description>{item.description}</Description>
-        <Base.GradientLine />
-      </Header>
+      <CategoryHeader
+        key={index}
+        current={(pathname === item.pathname).toString()}
+        title={item.title}
+        description={item.description}
+      />
     ))}
     <Menu>
       {items.map((item, index) => (

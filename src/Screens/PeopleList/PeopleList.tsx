@@ -5,6 +5,7 @@ import { RouteComponentProps } from "react-router-dom";
 import Base from "Components/Base";
 import ApiLoader from "Components/ApiLoader";
 import PersonItem from "Components/PersonItem";
+import CategoryHeader from "Components/CategoryHeader";
 
 interface IKnowFor {
   id: string;
@@ -71,14 +72,21 @@ const PeopleList: React.FunctionComponent<RouteComponentProps> = ({
   }, [pathname]);
 
   return (
-    <Container>
-      {people.map((person, index) => (
-        <PersonItem key={index} index={index} person={person} />
-      ))}
-      <Base.ScrollUpButton ref={elementRef} onClick={onClick}>
-        <i className="fas fa-angle-double-up"></i>
-      </Base.ScrollUpButton>
-    </Container>
+    <>
+      <CategoryHeader
+        current={"true"}
+        title={"Popular People"}
+        description={"The list of popular people. This list updates daily."}
+      />
+      <Container>
+        {people.map((person, index) => (
+          <PersonItem key={index} index={index} person={person} />
+        ))}
+        <Base.ScrollUpButton ref={elementRef} onClick={onClick}>
+          <i className="fas fa-angle-double-up"></i>
+        </Base.ScrollUpButton>
+      </Container>
+    </>
   );
 };
 
