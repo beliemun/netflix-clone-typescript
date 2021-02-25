@@ -38,15 +38,29 @@ export const Item = styled(Link)<{ index: number }>`
 `;
 
 export const ItemCover = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: cener;
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  /* backdrop-filter: blur(5px); */
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 30px;
   border-top-left-radius: 0;
   opacity: 0;
-  transition: opacity 0.3s ease-out;
+  transition: opacity 0.5s ease-out;
+`;
+
+export const CoverTitle = styled.h2`
+  font-size: 32px;
+  color: ${Colors.text.emphasis};
+  padding: 20px;
+  top: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 export const Poster = styled.div<{ bgUrl: string }>`

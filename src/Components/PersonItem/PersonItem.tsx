@@ -4,6 +4,7 @@ import {
   Poster,
   Detail,
   ItemCover,
+  CoverTitle,
   Title,
   Department,
   VideoItem,
@@ -43,7 +44,9 @@ interface IProps {
 const PersonItem: React.FunctionComponent<IProps> = ({ person, index }) => {
   return (
     <Item key={index} index={index} to={`/person/${person.id}`}>
-      <ItemCover />
+      <ItemCover>
+        <CoverTitle>{person.name}</CoverTitle>
+      </ItemCover>
       <Poster
         bgUrl={
           person.profile_path
