@@ -79,8 +79,8 @@ export const HoverYear = styled.h2`
 `;
 
 export const Title = styled.h3`
-  color: ${Colors.text.secondary};
-  font-size: 15px;
+  color: ${Colors.text.emphasis};
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
   text-align: center;
@@ -100,4 +100,10 @@ export const Genres = styled.h5`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+`;
+
+export const Rate = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 `;

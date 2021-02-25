@@ -3,9 +3,9 @@ import Colors from "Components/Colors";
 
 export const Container = styled.div`
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
-  padding: 10px;
+  /* padding: 10px; */
   i {
     font-size: 12px;
     color: ${Colors.primary};

@@ -7,6 +7,7 @@ import {
   PosterCover,
   HoverTitle,
   HoverYear,
+  Rate,
 } from "./style";
 import RatingStars from "Components/RatingStars";
 
@@ -73,7 +74,9 @@ const VideoItem: React.FunctionComponent<IProps> = ({
           )
         )}
       </Genres>
-      <RatingStars rate={video.vote_average} />
+      <Rate>
+        <RatingStars rate={video.vote_average} />
+      </Rate>
     </Item>
   );
 };

@@ -13,6 +13,7 @@ import {
   VideoTitle,
   KnownFor,
 } from "./style";
+import RatingStart from "Components/RatingStars";
 
 interface IKnowFor {
   id: string;
@@ -59,7 +60,7 @@ const PersonItem: React.FunctionComponent<IProps> = ({ person, index }) => {
             <VideoPoster
               src={
                 video.poster_path
-                  ? `https://image.tmdb.org/t/p/w200${video.poster_path}`
+                  ? `https://image.tmdb.org/t/p/w500${video.poster_path}`
                   : require("assets/no-image.jpg").default
               }
             />
@@ -72,6 +73,7 @@ const PersonItem: React.FunctionComponent<IProps> = ({ person, index }) => {
                   ? `Movie • ${video.release_date}`
                   : `TV • ${video.first_air_date}`}
               </VideoCreatedAt>
+              <RatingStart rate={video.vote_average} />
             </VideoDetail>
           </VideoItem>
         ))}

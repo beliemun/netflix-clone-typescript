@@ -25,8 +25,8 @@ export const Item = styled(Link)<{ index: number }>`
   }
   &:hover {
     transform: scale(1.1);
-    box-shadow: rgba(136, 165, 191, 0.2) 6px 2px 16px 0px,
-      rgba(255, 255, 255, 0.2) -6px -2px 16px 0px;
+    /* box-shadow: rgba(136, 165, 191, 0.2) 6px 2px 16px 0px,
+      rgba(255, 255, 255, 0.2) -6px -2px 16px 0px; */
     grid-template-columns: 1fr;
     & > div:first-child {
       opacity: 1;
@@ -41,16 +41,17 @@ export const ItemCover = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5);
+  /* backdrop-filter: blur(5px); */
   border-radius: 30px;
   border-top-left-radius: 0;
   opacity: 0;
+  transition: opacity 0.3s ease-out;
 `;
 
 export const Poster = styled.div<{ bgUrl: string }>`
   width: auto;
-  height: 240px;
+  height: 265px;
   background-image: url(${(props) => props.bgUrl});
   background-position: center center;
   background-size: cover;
@@ -75,14 +76,17 @@ export const Detail = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   margin-bottom: 5px;
   color: ${Colors.text.emphasis};
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 export const Department = styled.h5`
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 300;
   margin-bottom: 20px;
   color: ${Colors.primary};
@@ -102,7 +106,8 @@ export const KnownFor = styled.h5`
 
 export const VideoItem = styled.div`
   display: grid;
-  grid-template-columns: 50px 1fr;
+  align-items: center;
+  grid-template-columns: 40px 1fr;
   margin-bottom: 10px;
 `;
 
@@ -120,8 +125,9 @@ export const VideoDetail = styled.div`
 `;
 
 export const VideoTitle = styled.h4`
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
+  margin-bottom: 5px;
   color: ${Colors.text.emphasis};
   overflow: hidden;
   text-overflow: ellipsis;
@@ -129,7 +135,7 @@ export const VideoTitle = styled.h4`
 `;
 
 export const VideoCreatedAt = styled.span`
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 300;
   margin-bottom: 5px;
   color: ${Colors.text.secondary};
