@@ -6,7 +6,8 @@ import {
   PosterCover,
   HoverTitle,
   HoverYear,
-  Rate,
+  RateContainer,
+  GenresContainer,
 } from "./style";
 import RatingStars from "Components/RatingStars";
 import Genres from "Components/Genres";
@@ -56,10 +57,12 @@ const VideoItem: React.FunctionComponent<IProps> = ({
         </PosterCover>
       </Poster>
       <Title>{isMovie ? video.title : video.name}</Title>
-      <Genres genre_ids={video.genre_ids} />
-      <Rate>
+      <GenresContainer>
+        <Genres genre_ids={video.genre_ids} />
+      </GenresContainer>
+      <RateContainer>
         <RatingStars rate={video.vote_average} />
-      </Rate>
+      </RateContainer>
     </Item>
   );
 };

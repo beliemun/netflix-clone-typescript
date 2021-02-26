@@ -90,7 +90,12 @@ export const Title = styled.h3`
   white-space: nowrap;
 `;
 
-export const Rate = styled.div`
+export const GenresContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const RateContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 10px;

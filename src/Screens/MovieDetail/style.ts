@@ -37,13 +37,13 @@ export const MovieDetailContainer = styled.div`
 
 export const MovieTitle = styled.h2`
   font-size: 28px;
-  font-weight: 700;
-  line-height: 1.5;
+  font-weight: 500;
+  line-height: 1;
   color: ${Colors.text.primary};
 `;
 
 export const MovieSubTitle = styled.h5`
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 300;
   line-height: 1.5;
   color: ${Colors.text.secondary};
@@ -53,7 +53,7 @@ export const MovieTagLine = styled.p`
   font-size: 24px;
   font-weight: 300;
   font-style: italic;
-  line-height: 1.5;
+  line-height: 2;
   color: ${Colors.text.primary};
 `;
 
@@ -81,4 +81,8 @@ export const BackDropCurtain = styled.div`
   width: inherit;
   height: inherit;
   background-color: rgba(0, 0, 0, 0.7);
+`;
+
+export const RateContainer = styled.div`
+  margin-top: 10px;
 `;

@@ -11,10 +11,12 @@ import {
   MovieSubTitle,
   MovieTagLine,
   MovieOverview,
+  RateContainer,
 } from "./style";
 import { movieApi } from "Components/Api";
 import Loader from "Components/Loader";
 import Genres from "Components/Genres";
+import RatingStars from "Components/RatingStars";
 
 interface IParamsProps {
   id: string;
@@ -42,6 +44,7 @@ interface IMovie {
   release_date: string;
   runtime: string;
   tagline: string;
+  vote_average: number;
   videos: {
     results: Array<IMovieVideo>;
   };
@@ -72,6 +75,9 @@ const MovieDetail: React.FunctionComponent<
     loadMovie();
   }, [id]);
 
+  const convertGenres = (genres: IGenre[]): number[] =>
+    genres.map((genre) => parseInt(genre.id));
+
   return loading || movie === null ? (
     <Loader />
   ) : (
@@ -95,9 +101,13 @@ const MovieDetail: React.FunctionComponent<
         />
         <MovieDetailContainer>
           <MovieTitle>{movie.title}</MovieTitle>
-          {/* <Genres genre_ids={movie.genres} /> */}
-          {console.log(movie.genres)}
-          <MovieSubTitle>{movie.title}</MovieSubTitle>
+          <Genres genre_ids={convertGenres(movie.genres)} />
+          <MovieSubTitle>
+            {movie.release_date.slice(0, 4)} • {movie.runtime}m
+          </MovieSubTitle>
+          <RateContainer>
+            <RatingStars rate={movie.vote_average} />
+          </RateContainer>
           {movie.tagline.length !== 0 && (
             <MovieTagLine>"{movie.tagline}"</MovieTagLine>
           )}
