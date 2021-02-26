@@ -50,7 +50,7 @@ const PersonItem: React.FunctionComponent<IProps> = ({ person, index }) => {
       <Poster
         bgUrl={
           person.profile_path
-            ? `https://image.tmdb.org/t/p/w500${person.profile_path}`
+            ? `https://image.tmdb.org/t/p/w342${person.profile_path}`
             : require("assets/no-image.jpg").default
         }
       />
@@ -63,7 +63,7 @@ const PersonItem: React.FunctionComponent<IProps> = ({ person, index }) => {
             <VideoPoster
               src={
                 video.poster_path
-                  ? `https://image.tmdb.org/t/p/w500${video.poster_path}`
+                  ? `https://image.tmdb.org/t/p/w92${video.poster_path}`
                   : require("assets/no-image.jpg").default
               }
             />

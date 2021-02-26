@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, RouteComponentProps, Switch } from "react-router-dom";
 import VideoList from "Screens/VideoList";
-import VideoDetail from "Screens/VideoDetail";
+import TVDetail from "Screens/TVDetail";
 import Category from "Components/Category";
 import items from "./category";
 
@@ -26,7 +26,7 @@ const Movie: React.FunctionComponent<RouteComponentProps> = (props) => {
         <Route path="/tv/airing-today" component={VideoList} />
         <Route path="/tv/on-the-air" component={VideoList} />
         <Route path="/tv/top-rated" component={VideoList} />
-        <Route path="/tv/:id" component={VideoDetail} />
+        <Route path="/tv/:id" component={TVDetail} />
       </Switch>
     </>
   );

@@ -90,18 +90,6 @@ export const Title = styled.h3`
   white-space: nowrap;
 `;
 
-export const Genres = styled.h5`
-  color: ${Colors.text.secondary};
-  font-size: 13px;
-  font-weight: 300;
-  text-align: center;
-  vertical-align: middle;
-  margin-top: 5px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-`;
-
 export const Rate = styled.div`
   display: flex;
   justify-content: center;

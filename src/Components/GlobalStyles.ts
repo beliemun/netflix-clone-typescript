@@ -6,6 +6,9 @@ const GlobalStyles = createGlobalStyle`
     ${reset}
     * {
         box-sizing:border-box;
+        &:focus {
+            outline: none;
+        }
     }
     body {
         font-family: 'Roboto', sans-serif;
