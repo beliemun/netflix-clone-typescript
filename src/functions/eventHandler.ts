@@ -3,6 +3,7 @@ export const hideElementFormScrollTop = (
   limit: number
 ) => {
   const scrollTop = document.documentElement.scrollTop;
+  if (elementRef.current === null) return;
   if (scrollTop > limit) {
     elementRef.current.style.opacity = "1";
   } else {
