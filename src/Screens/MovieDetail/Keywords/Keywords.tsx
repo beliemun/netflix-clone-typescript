@@ -12,11 +12,16 @@ interface IProps {
 
 const Keywords: React.FunctionComponent<IProps> = ({ keywords }) => (
   <>
-    <Title>Quick search by Keywords</Title>
-    <Container>
-      {keywords &&
-        keywords.map((keyword) => <Item to="#"># {keyword.name}</Item>)}
-    </Container>
+    {keywords && keywords.length > 0 && (
+      <>
+        <Title>Quick search by Keywords</Title>
+        <Container>
+          {keywords.map((keyword) => (
+            <Item to="#"># {keyword.name}</Item>
+          ))}
+        </Container>
+      </>
+    )}
   </>
 );
 

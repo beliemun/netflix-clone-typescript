@@ -17,17 +17,22 @@ interface IProps {
 }
 
 const Players: React.FunctionComponent<IProps> = ({ videos }) => (
-  <Container>
-    {videos &&
-      videos.length > 0 &&
-      videos.map((video, index) => (
-        <Item key={index}>
-          <VideoType>{video.type}</VideoType>
-          <Youtube videoId={video.key} opts={{ width: "160", height: "90" }} />
-          <VideoName>{video.name}</VideoName>
-        </Item>
-      ))}
-  </Container>
+  <>
+    {videos && videos.length > 0 && (
+      <Container>
+        {videos.map((video, index) => (
+          <Item key={index}>
+            <VideoType>{video.type}</VideoType>
+            <Youtube
+              videoId={video.key}
+              opts={{ width: "160", height: "90" }}
+            />
+            <VideoName>{video.name}</VideoName>
+          </Item>
+        ))}
+      </Container>
+    )}
+  </>
 );
 
 export default Players;
