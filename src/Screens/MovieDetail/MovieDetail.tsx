@@ -17,6 +17,8 @@ import { movieApi } from "Components/Api";
 import Loader from "Components/Loader";
 import Genres from "Components/Genres";
 import RatingStars from "Components/RatingStars";
+import Videos from "./Videos";
+import Keywords from "./Keywords";
 
 interface IParamsProps {
   id: string;
@@ -27,10 +29,19 @@ interface IGenre {
   name: string;
 }
 
+interface IKeywords {
+  id: string;
+  name: string;
+}
+
 interface IMovieVideo {
   id: string;
   key: string;
   name: string;
+  site: string;
+  iso_639_1: string;
+  iso_3166_1: string;
+  type: string;
 }
 
 interface IMovie {
@@ -58,6 +69,7 @@ const MovieDetail: React.FunctionComponent<
   },
 }) => {
   const [movie, setMovie] = useState<IMovie | null>(null);
+  const [keywords, setKeywords] = useState<IKeywords[] | null>(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -66,6 +78,10 @@ const MovieDetail: React.FunctionComponent<
         setLoading(true);
         const { data } = await movieApi.movieDetail(id);
         setMovie(data);
+        const {
+          data: { keywords },
+        } = await movieApi.getKeywords(id);
+        setKeywords(keywords);
         setLoading(false);
       } catch (e) {
         console.log(e);
@@ -112,6 +128,8 @@ const MovieDetail: React.FunctionComponent<
             <MovieTagLine>"{movie.tagline}"</MovieTagLine>
           )}
           <MovieOverview>{movie.overview}</MovieOverview>
+          <Videos videos={movie.videos.results} />
+          <Keywords keywords={keywords} />
         </MovieDetailContainer>
       </MovieContainer>
     </Contaniner>

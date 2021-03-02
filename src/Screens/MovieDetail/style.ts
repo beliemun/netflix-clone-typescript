@@ -1,5 +1,4 @@
 import Colors from "Components/Colors";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Contaniner = styled.div`
@@ -62,6 +61,7 @@ export const MovieOverview = styled.p`
   font-weight: 300;
   line-height: 1.5;
   color: ${Colors.text.primary};
+  margin-bottom: 10px;
 `;
 
 export const BackDrop = styled.div<{ bgUrl: string }>`

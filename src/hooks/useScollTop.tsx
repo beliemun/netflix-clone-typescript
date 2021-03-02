@@ -8,7 +8,7 @@ const useScrollTop = () => {
     const handler = () => hideElementFormScrollTop(elementRef, 500);
     document.addEventListener("scroll", handler);
     return () => document.removeEventListener("scroll", handler);
-  }, [elementRef.current]);
+  }, [elementRef]);
 
   const onClick = () => {
     document.body.scrollTop = 0; // For Safari

@@ -27,6 +27,7 @@ export const movieApi = {
       },
     }),
   getGenres: () => api.get("/genre/movie/list"),
+  getKeywords: (movie_id: string) => api.get(`/movie/${movie_id}/keywords`),
 };
 
 export const tvApi = {
@@ -48,6 +49,7 @@ export const tvApi = {
       },
     }),
   getGenres: () => api.get("/genre/tv/list"),
+  getKeywords: (tv_id: string) => api.get(`/tv/${tv_id}/keywords`),
 };
 
 export const peopleApi = {
