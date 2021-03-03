@@ -9,6 +9,17 @@ export const Container = styled.div`
   margin: 10px 0;
 `;
 
+export const Title = styled.span`
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+  color: ${Colors.text.secondary};
+  margin-top: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
 export const Item = styled(Link)`
   border: 1px solid ${Colors.secondary};
   border-radius: 10px;
@@ -24,15 +35,11 @@ export const Item = styled(Link)`
     color: ${Colors.text.emphasis};
     background-color: ${Colors.secondary};
   }
-`;
-
-export const Title = styled.span`
-  font-size: 14px;
-  font-weight: 300;
-  font-style: italic;
-  color: ${Colors.text.secondary};
-  margin-top: 15px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  @media (max-width: 575px) {
+    font-size: 12px;
+    padding: 6px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+  }
 `;

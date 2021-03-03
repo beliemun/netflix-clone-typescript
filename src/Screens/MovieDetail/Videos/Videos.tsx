@@ -20,16 +20,18 @@ const Players: React.FunctionComponent<IProps> = ({ videos }) => (
   <>
     {videos && videos.length > 0 && (
       <Container>
-        {videos.map((video, index) => (
-          <Item key={index}>
-            <VideoType>{video.type}</VideoType>
-            <Youtube
-              videoId={video.key}
-              opts={{ width: "160", height: "90" }}
-            />
-            <VideoName>{video.name}</VideoName>
-          </Item>
-        ))}
+        {videos
+          .filter((_, i) => i < 4)
+          .map((video, index) => (
+            <Item key={index}>
+              <VideoType>{video.type}</VideoType>
+              <Youtube
+                videoId={video.key}
+                opts={{ width: "160", height: "90" }}
+              />
+              <VideoName>{video.name}</VideoName>
+            </Item>
+          ))}
       </Container>
     )}
   </>

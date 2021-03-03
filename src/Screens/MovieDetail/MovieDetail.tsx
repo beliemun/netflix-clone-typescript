@@ -19,6 +19,8 @@ import Genres from "Components/Genres";
 import RatingStars from "Components/RatingStars";
 import Videos from "./Videos";
 import Keywords from "./Keywords";
+import Cast from "./Cast";
+import Base from "Components/Base";
 
 interface IParamsProps {
   id: string;
@@ -61,6 +63,13 @@ interface IMovie {
   };
 }
 
+interface ICast {
+  id: number;
+  name: string;
+  character: string;
+  profile_path: string;
+}
+
 const MovieDetail: React.FunctionComponent<
   RouteComponentProps<IParamsProps>
 > = ({
@@ -68,9 +77,10 @@ const MovieDetail: React.FunctionComponent<
     params: { id },
   },
 }) => {
+  const [loading, setLoading] = useState(false);
   const [movie, setMovie] = useState<IMovie | null>(null);
   const [keywords, setKeywords] = useState<IKeywords[] | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [cast, setCast] = useState<ICast[] | null>(null);
 
   useEffect(() => {
     const loadMovie = async () => {
@@ -82,6 +92,10 @@ const MovieDetail: React.FunctionComponent<
           data: { keywords },
         } = await movieApi.getKeywords(id);
         setKeywords(keywords);
+        const {
+          data: { cast },
+        } = await movieApi.getMoiveCredits(id);
+        setCast(cast);
         setLoading(false);
       } catch (e) {
         console.log(e);
@@ -132,6 +146,8 @@ const MovieDetail: React.FunctionComponent<
           <Keywords keywords={keywords} />
         </MovieDetailContainer>
       </MovieContainer>
+      <Base.GradientLine />
+      <Cast cast={cast} />
     </Contaniner>
   );
 };

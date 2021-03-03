@@ -4,6 +4,11 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min-content, 180px));
+  margin: 15px 0;
+
+  @media (max-width: 640px) {
+    display: none;
+  }
 `;
 
 export const Item = styled.div`

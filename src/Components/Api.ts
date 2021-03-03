@@ -28,6 +28,7 @@ export const movieApi = {
     }),
   getGenres: () => api.get("/genre/movie/list"),
   getKeywords: (movie_id: string) => api.get(`/movie/${movie_id}/keywords`),
+  getMoiveCredits: (movie_id: string) => api.get(`/movie/${movie_id}/credits`),
 };
 
 export const tvApi = {
@@ -50,6 +51,7 @@ export const tvApi = {
     }),
   getGenres: () => api.get("/genre/tv/list"),
   getKeywords: (tv_id: string) => api.get(`/tv/${tv_id}/keywords`),
+  getTvCredits: (tv_id: string) => api.get(`/tv/${tv_id}/credits`),
 };
 
 export const peopleApi = {

@@ -49,7 +49,7 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
       const scrollTop = document.documentElement.scrollTop;
       const clientHeight = document.documentElement.clientHeight;
 
-      if (scrollTop + clientHeight >= scrollHeight * 0.7) {
+      if (scrollTop + clientHeight >= scrollHeight * 0.7 && !loading) {
         LoadVideos(page + 1);
       }
     };

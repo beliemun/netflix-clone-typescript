@@ -35,10 +35,14 @@ export const MovieDetailContainer = styled.div`
 `;
 
 export const MovieTitle = styled.h2`
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 500;
   line-height: 1;
   color: ${Colors.text.primary};
+  transition: font-size 0.2s ease-in-out;
+  @media (max-width: 640px) {
+    font-size: 24px;
+  }
 `;
 
 export const MovieSubTitle = styled.h5`
@@ -52,8 +56,12 @@ export const MovieTagLine = styled.p`
   font-size: 24px;
   font-weight: 300;
   font-style: italic;
-  line-height: 2;
   color: ${Colors.text.primary};
+  margin-top: 25px;
+  transition: font-size 0.2s ease-in-out;
+  @media (max-width: 640px) {
+    font-size: 18px;
+  }
 `;
 
 export const MovieOverview = styled.p`
@@ -62,6 +70,10 @@ export const MovieOverview = styled.p`
   line-height: 1.5;
   color: ${Colors.text.primary};
   margin-bottom: 10px;
+  transition: font-size 0.2s ease-in-out;
+  @media (max-width: 640px) {
+    font-size: 12px;
+  }
 `;
 
 export const BackDrop = styled.div<{ bgUrl: string }>`
@@ -84,5 +96,5 @@ export const BackDropCurtain = styled.div`
 `;
 
 export const RateContainer = styled.div`
-  margin-top: 10px;
+  margin-top: 5px;
 `;
