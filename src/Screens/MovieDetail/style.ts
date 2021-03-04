@@ -32,6 +32,7 @@ export const MovieDetailContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
+  margin-bottom: 20px;
 `;
 
 export const MovieTitle = styled.h2`
@@ -97,4 +98,16 @@ export const BackDropCurtain = styled.div`
 
 export const RateContainer = styled.div`
   margin-top: 5px;
+`;
+
+export const Revenue = styled.h3`
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  margin-top: 20px;
+  text-align: center;
+  color: ${Colors.secondary};
+  @media (max-width: 640px) {
+    font-size: 14px;
+  }
 `;

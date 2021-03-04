@@ -53,11 +53,11 @@ interface IPerson {
   profile_path: string;
 }
 
-interface ICast {
+interface ICompany {
   id: number;
   name: string;
-  character: string;
-  profile_path: string;
+  logo_path: string | null;
+  origin_country: string;
 }
 
 interface IMovieVideos {
@@ -84,5 +84,33 @@ interface IMovie {
   vote_average: number;
   videos: {
     results: Array<IMovieVideos>;
+  };
+  production_companies: Array<ICompany> | null;
+  budget: number;
+  revenue: number;
+}
+
+interface ICredit {
+  id: number;
+  name: string;
+  profile_path: string | null;
+}
+
+interface ICast extends ICredit {
+  character: string;
+}
+
+interface ICrew extends ICredit {
+  job: string;
+  known_for_department: string;
+}
+
+interface IReview {
+  content: string;
+  created_at: string;
+  author_details: {
+    username: string;
+    avatar_path: string;
+    rating: string;
   };
 }

@@ -21,7 +21,7 @@ const Cast: React.FunctionComponent<IProps> = ({ cast }) => {
                     bgUrl={
                       item.profile_path
                         ? `https://image.tmdb.org/t/p/w154${item.profile_path}`
-                        : require("assets/no-image.jpg").default
+                        : require("assets/no-image-person.png").default
                     }
                   />
                   <Name>{item.name}</Name>
