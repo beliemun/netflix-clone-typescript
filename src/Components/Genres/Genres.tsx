@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { movieApi } from "Components/Api";
 import { Container } from "./style";
-
-interface IGenre {
-  id: number;
-  name: string;
-}
+import { IGenre } from "types";
 
 interface IProps {
   genre_ids: number[];

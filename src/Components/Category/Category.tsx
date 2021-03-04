@@ -2,15 +2,10 @@ import React from "react";
 import { RouteComponentProps } from "react-router-dom";
 import { Menu, Item } from "./style";
 import CategoryHeader from "Components/CategoryHeader";
-
-interface IItem {
-  pathname: string;
-  title: string;
-  description: string;
-}
+import { ICategory } from "types";
 
 interface IProps {
-  items: IItem[];
+  items: ICategory[];
 }
 
 const Category: React.FunctionComponent<IProps & RouteComponentProps> = ({

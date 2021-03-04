@@ -5,19 +5,7 @@ import ApiLoader from "Components/ApiLoader";
 import VideoItem from "Components/VideoItem";
 import useScrollTop from "hooks/useScollTop";
 import Base from "Components/Base";
-
-interface IVideo {
-  id: number;
-  title?: string;
-  name?: string;
-  overview: string;
-  poster_path: string;
-  backdrop_path: string;
-  genre_ids: number[];
-  release_date?: string;
-  first_air_date?: string;
-  vote_average: number;
-}
+import { IVideo } from "types";
 
 const VideoList: React.FunctionComponent<RouteComponentProps> = ({
   location: { pathname },

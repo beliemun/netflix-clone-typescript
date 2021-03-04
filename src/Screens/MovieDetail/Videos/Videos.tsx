@@ -1,19 +1,10 @@
 import React from "react";
 import { Container, Item, VideoName, VideoType } from "./style";
 import Youtube from "react-youtube";
-
-interface IMovieVideo {
-  id: string;
-  key: string;
-  name: string;
-  site: string;
-  iso_639_1: string;
-  iso_3166_1: string;
-  type: string;
-}
+import { IMovieVideos } from "types";
 
 interface IProps {
-  videos: IMovieVideo[];
+  videos: IMovieVideos[];
 }
 
 const Players: React.FunctionComponent<IProps> = ({ videos }) => (

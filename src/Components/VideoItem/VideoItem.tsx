@@ -11,19 +11,7 @@ import {
 } from "./style";
 import RatingStars from "Components/RatingStars";
 import Genres from "Components/Genres";
-
-interface IVideo {
-  id: number;
-  title?: string;
-  name?: string;
-  overview: string;
-  poster_path: string;
-  backdrop_path: string;
-  genre_ids: number[];
-  release_date?: string;
-  first_air_date?: string;
-  vote_average: number;
-}
+import { IVideo } from "types";
 
 interface IProps {
   video: IVideo;

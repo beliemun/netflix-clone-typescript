@@ -6,26 +6,7 @@ import Base from "Components/Base";
 import ApiLoader from "Components/ApiLoader";
 import PersonItem from "Components/PersonItem";
 import CategoryHeader from "Components/CategoryHeader";
-
-interface IKnowFor {
-  id: string;
-  title?: string;
-  name?: string;
-  poster_path: string | null;
-  vote_average: number;
-  release_date?: string;
-  first_air_date?: string;
-  original_language: string;
-  media_type: "movie" | "tv";
-}
-
-interface IPerson {
-  id: number;
-  name: string;
-  known_for: Array<IKnowFor>;
-  known_for_department: string;
-  profile_path: string;
-}
+import { IPerson } from "types";
 
 const PeopleList: React.FunctionComponent<RouteComponentProps> = ({
   location: { pathname },

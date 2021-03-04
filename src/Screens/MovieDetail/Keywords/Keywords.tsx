@@ -1,10 +1,6 @@
 import React from "react";
 import { Container, Item, Title } from "./style";
-
-interface IKeyword {
-  id: string;
-  name: string;
-}
+import { IKeyword } from "types";
 
 interface IProps {
   keywords: IKeyword[] | null;

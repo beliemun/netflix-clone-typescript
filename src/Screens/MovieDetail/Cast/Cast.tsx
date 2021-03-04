@@ -1,13 +1,6 @@
 import React from "react";
 import { Container, Title, Item, Poster, Name, Character } from "./style";
-import { Link } from "react-router-dom";
-
-interface ICast {
-  id: number;
-  name: string;
-  character: string;
-  profile_path: string;
-}
+import { ICast } from "types";
 
 interface IProps {
   cast: ICast[] | null;

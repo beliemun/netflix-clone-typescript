@@ -1,14 +1,9 @@
 import React from "react";
 import { Header, Title, Description } from "./style";
 import Base from "Components/Base";
+import { ICategoryHeader } from "types";
 
-interface IProps {
-  current: string;
-  title: string;
-  description: string;
-}
-
-const CategoryHeader: React.FunctionComponent<IProps> = ({
+const CategoryHeader: React.FunctionComponent<ICategoryHeader> = ({
   current,
   title,
   description,

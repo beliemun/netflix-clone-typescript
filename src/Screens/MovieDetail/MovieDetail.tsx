@@ -21,53 +21,10 @@ import Videos from "./Videos";
 import Keywords from "./Keywords";
 import Cast from "./Cast";
 import Base from "Components/Base";
+import { IMovie, IKeyword, ICast, IGenre } from "types";
 
 interface IParamsProps {
   id: string;
-}
-
-interface IGenre {
-  id: string;
-  name: string;
-}
-
-interface IKeywords {
-  id: string;
-  name: string;
-}
-
-interface IMovieVideo {
-  id: string;
-  key: string;
-  name: string;
-  site: string;
-  iso_639_1: string;
-  iso_3166_1: string;
-  type: string;
-}
-
-interface IMovie {
-  id: number;
-  poster_path: string;
-  backdrop_path: string;
-  original_language: string;
-  overview: string;
-  title: string;
-  genres: Array<IGenre>;
-  release_date: string;
-  runtime: string;
-  tagline: string;
-  vote_average: number;
-  videos: {
-    results: Array<IMovieVideo>;
-  };
-}
-
-interface ICast {
-  id: number;
-  name: string;
-  character: string;
-  profile_path: string;
 }
 
 const MovieDetail: React.FunctionComponent<
@@ -79,7 +36,7 @@ const MovieDetail: React.FunctionComponent<
 }) => {
   const [loading, setLoading] = useState(false);
   const [movie, setMovie] = useState<IMovie | null>(null);
-  const [keywords, setKeywords] = useState<IKeywords[] | null>(null);
+  const [keywords, setKeywords] = useState<IKeyword[] | null>(null);
   const [cast, setCast] = useState<ICast[] | null>(null);
 
   useEffect(() => {
@@ -106,7 +63,7 @@ const MovieDetail: React.FunctionComponent<
   }, [id]);
 
   const convertGenres = (genres: IGenre[]): number[] =>
-    genres.map((genre) => parseInt(genre.id));
+    genres.map((genre) => genre.id);
 
   return loading || movie === null ? (
     <Loader />
