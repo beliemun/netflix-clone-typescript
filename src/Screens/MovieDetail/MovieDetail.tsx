@@ -16,6 +16,8 @@ import {
 } from "./style";
 import { movieApi } from "Components/Api";
 import { IVideo, IMovie, IKeyword, ICast, ICrew, IGenre, IReview } from "types";
+import useScrollTop from "hooks/useScollTop";
+import Base from "Components/Base";
 import Loader from "Components/Loader";
 import Genres from "Components/Genres";
 import RatingStars from "Components/RatingStars";
@@ -47,6 +49,7 @@ const MovieDetail: React.FunctionComponent<
   const [crew, setCrew] = useState<ICrew[] | null>(null);
   const [reviews, setReviews] = useState<IReview[] | null>(null);
   const [similar, setSimilar] = useState<IVideo[] | null>(null);
+  const { elementRef, onClick } = useScrollTop();
 
   useEffect(() => {
     const loadMovie = async () => {
@@ -144,7 +147,10 @@ const MovieDetail: React.FunctionComponent<
         )}
         <div style={{ height: "30px" }} />
         <Reviews reviews={reviews} />
-        {/* <VideoSlider title={"Similar Movies"} videos={similar} /> */}
+        <VideoSlider title={"Similar Movies"} videos={similar} />
+        <Base.ScrollUpButton ref={elementRef} onClick={onClick}>
+          <i className="fas fa-angle-double-up"></i>
+        </Base.ScrollUpButton>
       </Contaniner>
       <Footer />
     </>
