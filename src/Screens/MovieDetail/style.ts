@@ -36,9 +36,12 @@ export const MovieDetailContainer = styled.div`
 `;
 
 export const MovieTitle = styled.h2`
+  position: relative;
+  display: flex;
+  align-items: center;
   font-size: 32px;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.2;
   color: ${Colors.text.primary};
   transition: font-size 0.2s ease-in-out;
   @media (max-width: 640px) {

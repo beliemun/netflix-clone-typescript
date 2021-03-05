@@ -12,6 +12,7 @@ import {
 } from "./style";
 import { IReview } from "types";
 import { getNumberFromString } from "functions/common";
+import Base from "Components/Base";
 
 interface IProps {
   reviews: IReview[] | null;
@@ -29,6 +30,7 @@ const Reviews: React.FunctionComponent<IProps> = ({ reviews }) => {
     <>
       {reviews && reviews.length > 0 && (
         <>
+          <Base.GradientLine />
           <Title>Reviews</Title>
           <Container>
             {reviews

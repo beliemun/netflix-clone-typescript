@@ -9,6 +9,8 @@ import {
   Country,
 } from "./style";
 import { ICompany } from "types";
+import Base from "Components/Base";
+import Flag from "react-country-flag";
 
 interface IProps {
   company: ICompany[] | null;
@@ -19,6 +21,7 @@ const Company: React.FunctionComponent<IProps> = ({ company }) => {
     <>
       {company && company.length > 0 && (
         <>
+          <Base.GradientLine />
           <Title>Production Companies</Title>
           <Container>
             {company
@@ -32,6 +35,23 @@ const Company: React.FunctionComponent<IProps> = ({ company }) => {
                         : require("assets/no-image-company.png").default
                     }
                   />
+                  {item.origin_country && (
+                    <Flag
+                      countryCode={item.origin_country}
+                      svg
+                      style={{
+                        position: "absolute",
+                        top: "6px",
+                        left: "6px",
+                        fontSize: "28px",
+                        lineHeight: "28px",
+                        borderRadius: "50%",
+                        objectFit: "cover",
+                        border: "1px solid white",
+                      }}
+                    />
+                  )}
+
                   <DetailContainer>
                     <Name>{item.name}</Name>
                     <Country>

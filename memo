@@ -1,0 +1,20 @@
+- 'react-country-flag' 설치 후 node_modules 안에 해당 모듈폴더 들어가서 index.d.ts 만들고 이하의 내용을 붙여 넣기
+
+declare module 'react-country-flag' {
+  import * as React from 'react';
+  export interface ReactCountryFlagProps<T> extends React.DetailedHTMLProps<React.LabelHTMLAttributes<T>,T> {
+    cdnSuffix?:string;
+    cdnUrl?:string;
+    countryCode: string;
+    svg?: boolean;
+    style?: React.CSSProperties;
+  }
+  const ReactCountryFlag:React.FC<ReactCountryFlagProps<HTMLSpanElement|HTMLImageElement>> = ({
+    cdnSuffix='svg',
+    cdnUrl='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/4x3/',
+    svg=false,
+    style={},
+    countryCode
+  })=>React.ReactNode;// return should be HTMLImageElement or HTMLSpanElement but close enough for me.
+  export default ReactCountryFlag;
+};

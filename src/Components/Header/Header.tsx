@@ -1,11 +1,11 @@
 import React from "react";
 import { Link, withRouter, RouteComponentProps } from "react-router-dom";
-import { Contianer, Item, List, Logo, Menu, Search } from "./style";
+import { Container, Item, List, Logo, Menu, Search } from "./style";
 
 const Header: React.FunctionComponent<RouteComponentProps> = ({
   location: { pathname },
 }) => (
-  <Contianer>
+  <Container>
     <Logo>
       <Link to="/">
         <img src={require("assets/title.png").default} alt={"logo"} />
@@ -51,7 +51,7 @@ const Header: React.FunctionComponent<RouteComponentProps> = ({
         <i className="fas fa-search"></i>
       </Link>
     </Search>
-  </Contianer>
+  </Container>
 );
 
 export default withRouter(Header);

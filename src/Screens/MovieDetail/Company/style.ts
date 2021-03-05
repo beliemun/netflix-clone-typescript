@@ -25,6 +25,7 @@ export const Title = styled.h2`
 `;
 
 export const Item = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   padding: 10px;

@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Title, Item, Poster, Name, Character } from "./style";
 import { ICast } from "types";
+import Base from "Components/Base";
 
 interface IProps {
   cast: ICast[] | null;
@@ -11,6 +12,7 @@ const Cast: React.FunctionComponent<IProps> = ({ cast }) => {
     <>
       {cast && cast.length > 0 && (
         <>
+          <Base.GradientLine />
           <Title>Top Billed Cast</Title>
           <Container>
             {cast

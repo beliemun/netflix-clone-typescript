@@ -9,6 +9,7 @@ import {
   Job,
 } from "./style";
 import { ICrew } from "types";
+import Base from "Components/Base";
 
 interface IProps {
   crew: ICrew[] | null;
@@ -19,6 +20,7 @@ const Crew: React.FunctionComponent<IProps> = ({ crew }) => {
     <>
       {crew && crew.length > 0 && (
         <>
+          <Base.GradientLine />
           <Title>Crew</Title>
           <Container>
             {crew

@@ -60,6 +60,11 @@ interface ICompany {
   origin_country: string;
 }
 
+interface IProductionCompany {
+  iso_3166_1: string;
+  name: string;
+}
+
 interface IMovieVideos {
   id: string;
   key: string;
@@ -86,6 +91,7 @@ interface IMovie {
     results: Array<IMovieVideos>;
   };
   production_companies: Array<ICompany> | null;
+  production_countries: Array<IProductionCompany>;
   budget: number;
   revenue: number;
 }
