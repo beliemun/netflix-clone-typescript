@@ -16,14 +16,23 @@ export const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 10px 20px 30px;
-  @media (max-width: 700px) {
+  @media (max-width: 1080px) {
     grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 575px) {
+    grid-template-columns: 1fr;
   }
 `;
 
 export const Terms = styled.div`
   grid-column: 1 / span 2;
   padding: 10px;
+  @media (max-width: 575px) {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Title = styled.h3`
@@ -37,6 +46,10 @@ export const Title = styled.h3`
       color: ${Colors.primary};
     }
   }
+  @media (max-width: 575px) {
+    font-size: 14px;
+    margin: 10px 0;
+  }
 `;
 
 export const SubTitle = styled.p`
@@ -44,10 +57,19 @@ export const SubTitle = styled.p`
   font-weight: 300;
   color: ${Colors.text.secondary};
   line-height: 1.5;
+  @media (max-width: 575px) {
+    font-size: 11px;
+    text-algin: center;
+  }
 `;
 
 export const Follow = styled.div`
   padding: 10px;
+  @media (max-width: 575px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const FollowContainer = styled.div`
@@ -75,6 +97,14 @@ export const FollowIcon = styled.div`
 
 export const Store = styled.div`
   padding: 10px;
+  @media (max-width: 1080px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  @media (max-width: 575px) {
+    align-items: center;
+  }
 `;
 
 export const StoreContainer = styled.div`
@@ -97,6 +127,10 @@ export const DownloadButton = styled.div`
   }
   &:not(first-child) {
     margin-right: 10px;
+    @media (max-width: 1080px) {
+      margin-right: 0px;
+      margin-left: 10px;
+    }
   }
   &:hover {
     transform: scale(1.1);

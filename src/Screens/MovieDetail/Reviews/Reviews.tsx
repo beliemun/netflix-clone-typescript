@@ -54,7 +54,7 @@ const Reviews: React.FunctionComponent<IProps> = ({ reviews }) => {
                     <Content>
                       {item.content.length > 180 ? (
                         <>
-                          {`"${item.content.slice(0, 180)}"`}...
+                          {`${item.content.slice(0, 180)}...`}
                           <ReadMore
                             onClick={(e) => readMoreHandler(e, item.content)}
                           >
@@ -62,7 +62,7 @@ const Reviews: React.FunctionComponent<IProps> = ({ reviews }) => {
                           </ReadMore>
                         </>
                       ) : (
-                        `"${item.content}"`
+                        item.content
                       )}
                     </Content>
                     <CreateAt>{item.created_at.slice(0, 10)}</CreateAt>

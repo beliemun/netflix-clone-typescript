@@ -30,6 +30,7 @@ export const movieApi = {
   getKeywords: (movie_id: string) => api.get(`/movie/${movie_id}/keywords`),
   getMoiveCredits: (movie_id: string) => api.get(`/movie/${movie_id}/credits`),
   getMoiveReviews: (movie_id: string) => api.get(`/movie/${movie_id}/reviews`),
+  getSimilar: (movie_id: string) => api.get(`/movie/${movie_id}/similar`),
 };
 
 export const tvApi = {
@@ -54,6 +55,7 @@ export const tvApi = {
   getKeywords: (tv_id: string) => api.get(`/tv/${tv_id}/keywords`),
   getTvCredits: (tv_id: string) => api.get(`/tv/${tv_id}/credits`),
   getTvReviews: (tv_id: string) => api.get(`/tv/${tv_id}/reviews`),
+  getSimilar: (tv_id: string) => api.get(`/tv/${tv_id}/similar`),
 };
 
 export const peopleApi = {

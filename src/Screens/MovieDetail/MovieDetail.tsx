@@ -15,7 +15,7 @@ import {
   Revenue,
 } from "./style";
 import { movieApi } from "Components/Api";
-import { IMovie, IKeyword, ICast, ICrew, IGenre, IReview } from "types";
+import { IVideo, IMovie, IKeyword, ICast, ICrew, IGenre, IReview } from "types";
 import Loader from "Components/Loader";
 import Genres from "Components/Genres";
 import RatingStars from "Components/RatingStars";
@@ -26,6 +26,7 @@ import Crew from "./Crew";
 import Company from "./Company";
 import Reviews from "./Reviews";
 import Flag from "react-country-flag";
+import VideoSlider from "Components/VideoSlider";
 import Footer from "Components/Footer";
 
 interface IParamsProps {
@@ -45,6 +46,7 @@ const MovieDetail: React.FunctionComponent<
   const [cast, setCast] = useState<ICast[] | null>(null);
   const [crew, setCrew] = useState<ICrew[] | null>(null);
   const [reviews, setReviews] = useState<IReview[] | null>(null);
+  const [similar, setSimilar] = useState<IVideo[] | null>(null);
 
   useEffect(() => {
     const loadMovie = async () => {
@@ -62,9 +64,13 @@ const MovieDetail: React.FunctionComponent<
         setCast(cast);
         setCrew(crew);
         const {
-          data: { results },
+          data: { results: reviews },
         } = await movieApi.getMoiveReviews(id);
-        setReviews(results);
+        setReviews(reviews);
+        const {
+          data: { results: similar },
+        } = await movieApi.getSimilar(id);
+        setSimilar(similar);
         setLoading(false);
       } catch (e) {
         console.log(e);
@@ -138,6 +144,7 @@ const MovieDetail: React.FunctionComponent<
         )}
         <div style={{ height: "30px" }} />
         <Reviews reviews={reviews} />
+        {/* <VideoSlider title={"Similar Movies"} videos={similar} /> */}
       </Contaniner>
       <Footer />
     </>
