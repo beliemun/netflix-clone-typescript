@@ -11,6 +11,7 @@ import {
   ReadMore,
 } from "./style";
 import { IReview } from "types";
+import { getNumberFromString } from "functions/common";
 
 interface IProps {
   reviews: IReview[] | null;
@@ -31,6 +32,11 @@ const Reviews: React.FunctionComponent<IProps> = ({ reviews }) => {
           <Title>Reviews</Title>
           <Container>
             {reviews
+              .sort(
+                (a, b) =>
+                  getNumberFromString(b.created_at) -
+                  getNumberFromString(a.created_at)
+              )
               .filter((_, i) => i < 6)
               .map((item, index) => (
                 <Item key={index}>
