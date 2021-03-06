@@ -1,7 +1,7 @@
 const TVCategory = [
   {
     pathname: "/tv",
-    title: "Popular",
+    title: "Popular Shows",
     description:
       "The list of the current popular TV shows. This list updates daily.",
   },

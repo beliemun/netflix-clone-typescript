@@ -15,7 +15,7 @@ export const Item = styled(Link)<{ current: string }>`
     props.current === "true" ? Colors.text.emphasis : Colors.text.secondary};
   margin: 0 5px;
   padding: 12px;
-  width: 120px;
+  width: 130px;
   border: 1px solid
     ${(props) =>
       props.current === "true" ? Colors.text.emphasis : "transparent"};
@@ -24,8 +24,14 @@ export const Item = styled(Link)<{ current: string }>`
   text-align: center;
   @media (max-width: 1000px) {
     padding: 8px;
-    width: 95px;
+    width: 115px;
     border-radius: 8px;
     font-size: 13px;
+  }
+  @media (max-width: 575px) {
+    padding: 6px;
+    width: 100px;
+    border-radius: 6px;
+    font-size: 12px;
   }
 `;

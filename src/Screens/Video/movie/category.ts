@@ -1,7 +1,7 @@
 const MovieCategory = [
   {
     pathname: "/movie",
-    title: "Popular",
+    title: "Popular Movies",
     description:
       "The list of the current popular movies. This list updates daily.",
   },

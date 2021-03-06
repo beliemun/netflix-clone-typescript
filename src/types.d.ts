@@ -1,4 +1,3 @@
-import { type } from "os";
 import {} from "react";
 
 type MediaType = "movie" | "tv";
