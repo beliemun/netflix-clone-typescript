@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, Item, VideoName, VideoType } from "./style";
 import Youtube from "react-youtube";
-import { IMovieVideos } from "types";
+import { IYoutube } from "types";
 
 interface IProps {
-  videos: IMovieVideos[];
+  videos: IYoutube[];
 }
 
 const Players: React.FunctionComponent<IProps> = ({ videos }) => {

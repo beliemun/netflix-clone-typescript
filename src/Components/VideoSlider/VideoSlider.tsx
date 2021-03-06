@@ -22,13 +22,13 @@ import RatingStars from "Components/RatingStars";
 interface IProps {
   title: string;
   videos: IVideo[] | null;
-  videoType: MediaType;
+  mediaType: MediaType;
 }
 
 const VideoSlider: React.FunctionComponent<IProps> = ({
   title,
   videos,
-  videoType,
+  mediaType,
 }) => {
   const settings = {
     dots: true,
@@ -87,7 +87,7 @@ const VideoSlider: React.FunctionComponent<IProps> = ({
                 <Item
                   key={index}
                   to={
-                    videoType === "movie"
+                    mediaType === "movie"
                       ? `/movie/${video.id}`
                       : `/tv/${video.id}`
                   }
@@ -101,7 +101,9 @@ const VideoSlider: React.FunctionComponent<IProps> = ({
                   >
                     <PostCover>
                       <OverviewContainer>
-                        <VideoTitle>{video.title}</VideoTitle>
+                        <VideoTitle>
+                          {mediaType === "movie" ? video.title : video.name}
+                        </VideoTitle>
                         <RatingStars rate={video.vote_average} />
                         <VideoOverview>{video.overview}</VideoOverview>
                       </OverviewContainer>
@@ -111,7 +113,9 @@ const VideoSlider: React.FunctionComponent<IProps> = ({
                       </PlayButtonLarge>
                     </PostCover>
                     <DetailContainer>
-                      <VideoTitle>{video.title}</VideoTitle>
+                      <VideoTitle>
+                        {mediaType === "movie" ? video.title : video.name}
+                      </VideoTitle>
                       <RatingStars rate={video.vote_average} />
                     </DetailContainer>
                     <PlayButtonSmall>

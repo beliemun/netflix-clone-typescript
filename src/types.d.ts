@@ -68,7 +68,7 @@ interface IProductionCompany {
   name: string;
 }
 
-interface IMovieVideos {
+interface IYoutube {
   id: string;
   key: string;
   name: string;
@@ -78,20 +78,24 @@ interface IMovieVideos {
   type: string;
 }
 
-interface IMovie {
+interface IDetailVideo {
   id: number;
   poster_path: string;
   backdrop_path: string;
   original_language: string;
   overview: string;
   title: string;
+  name: string;
   genres: Array<IGenre>;
   release_date: string;
+  first_air_date: string;
+  number_of_episodes: number;
+  number_of_seasons: number;
   runtime: string;
   tagline: string;
   vote_average: number;
   videos: {
-    results: Array<IMovieVideos>;
+    results: Array<IYoutube>;
   };
   production_companies: Array<ICompany> | null;
   production_countries: Array<IProductionCompany>;

@@ -7,14 +7,14 @@ export const Contaniner = styled.div`
   padding: 20px;
 `;
 
-export const MovieContainer = styled.div`
+export const VideoContainer = styled.div`
   width: 100%;
   max-width: 1080px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 `;
 
-export const MoviePoster = styled.div<{ bgUrl: string }>`
+export const VideoPoster = styled.div<{ bgUrl: string }>`
   min-width: 180px;
   height: 320px;
   margin: 0 20px;
@@ -27,7 +27,7 @@ export const MoviePoster = styled.div<{ bgUrl: string }>`
     rgba(0, 0, 0, 0.34) 0px 12px 13px, rgba(0, 0, 0, 0.18) 0px -3px 5px;
 `;
 
-export const MovieDetailContainer = styled.div`
+export const VideoDetailContainer = styled.div`
   grid-column: 2 / 6;
   display: flex;
   flex-direction: column;
@@ -35,7 +35,7 @@ export const MovieDetailContainer = styled.div`
   margin-bottom: 20px;
 `;
 
-export const MovieTitle = styled.h2`
+export const VideoTitle = styled.h2`
   position: relative;
   display: flex;
   align-items: center;
@@ -49,14 +49,14 @@ export const MovieTitle = styled.h2`
   }
 `;
 
-export const MovieSubTitle = styled.h5`
+export const VideoSubTitle = styled.h5`
   font-size: 13px;
   font-weight: 300;
   line-height: 1.5;
   color: ${Colors.text.secondary};
 `;
 
-export const MovieTagLine = styled.p`
+export const VideoTagLine = styled.p`
   font-size: 24px;
   font-weight: 300;
   font-style: italic;
@@ -68,7 +68,7 @@ export const MovieTagLine = styled.p`
   }
 `;
 
-export const MovieOverview = styled.p`
+export const VideoOverview = styled.p`
   font-size: 14px;
   font-weight: 300;
   line-height: 1.5;

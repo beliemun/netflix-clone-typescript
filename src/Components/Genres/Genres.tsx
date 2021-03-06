@@ -29,7 +29,7 @@ const Genres: React.FunctionComponent<IProps> = ({ genre_ids }) => {
       {genre_ids.map((video_genre_id: number, index: number) =>
         genreCodes.map((code: IGenre) =>
           code.id === video_genre_id
-            ? genre_ids.length - 1 === index
+            ? genre_ids.length - 1 === index || genreCodes.length === 1
               ? code.name
               : code.name + " • "
             : ""

@@ -11,21 +11,24 @@ import {
 } from "./style";
 import RatingStars from "Components/RatingStars";
 import Genres from "Components/Genres";
-import { IVideo } from "types";
+import { IVideo, MediaType } from "types";
 
 interface IProps {
   video: IVideo;
   index: number;
-  isMovie: boolean;
+  mediaType: MediaType;
 }
 
 const VideoItem: React.FunctionComponent<IProps> = ({
   video,
   index,
-  isMovie,
+  mediaType,
 }) => {
   return (
-    <Item index={index} to={isMovie ? `/movie/${video.id}` : `/tv/${video.id}`}>
+    <Item
+      index={index}
+      to={mediaType === "movie" ? `/movie/${video.id}` : `/tv/${video.id}`}
+    >
       <Poster
         bgUrl={
           video.poster_path
@@ -34,17 +37,19 @@ const VideoItem: React.FunctionComponent<IProps> = ({
         }
       >
         <PosterCover>
-          <HoverTitle>{isMovie ? video.title : video.name}</HoverTitle>
+          <HoverTitle>
+            {mediaType === "movie" ? video.title : video.name}
+          </HoverTitle>
           <HoverYear>
             (
-            {isMovie
+            {mediaType === "movie"
               ? video.release_date?.slice(0, 4)
               : video.first_air_date?.slice(0, 4)}
             )
           </HoverYear>
         </PosterCover>
       </Poster>
-      <Title>{isMovie ? video.title : video.name}</Title>
+      <Title>{mediaType === "movie" ? video.title : video.name}</Title>
       <GenresContainer>
         <Genres genre_ids={video.genre_ids} />
       </GenresContainer>

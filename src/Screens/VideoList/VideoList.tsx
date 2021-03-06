@@ -5,12 +5,12 @@ import ApiLoader from "Components/ApiLoader";
 import VideoItem from "Components/VideoItem";
 import useScrollTop from "hooks/useScollTop";
 import Base from "Components/Base";
-import { IVideo } from "types";
+import { IVideo, MediaType } from "types";
 
 const VideoList: React.FunctionComponent<RouteComponentProps> = ({
   location: { pathname },
 }) => {
-  const isMovie = pathname.includes("movie");
+  const mediaType: MediaType = pathname.includes("movie") ? "movie" : "tv";
   const [videos, setVideos] = useState<Array<IVideo>>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [page, setPage] = useState<number>(0);
@@ -55,7 +55,12 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
   return (
     <Container>
       {videos.map((video: IVideo, index: number) => (
-        <VideoItem key={index} index={index} video={video} isMovie={isMovie} />
+        <VideoItem
+          key={index}
+          index={index}
+          video={video}
+          mediaType={mediaType}
+        />
       ))}
       <Base.ScrollUpButton ref={elementRef} onClick={onClick}>
         <i className="fas fa-angle-double-up"></i>

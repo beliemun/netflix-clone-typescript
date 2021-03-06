@@ -7,7 +7,7 @@ interface IRateProps {
 
 const Stars: React.FunctionComponent<IRateProps> = ({ rate }) => {
   const getStarsElements = (rate: number) => {
-    let remainedRate = rate / 2;
+    let remainedRate = rate / 2 + 0.5;
     let stars = [];
     while (remainedRate > 1) {
       const i = React.createElement("i", {

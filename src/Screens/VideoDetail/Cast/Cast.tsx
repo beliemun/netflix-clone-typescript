@@ -5,15 +5,16 @@ import Base from "Components/Base";
 
 interface IProps {
   cast: ICast[] | null;
+  title: string;
 }
 
-const Cast: React.FunctionComponent<IProps> = ({ cast }) => {
+const Cast: React.FunctionComponent<IProps> = ({ cast, title }) => {
   return (
     <>
       {cast && cast.length > 0 && (
         <>
           <Base.GradientLine />
-          <Title>Top Billed Cast</Title>
+          <Title>{title}</Title>
           <Container>
             {cast
               .filter((_, i) => i < 20)
