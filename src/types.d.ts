@@ -1,4 +1,7 @@
+import { type } from "os";
 import {} from "react";
+
+type MediaType = "movie" | "tv";
 
 interface IVideo {
   id: number;
@@ -42,7 +45,7 @@ interface IKnowFor {
   release_date?: string;
   first_air_date?: string;
   original_language: string;
-  media_type: "movie" | "tv";
+  media_type: MediaType;
 }
 
 interface IPerson {

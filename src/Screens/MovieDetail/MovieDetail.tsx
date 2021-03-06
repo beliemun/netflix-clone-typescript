@@ -90,16 +90,19 @@ const MovieDetail: React.FunctionComponent<
     <Loader />
   ) : (
     <>
+      <BackDrop
+        bgUrl={
+          movie.backdrop_path
+            ? `https://image.tmdb.org/t/p/w300${movie.backdrop_path}`
+            : require("assets/no-image.jpg").default
+        }
+      >
+        <BackDropCurtain />
+      </BackDrop>
+      <Base.ScrollUpButton ref={elementRef} onClick={onClick}>
+        <i className="fas fa-angle-double-up"></i>
+      </Base.ScrollUpButton>
       <Contaniner>
-        <BackDrop
-          bgUrl={
-            movie.backdrop_path
-              ? `https://image.tmdb.org/t/p/w300${movie.backdrop_path}`
-              : require("assets/no-image.jpg").default
-          }
-        >
-          <BackDropCurtain />
-        </BackDrop>
         <MovieContainer>
           <MoviePoster
             bgUrl={
@@ -147,11 +150,12 @@ const MovieDetail: React.FunctionComponent<
         )}
         <div style={{ height: "30px" }} />
         <Reviews reviews={reviews} />
-        <VideoSlider title={"Similar Movies"} videos={similar} />
-        <Base.ScrollUpButton ref={elementRef} onClick={onClick}>
-          <i className="fas fa-angle-double-up"></i>
-        </Base.ScrollUpButton>
       </Contaniner>
+      <VideoSlider
+        title={"Similar Movies"}
+        videos={similar}
+        videoType={"movie"}
+      />
       <Footer />
     </>
   );

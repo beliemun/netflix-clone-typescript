@@ -33,7 +33,7 @@ export const ScrollUpButton = styled.button`
   z-index: 1;
   width: 50px;
   height: 50px;
-  background-color: ${Colors.bg.secondary};
+  background: linear-gradient(to left, #8a2387, #e94057, #f27121);
   border-radius: 30px;
   border: 2px solid ${Colors.text.emphasis};
   opacity: 0;

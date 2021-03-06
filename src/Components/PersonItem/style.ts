@@ -25,8 +25,6 @@ export const Item = styled(Link)<{ index: number }>`
   }
   &:hover {
     transform: scale(1.1);
-    /* box-shadow: rgba(136, 165, 191, 0.2) 6px 2px 16px 0px,
-      rgba(255, 255, 255, 0.2) -6px -2px 16px 0px; */
     grid-template-columns: 1fr;
     & > div:first-child {
       opacity: 1;

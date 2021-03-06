@@ -1,38 +1,131 @@
 import React from "react";
 import {
+  SliderContainer,
   Container,
   Title,
-  SliderFrame,
-  SliderItem,
-  PosterContainer,
+  Item,
   Poster,
+  PostCover,
   DetailContainer,
   VideoTitle,
+  VideoOverview,
+  PlayButtonSmall,
+  PlayButtonLarge,
+  PlayButtonText,
+  OverviewContainer,
 } from "./style";
-import { IVideo } from "types";
+import { IVideo, MediaType } from "types";
 import Base from "Components/Base";
+import Slider from "react-slick";
+import RatingStars from "Components/RatingStars";
 
 interface IProps {
   title: string;
   videos: IVideo[] | null;
+  videoType: MediaType;
 }
 
-const VideoSlider: React.FunctionComponent<IProps> = ({ title, videos }) => (
-  <>
-    {videos && videos.length > 0 && (
-      <>
-        <Base.GradientLine />
-        <Title>{title}</Title>
+const VideoSlider: React.FunctionComponent<IProps> = ({
+  title,
+  videos,
+  videoType,
+}) => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 7,
+    slidesToScroll: 7,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1920,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 6,
+        },
+      },
+      {
+        breakpoint: 1680,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 5,
+        },
+      },
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
+        breakpoint: 1020,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+    ],
+  };
+  return (
+    <>
+      {videos && videos.length > 0 && (
         <Container>
-          <SliderFrame>
-            {videos.map((video, index) => (
-              <SliderItem>{video.title}</SliderItem>
-            ))}
-          </SliderFrame>
+          <Base.GradientLine />
+          <Title>{title}</Title>
+          <SliderContainer>
+            <Slider {...settings}>
+              {videos.map((video, index) => (
+                <Item
+                  key={index}
+                  to={
+                    videoType === "movie"
+                      ? `/movie/${video.id}`
+                      : `/tv/${video.id}`
+                  }
+                >
+                  <Poster
+                    bgUrl={
+                      video.backdrop_path
+                        ? `https://image.tmdb.org/t/p/w780${video.backdrop_path}`
+                        : require("assets/no-image.jpg").default
+                    }
+                  >
+                    <PostCover>
+                      <OverviewContainer>
+                        <VideoTitle>{video.title}</VideoTitle>
+                        <RatingStars rate={video.vote_average} />
+                        <VideoOverview>{video.overview}</VideoOverview>
+                      </OverviewContainer>
+                      <PlayButtonLarge>
+                        <i className="fas fa-play"></i>
+                        <PlayButtonText>Play</PlayButtonText>
+                      </PlayButtonLarge>
+                    </PostCover>
+                    <DetailContainer>
+                      <VideoTitle>{video.title}</VideoTitle>
+                      <RatingStars rate={video.vote_average} />
+                    </DetailContainer>
+                    <PlayButtonSmall>
+                      <i className="fas fa-play"></i>
+                    </PlayButtonSmall>
+                  </Poster>
+                </Item>
+              ))}
+            </Slider>
+          </SliderContainer>
         </Container>
-      </>
-    )}
-  </>
-);
+      )}
+    </>
+  );
+};
 
 export default VideoSlider;

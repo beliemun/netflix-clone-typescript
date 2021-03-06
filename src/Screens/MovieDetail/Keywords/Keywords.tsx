@@ -14,8 +14,10 @@ const Keywords: React.FunctionComponent<IProps> = ({ keywords }) => (
         <Container>
           {keywords
             .filter((_, i) => i < 12)
-            .map((keyword) => (
-              <Item to="#"># {keyword.name}</Item>
+            .map((keyword, index) => (
+              <Item to="#" key={index}>
+                # {keyword.name}
+              </Item>
             ))}
         </Container>
       </>
