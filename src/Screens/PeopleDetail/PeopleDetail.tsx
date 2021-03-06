@@ -3,6 +3,7 @@ import { BackDrop, BackDropCurtain, Container } from "./style";
 import { IPersonDetail } from "types";
 import { RouteComponentProps } from "react-router-dom";
 import { peopleApi } from "Components/Api";
+import Base from "Components/Base";
 import useScrollTop from "hooks/useScollTop";
 import Loader from "Components/Loader";
 import Footer from "Components/Footer";
@@ -56,6 +57,9 @@ const PeopleDetail: React.FunctionComponent<
             <Detail person={person} />
           </Container>
           <Footer />
+          <Base.ScrollUpButton ref={elementRef} onClick={onClick}>
+            <i className="fas fa-angle-double-up"></i>
+          </Base.ScrollUpButton>
         </>
       )}
     </>

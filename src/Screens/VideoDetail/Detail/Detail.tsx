@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  VideoContainer,
+  Container,
   VideoPoster,
   VideoDetailContainer,
   VideoTitle,
@@ -31,7 +31,7 @@ const Detail: React.FunctionComponent<IProps> = ({
     genres.map((genre) => genre.id);
 
   return (
-    <VideoContainer>
+    <Container>
       <VideoPoster
         bgUrl={
           video.poster_path
@@ -73,7 +73,7 @@ const Detail: React.FunctionComponent<IProps> = ({
         <Videos videos={video.videos.results} />
         <Keywords keywords={keywords} />
       </VideoDetailContainer>
-    </VideoContainer>
+    </Container>
   );
 };
 

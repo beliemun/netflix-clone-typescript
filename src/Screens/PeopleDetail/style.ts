@@ -12,13 +12,13 @@ export const BackDrop = styled.div<{ bgUrl: string }>`
   background-image: url(${(props) => props.bgUrl});
   background-position: center center;
   background-size: cover;
-  filter: blur(20px);
+  filter: blur(15px);
 `;
 
 export const BackDropCurtain = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
 `;
 
 export const Container = styled.div`
