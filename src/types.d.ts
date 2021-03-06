@@ -37,12 +37,12 @@ interface IKeyword extends __ID__NAME {}
 
 interface IKnowFor {
   id: string;
-  title?: string;
-  name?: string;
+  title: string;
+  name: string;
   poster_path: string | null;
   vote_average: number;
-  release_date?: string;
-  first_air_date?: string;
+  release_date: string;
+  first_air_date: string;
   original_language: string;
   media_type: MediaType;
 }
@@ -53,6 +53,17 @@ interface IPerson {
   known_for: Array<IKnowFor>;
   known_for_department: string;
   profile_path: string;
+}
+
+interface IPersonDetail {
+  id: number;
+  name: string;
+  biography: string;
+  profile_path: string | null;
+  place_of_birth: string | null;
+  gender: integer;
+  birthday: string | null;
+  known_for_department: string;
 }
 
 interface ICompany {

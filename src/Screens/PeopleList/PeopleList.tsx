@@ -63,10 +63,10 @@ const PeopleList: React.FunctionComponent<RouteComponentProps> = ({
         {people.map((person, index) => (
           <PersonItem key={index} index={index} person={person} />
         ))}
-        <Base.ScrollUpButton ref={elementRef} onClick={onClick}>
-          <i className="fas fa-angle-double-up"></i>
-        </Base.ScrollUpButton>
       </Container>
+      <Base.ScrollUpButton ref={elementRef} onClick={onClick}>
+        <i className="fas fa-angle-double-up"></i>
+      </Base.ScrollUpButton>
     </>
   );
 };

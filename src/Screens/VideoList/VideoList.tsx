@@ -53,19 +53,21 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
   }, [pathname]);
 
   return (
-    <Container>
-      {videos.map((video: IVideo, index: number) => (
-        <VideoItem
-          key={index}
-          index={index}
-          video={video}
-          mediaType={mediaType}
-        />
-      ))}
+    <>
+      <Container>
+        {videos.map((video: IVideo, index: number) => (
+          <VideoItem
+            key={index}
+            index={index}
+            video={video}
+            mediaType={mediaType}
+          />
+        ))}
+      </Container>
       <Base.ScrollUpButton ref={elementRef} onClick={onClick}>
         <i className="fas fa-angle-double-up"></i>
       </Base.ScrollUpButton>
-    </Container>
+    </>
   );
 };
 
