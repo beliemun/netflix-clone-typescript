@@ -52,7 +52,7 @@ const MovieCredit: React.FunctionComponent<IProps> = ({
                       mediaType={mediaType}
                     />
                   ))}
-            {!moreMovie && (
+            {!moreMovie && videos.length > 7 && (
               <SeeMoreContainer>
                 <SeeMoreButton onClick={() => setMoreMovie(true)}>
                   <i className="fas fa-redo "></i>See more
@@ -62,6 +62,7 @@ const MovieCredit: React.FunctionComponent<IProps> = ({
           </VideoItemContainer>
         </>
       )}
+      {videos && videos.length === 0 && <div style={{ height: "100vh" }} />}
     </>
   );
 };
