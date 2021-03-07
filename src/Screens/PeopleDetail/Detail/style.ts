@@ -12,8 +12,10 @@ export const CenterContainer = styled.div`
   display: flex;
   width: 100%;
   max-width: 1080px;
-  margin-top: 10px;
   padding: 30px;
+  @media (max-width: 1080px) {
+    padding: 20px;
+  }
 `;
 
 export const Poster = styled.img`
@@ -23,6 +25,18 @@ export const Poster = styled.img`
   border-radius: 50%;
   object-fit: cover;
   margin-right: 30px;
+  transition: all 0.2s ease-in-out;
+  @media (max-width: 1080px) {
+    width: 180px;
+    min-width: 180px;
+    height: 180px;
+    margin-right: 20px;
+  }
+  @media (max-width: 650px) {
+    width: 120px;
+    min-width: 120px;
+    height: 120px;
+  }
 `;
 
 export const DetailContainer = styled.div`
@@ -36,6 +50,13 @@ export const Name = styled.h2`
   line-height: 1.2;
   color: ${Colors.text.emphasis};
   margin: 10px 0;
+  transition: all 0.2s ease-in-out;
+  @media (max-width: 1080px) {
+    font-size: 28px;
+  }
+  @media (max-width: 650px) {
+    font-size: 24px;
+  }
 `;
 
 export const Info = styled.h5`
@@ -44,6 +65,14 @@ export const Info = styled.h5`
   line-height: 1.2;
   color: ${Colors.text.primary};
   margin-bottom: 10px;
+  transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  @media (max-width: 1080px) {
+    font-size: 12px;
+  }
+  @media (max-width: 650px) {
+    font-size: 11px;
+  }
 `;
 
 export const Subtitle = styled.h4`
@@ -52,6 +81,13 @@ export const Subtitle = styled.h4`
   line-height: 1.2;
   color: ${Colors.secondary};
   margin: 15px 0;
+  transition: all 0.2s ease-in-out;
+  @media (max-width: 1080px) {
+    font-size: 15px;
+  }
+  @media (max-width: 650px) {
+    font-size: 14px;
+  }
 `;
 
 export const Biography = styled.p`
@@ -60,6 +96,13 @@ export const Biography = styled.p`
   font-style: italic;
   line-height: 1.5;
   color: ${Colors.secondary};
+  transition: all 0.2s ease-in-out;
+  @media (max-width: 1080px) {
+    font-size: 15px;
+  }
+  @media (max-width: 650px) {
+    font-size: 14px;
+  }
 `;
 
 export const ReadMore = styled.span`
