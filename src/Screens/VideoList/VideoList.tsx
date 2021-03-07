@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { RouteComponentProps } from "react-router-dom";
-import { Container } from "./style";
+import { VideoItemContainer } from "./style";
 import ApiLoader from "Components/ApiLoader";
 import VideoItem from "Components/VideoItem";
 import useScrollTop from "hooks/useScollTop";
@@ -54,7 +54,7 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
 
   return (
     <>
-      <Container>
+      <VideoItemContainer>
         {videos.map((video: IVideo, index: number) => (
           <VideoItem
             key={index}
@@ -63,7 +63,7 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
             mediaType={mediaType}
           />
         ))}
-      </Container>
+      </VideoItemContainer>
       <Base.ScrollUpButton ref={elementRef} onClick={onClick}>
         <i className="fas fa-angle-double-up"></i>
       </Base.ScrollUpButton>

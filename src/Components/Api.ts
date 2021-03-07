@@ -67,4 +67,8 @@ export const peopleApi = {
         query: encodeURIComponent(term),
       },
     }),
+  getMoiveCredits: (person_id: string) =>
+    api.get(`/person/${person_id}/movie_credits`),
+  getTvCredits: (person_id: string) =>
+    api.get(`/person/${person_id}/tv_credits`),
 };

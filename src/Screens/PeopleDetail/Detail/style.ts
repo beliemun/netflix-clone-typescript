@@ -4,9 +4,14 @@ import Colors from "Components/Colors";
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const CenterContainer = styled.div`
+  display: flex;
   width: 100%;
   max-width: 1080px;
-  height: 100vh;
   margin-top: 10px;
   padding: 30px;
 `;

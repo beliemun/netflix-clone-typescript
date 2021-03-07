@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { BackDrop, BackDropCurtain, Container } from "./style";
-import { IPersonDetail } from "types";
+import { BackDrop, BackDropCurtain } from "./style";
+import { IPersonDetail, IVideo } from "types";
 import { RouteComponentProps } from "react-router-dom";
 import { peopleApi } from "Components/Api";
 import Base from "Components/Base";
@@ -8,6 +8,7 @@ import useScrollTop from "hooks/useScollTop";
 import Loader from "Components/Loader";
 import Footer from "Components/Footer";
 import Detail from "./Detail";
+import MovieCredit from "./MovieCredit";
 
 interface IParamsProps {
   id: string;
@@ -22,6 +23,7 @@ const PeopleDetail: React.FunctionComponent<
 }) => {
   const [loading, setLoading] = useState(false);
   const [person, setPerson] = useState<IPersonDetail | null>(null);
+  const [movieCredit, setMovieCredit] = useState<IVideo[] | []>([]);
   const { elementRef, onClick } = useScrollTop();
 
   useEffect(() => {
@@ -30,6 +32,10 @@ const PeopleDetail: React.FunctionComponent<
         setLoading(true);
         const { data } = await peopleApi.poepleDetail(id);
         setPerson(data);
+        const {
+          data: { cast: moiveCredit },
+        } = await peopleApi.getMoiveCredits(id);
+        setMovieCredit(moiveCredit);
         setLoading(false);
       } catch (e) {
         console.log(e);
@@ -53,9 +59,12 @@ const PeopleDetail: React.FunctionComponent<
           >
             <BackDropCurtain />
           </BackDrop>
-          <Container>
-            <Detail person={person} />
-          </Container>
+          <Detail person={person} />
+          <MovieCredit
+            videos={movieCredit}
+            title={"Known For"}
+            mediaType="movie"
+          />
           <Footer />
           <Base.ScrollUpButton ref={elementRef} onClick={onClick}>
             <i className="fas fa-angle-double-up"></i>
