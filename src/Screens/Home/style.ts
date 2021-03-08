@@ -20,7 +20,7 @@ export const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 1080px;
-  animation: move 3s ease-in-out infinite;
+  animation: move 4s ease-in-out infinite;
 `;
 
 export const MovieContainer = styled.div<{ bgUrl: string }>`
