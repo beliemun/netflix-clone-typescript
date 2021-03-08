@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Colors from "Components/Colors";
 
 export const Container = styled.div`
+  position: relative;
   padding: 30px;
 `;
 
@@ -204,4 +205,27 @@ export const PlayButtonText = styled.span`
   font-weight: 300;
   margin-left: 10px;
   color: ${Colors.text.emphasis};
+`;
+
+export const SeeMoreButton = styled(Link)`
+  position: absolute;
+  z-index: 1;
+  top: 60px;
+  right: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: ${Colors.primary};
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+
+  @media (max-width: 720px) {
+    font-size: 14px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    color: ${Colors.text.emphasis};
+  }
 `;

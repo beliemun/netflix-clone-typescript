@@ -10,6 +10,7 @@ import {
   RateContainer,
 } from "./style";
 import { MediaType, IDetailVideo, IKeyword, IGenre } from "types";
+import { convertGenres } from "functions/common";
 import Genres from "Components/Genres";
 import RatingStars from "Components/RatingStars";
 import Videos from "../Videos";
@@ -27,9 +28,6 @@ const Detail: React.FunctionComponent<IProps> = ({
   keywords,
   mediaType,
 }) => {
-  const convertGenres = (genres: IGenre[]): number[] =>
-    genres.map((genre) => genre.id);
-
   return (
     <Container>
       <VideoPoster

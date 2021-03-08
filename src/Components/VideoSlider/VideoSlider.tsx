@@ -13,6 +13,7 @@ import {
   PlayButtonLarge,
   PlayButtonText,
   OverviewContainer,
+  SeeMoreButton,
 } from "./style";
 import { IVideo, MediaType } from "types";
 import Base from "Components/Base";
@@ -23,12 +24,14 @@ interface IProps {
   title: string;
   videos: IVideo[] | null;
   mediaType: MediaType;
+  link?: string;
 }
 
 const VideoSlider: React.FunctionComponent<IProps> = ({
   title,
   videos,
   mediaType,
+  link,
 }) => {
   const settings = {
     dots: true,
@@ -72,6 +75,7 @@ const VideoSlider: React.FunctionComponent<IProps> = ({
     <>
       {videos && videos.length > 0 && (
         <Container>
+          {link && <SeeMoreButton to={link}>See More</SeeMoreButton>}
           <Base.GradientLine />
           <Title>{title}</Title>
           <SliderContainer>
