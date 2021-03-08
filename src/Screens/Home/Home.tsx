@@ -9,8 +9,10 @@ import {
   Info,
   Overview,
   StarsContainer,
+  PlayButtonContainer,
   PlayButton,
   PlayButtonText,
+  TagLine,
 } from "./style";
 import { IVideo, IDetailVideo } from "types";
 import { movieApi, tvApi } from "Components/Api";
@@ -67,6 +69,13 @@ const Home: React.FunctionComponent<RouteComponentProps> = () => {
             }
           >
             <GradientCover />
+            {mainMovie.tagline.length > 0 && (
+              <TagLine bgUrl={require("assets/texture.jpg").default}>
+                {mainMovie.tagline.length < 36
+                  ? mainMovie.tagline
+                  : mainMovie.tagline.slice(0, 36) + "..."}
+              </TagLine>
+            )}
             <DetailContainer>
               <Title>{mainMovie.title}</Title>
               <Genres genre_ids={convertGenres(mainMovie.genres)} />
@@ -78,10 +87,12 @@ const Home: React.FunctionComponent<RouteComponentProps> = () => {
               </StarsContainer>
               <Overview>{mainMovie.overview}</Overview>
             </DetailContainer>
-            <PlayButton to={`/movie/${mainMovie.id}`}>
-              <i className="fas fa-play"></i>
-              <PlayButtonText>Play</PlayButtonText>
-            </PlayButton>
+            <PlayButtonContainer>
+              <PlayButton to={`/movie/${mainMovie.id}`}>
+                <i className="fas fa-play"></i>
+                <PlayButtonText>Play</PlayButtonText>
+              </PlayButton>
+            </PlayButtonContainer>
           </MovieContainer>
         </Container>
       )}

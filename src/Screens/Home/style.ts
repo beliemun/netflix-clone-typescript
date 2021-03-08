@@ -3,18 +3,31 @@ import Colors from "Components/Colors";
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
+  @keyframes move {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
   display: grid;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
   max-width: 1080px;
+  animation: move 3s ease-in-out infinite;
 `;
 
 export const MovieContainer = styled.div<{ bgUrl: string }>`
   position: relative;
-  display: grid;
-  place-content: center left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   width: inherit;
   height: 500px;
   background-image: url(${(props) => props.bgUrl});
@@ -22,7 +35,7 @@ export const MovieContainer = styled.div<{ bgUrl: string }>`
   background-size: cover;
   border-radius: 0 20px 20px;
   margin: 30px;
-  background-color: rbga(255, 255, 255, 0.2);
+
   transition: all 0.5s ease-in-out;
 
   @media (max-width: 1080px) {
@@ -30,9 +43,6 @@ export const MovieContainer = styled.div<{ bgUrl: string }>`
   }
   @media (max-width: 720px) {
     height: 320px;
-  }
-  @media (max-width: 640px) {
-    height: 240px;
   }
 `;
 
@@ -46,40 +56,62 @@ export const GradientCover = styled.div`
     rgba(0, 0, 0, 0.1),
     transparent
   );
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 0 20px 20px;
   transition: background, background-color 0.5s ease-in-out;
 
   @media (max-width: 1080px) {
-    width: 100%;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
-    background-color: rgba(0, 0, 0, 0.2);
   }
   @media (max-width: 720px) {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
   }
 `;
 
 export const DetailContainer = styled.div`
   position: relative;
   z-index: 1;
-  width: 500px;
-  padding: 20px;
+  max-width: 600px;
+  margin-left: 20px;
+  @media (max-width: 640px) {
+    place-content: center center;
+    margin: 0 20px;
+  }
 `;
 
-export const TagLine = styled.h1`
-  font-size: 36px;
-  font-weight: 500;
+export const TagLine = styled.h1<{ bgUrl: string }>`
+  flex: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-size: 60px;
+  font-weight: 700;
+  font-style: italic;
   line-height: 1.2;
-  color: ${Colors.text.primary};
+  background: url(${(props) => props.bgUrl});
+  background-repeat: repeat-x;
+  background-position: 100% 100%;
+  color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -2px;
+  text-shadow: 0px 3px 10px rgba(255, 255, 255, 0.5);
   transition: font-size 0.5s ease-in-out;
   @media (max-width: 1080px) {
-    width: 400px;
-    font-size: 32px;
+    font-size: 48px;
   }
-  @media (max-width: 720px) {
-    width: 300px;
-    font-size: 24px;
+  @media (max-width: 920px) {
+    font-size: 40px;
+  }
+  @media (max-width: 750px) {
+    font-size: 36px;
+  }
+  @media (max-width: 640px) {
+    font-size: 3px;
   }
 `;
 
@@ -93,7 +125,7 @@ export const Title = styled.h1`
     font-size: 26px;
   }
   @media (max-width: 720px) {
-    font-size: 22px;
+    font-size: 20px;
   }
 `;
 
@@ -117,6 +149,7 @@ export const Overview = styled.p`
   font-weight: 300;
   line-height: 1.5;
   color: ${Colors.text.primary};
+  margin-bottom: 10px;
   @media (max-width: 1080px) {
     font-size: 13px;
   }
@@ -130,14 +163,17 @@ export const StarsContainer = styled.div`
   margin: 10px 0;
 `;
 
+export const PlayButtonContainer = styled.div`
+  display: flex;
+  margin-left: 20px;
+`;
+
 export const PlayButton = styled(Link)`
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
-  right: 30px;
-  bottom: 30px;
+  margin-bottom: 20px;
   padding: 15px 50px;
   background: linear-gradient(to left, #8a2387, #e94057, #f27121);
   border-radius: 0 10px 10px;
@@ -152,13 +188,13 @@ export const PlayButton = styled(Link)`
   }
 
   @media (max-width: 1080px) {
-    right: 15px;
-    bottom: 15px;
-    padding: 15px 30px;
+    padding: 10px 50px;
   }
   @media (max-width: 720px) {
-    width: 30%;
-    bottom: -20px;
+    padding: 10px 50px;
+  }
+  @media (max-width: 640px) {
+    place-content: center center;
   }
 `;
 
