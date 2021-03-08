@@ -19,7 +19,7 @@ const Video: React.FunctionComponent<RouteComponentProps> = (props) => {
     } else if (pathname.includes("tv")) {
       setCategory(tvCategory);
     }
-  }, [category, props.location.pathname]);
+  }, [category, props]);
 
   const hasVideo = (): boolean => {
     let hasVideo = false;

@@ -21,7 +21,7 @@ const MovieCredit: React.FunctionComponent<IProps> = ({
   mediaType,
 }) => {
   const [moreMovie, setMoreMovie] = useState(false);
-  const [moreTv, setMoreTv] = useState(false);
+  // const [moreTv, setMoreTv] = useState(false);
 
   return (
     <>

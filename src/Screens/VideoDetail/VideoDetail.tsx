@@ -91,7 +91,7 @@ const VideoDetail: React.FunctionComponent<
     };
 
     loadVideo();
-  }, [id]);
+  }, [id, mediaType]);
 
   return loading || video === null ? (
     <Loader />
@@ -128,6 +128,7 @@ const VideoDetail: React.FunctionComponent<
         videos={similar}
         mediaType={mediaType}
       />
+
       <Footer />
       <Base.ScrollUpButton ref={elementRef} onClick={onClick}>
         <i className="fas fa-angle-double-up"></i>

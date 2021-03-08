@@ -34,19 +34,12 @@ const VideoSlider: React.FunctionComponent<IProps> = ({
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 7,
-    slidesToScroll: 7,
+    slidesToShow: 6,
+    slidesToScroll: 6,
     initialSlide: 0,
     responsive: [
       {
         breakpoint: 1920,
-        settings: {
-          slidesToShow: 6,
-          slidesToScroll: 6,
-        },
-      },
-      {
-        breakpoint: 1680,
         settings: {
           slidesToShow: 5,
           slidesToScroll: 5,
@@ -60,7 +53,7 @@ const VideoSlider: React.FunctionComponent<IProps> = ({
         },
       },
       {
-        breakpoint: 1020,
+        breakpoint: 1080,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
