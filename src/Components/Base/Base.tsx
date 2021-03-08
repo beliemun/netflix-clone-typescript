@@ -1,2 +1,2 @@
-import { Container, GradientLine, ScrollUpButton } from "./style";
-export { Container, GradientLine, ScrollUpButton };
+import { Container, GradientLine, ScrollUpButton, Height } from "./style";
+export { Container, GradientLine, ScrollUpButton, Height };

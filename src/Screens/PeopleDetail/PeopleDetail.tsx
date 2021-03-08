@@ -42,7 +42,7 @@ const PeopleDetail: React.FunctionComponent<
       }
     };
     loadPerson();
-  }, []);
+  }, [id]);
 
   return loading ? (
     <Loader />

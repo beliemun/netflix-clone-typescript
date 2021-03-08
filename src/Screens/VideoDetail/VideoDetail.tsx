@@ -120,7 +120,7 @@ const VideoDetail: React.FunctionComponent<
             "en-EN"
           )} / Revenue: $${video.revenue.toLocaleString("en-EN")}`}</Revenue>
         )}
-        <div style={{ height: "30px" }} />
+        <Base.Height height={30} />
         <Reviews reviews={reviews} />
       </Contaniner>
       <VideoSlider

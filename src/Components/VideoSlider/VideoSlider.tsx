@@ -57,7 +57,6 @@ const VideoSlider: React.FunctionComponent<IProps> = ({
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          dots: false,
         },
       },
       {
@@ -65,7 +64,6 @@ const VideoSlider: React.FunctionComponent<IProps> = ({
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          dots: false,
         },
       },
     ],

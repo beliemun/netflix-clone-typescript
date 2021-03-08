@@ -72,3 +72,7 @@ export const ScrollUpButton = styled.button`
     }
   }
 `;
+
+export const Height = styled.div<{ height: number }>`
+  margin-top: ${(props) => props.height}px;
+`;
