@@ -2003,6 +2003,11 @@
   dependencies:
     "@types/yargs-parser" "*"
 
+"@types/youtube@0.0.42":
+  "integrity" "sha512-Nqo3HMPFPcNyZ7HNFZJjpH+N4yXqpxBItG+41e7nL9zednovMRZMXWj36CctSznbBcbj6ucvkJDo5iZ8SKqLIw=="
+  "resolved" "https://registry.npmjs.org/@types/youtube/-/youtube-0.0.42.tgz"
+  "version" "0.0.42"
+
 "@typescript-eslint/eslint-plugin@^4.0.0", "@typescript-eslint/eslint-plugin@^4.5.0":
   "integrity" "sha512-SK777klBdlkUZpZLC1mPvyOWk9yAFCWmug13eAjVQ4/Q1LATE/NbcQL1xDHkptQkZOLnPmLUA1Y54m8dqYwnoQ=="
   "resolved" "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.16.1.tgz"
