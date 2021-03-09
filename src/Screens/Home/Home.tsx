@@ -79,10 +79,9 @@ const Home: React.FunctionComponent<RouteComponentProps> = () => {
                 loop: 1,
                 playlist: mainMovie.videos.results[0].key,
                 modestbranding: 1,
-                start: 10,
-                end: 10,
+                start: 20,
+                end: 20,
                 mute: 1,
-                enablejsapi: 1,
               },
             }}
           />
@@ -101,8 +100,10 @@ const Home: React.FunctionComponent<RouteComponentProps> = () => {
           {mainMovie.tagline.length > 0 && (
             <TagLine bgUrl={require("assets/texture.jpg").default}>
               {mainMovie.tagline.length < 36
-                ? mainMovie.tagline
-                : mainMovie.tagline.slice(0, 36) + "..."}
+                ? `"${mainMovie.tagline.replace(".", "")}"`
+                : `"${
+                    mainMovie.tagline.slice(0, 36).replace(".", "") + "..."
+                  }"`}
             </TagLine>
           )}
           <DetailContainer>
