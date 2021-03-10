@@ -4,9 +4,21 @@ import { Link } from "react-router-dom";
 
 export const HomeContainer = styled.div`
   background-color: black;
+  opacity: 0;
   @media (max-width: 720px) {
     background-color: ${Colors.bg.primary};
   }
+  @keyframes FadeIn {
+    from {
+      transform: translateY(30px) scale(1.05);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px) scale(1);
+      opacity: 1;
+    }
+  }
+  animation: FadeIn 1s ease-in-out forwards;
 `;
 
 export const MovieContainer = styled.div<{ bgUrl: string }>`
@@ -21,7 +33,6 @@ export const MovieContainer = styled.div<{ bgUrl: string }>`
   @media (max-width: 1080px) {
     height: 400px;
   }
-
   @media (max-width: 720px) {
     height: auto;
     margin: 20px 20px 0;
@@ -35,7 +46,9 @@ export const MovieContainer = styled.div<{ bgUrl: string }>`
 export const MovieContainerCover = styled.div`
   padding: 20px 0;
   border-radius: 20px;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
+  @media (max-width: 720px) {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
+  }
 `;
 
 export const GradientCover = styled.div`
@@ -220,11 +233,11 @@ export const YoutubeCover = styled.div`
   width: 100vw;
   height: 100vh;
   background: linear-gradient(
-    to right,
+    120deg,
     rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.1)
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.2)
   );
   transition: background, background-color 0.5s ease-in-out;
 `;

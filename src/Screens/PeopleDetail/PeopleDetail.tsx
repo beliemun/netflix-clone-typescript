@@ -3,6 +3,7 @@ import { BackDrop, BackDropCurtain } from "./style";
 import { IPersonDetail, IVideo } from "types";
 import { RouteComponentProps } from "react-router-dom";
 import { peopleApi } from "Components/Api";
+import { getRandomInt } from "functions/common";
 import Base from "Components/Base";
 import useScrollTop from "hooks/useScollTop";
 import Loader from "Components/Loader";
@@ -36,7 +37,9 @@ const PeopleDetail: React.FunctionComponent<
           data: { cast: moiveCredit },
         } = await peopleApi.getMoiveCredits(id);
         setMovieCredit(moiveCredit);
-        setLoading(false);
+        setTimeout(() => {
+          setLoading(false);
+        }, getRandomInt(500, 2000));
       } catch (e) {
         console.log(e);
       }

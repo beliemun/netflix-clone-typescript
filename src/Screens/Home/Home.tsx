@@ -50,7 +50,9 @@ const Home: React.FunctionComponent<RouteComponentProps> = () => {
           movies[getRandomInt(0, 10)].id
         );
         setMainMovie(mainMovie);
-        setLoading(false);
+        setTimeout(() => {
+          setLoading(false);
+        }, getRandomInt(500, 2000));
       } catch (e) {
         console.log(e);
       }

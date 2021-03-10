@@ -126,6 +126,7 @@ export const PostCover = styled.div`
 
 export const OverviewContainer = styled.div`
   width: inherit;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -147,7 +148,7 @@ export const VideoTitle = styled.h3`
   font-size: 16px;
   font-weight: 500;
   color: ${Colors.text.emphasis};
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -156,6 +157,22 @@ export const VideoTitle = styled.h3`
   }
   @media (max-width: 480px) {
     font-size: 13px;
+  }
+`;
+
+export const VideoOverview = styled.p`
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: ${Colors.text.emphasis};
+  margin: 5px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  @media (max-width: 1080px) {
+    display: none;
   }
 `;
 

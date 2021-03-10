@@ -8,6 +8,7 @@ import {
   PostCover,
   DetailContainer,
   VideoTitle,
+  VideoOverview,
   PlayButtonSmall,
   PlayButtonLarge,
   PlayButtonText,
@@ -109,6 +110,7 @@ const VideoSlider: React.FunctionComponent<IProps> = ({
                           {mediaType === "movie" ? video.title : video.name}
                         </VideoTitle>
                         <RatingStars rate={video.vote_average} />
+                        <VideoOverview>{video.overview}</VideoOverview>
                       </OverviewContainer>
                       <PlayButtonLarge>
                         <i className="fas fa-play"></i>

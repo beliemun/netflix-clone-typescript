@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import { Contaniner, BackDrop, BackDropCurtain, Revenue } from "./style";
 import { movieApi, tvApi } from "Components/Api";
+import { getRandomInt } from "functions/common";
 import {
   IVideo,
   IDetailVideo,
@@ -84,7 +85,9 @@ const VideoDetail: React.FunctionComponent<
             ? await movieApi.getSimilar(id)
             : await tvApi.getSimilar(id);
         setSimilar(similar);
-        setLoading(false);
+        setTimeout(() => {
+          setLoading(false);
+        }, getRandomInt(500, 2000));
       } catch (e) {
         console.log(e);
       }
