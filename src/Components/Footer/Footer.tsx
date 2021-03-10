@@ -6,7 +6,9 @@ import {
   Terms,
   Follow,
   Store,
-  Title,
+  GridTitle,
+  LeftTitle,
+  RightTitle,
   SubTitle,
   FollowContainer,
   FollowIcon,
@@ -18,23 +20,20 @@ const Footer = () => (
   <Container>
     <Content>
       <Terms>
-        <Title>
+        <GridTitle>
           <Link to="#">
             <span>TERMS OF USE</span>
           </Link>
-          {"ㅤ•ㅤ"}
           <Link to="#">
             <span>RIVACY POLICY</span>
           </Link>
-          {"ㅤ•ㅤ"}
           <Link to="#">
             <span>FAQ</span>
           </Link>
-          {"ㅤ•ㅤ"}
           <Link to="#">
             <span>CONTACT US</span>
           </Link>
-        </Title>
+        </GridTitle>
         <SubTitle>
           © 2021 NICOFLIX. All Rights Reserved. All videos and shows on this
           platform are trademarks of, and all related images and content are the
@@ -43,7 +42,9 @@ const Footer = () => (
         </SubTitle>
       </Terms>
       <Follow>
-        <Title>FOLLOW US</Title>
+        <LeftTitle>
+          <span>FOLLOW US</span>
+        </LeftTitle>
         <FollowContainer>
           <Link to="#">
             <FollowIcon>
@@ -68,7 +69,9 @@ const Footer = () => (
         </FollowContainer>
       </Follow>
       <Store>
-        <Title>NICOFLIX APP</Title>
+        <RightTitle>
+          <span>NICOFLIX APP</span>
+        </RightTitle>
         <StoreContainer>
           <Link to="#">
             <DownloadButton>

@@ -12,7 +12,7 @@ export const Container = styled.div`
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(7px);
   z-index: 100;
-  @media (max-width: 700px) {
+  @media (max-width: 720px) {
     display: flex;
     justify-content: center;
     grid-template-columns: 1fr min-content;
@@ -28,13 +28,13 @@ export const Logo = styled.div`
     width: 100px;
     transition: all 0.3s ease-in-out;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 1080px) {
     padding: 15px;
     img {
       width: 70px;
     }
   }
-  @media (max-width: 700px) {
+  @media (max-width: 720px) {
     display: none;
     transition: all 0.5s ease-in-out;
   }
@@ -56,12 +56,13 @@ export const List = styled.div`
   .menu-icon-sr {
     display: none;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 1080px) {
     grid-template-columns: repeat(5, minmax(min-content, 100px));
     transition: all 0.3s ease-in-out;
   }
-  @media (max-width: 700px) {
+  @media (max-width: 720px) {
     grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 0px;
     .menu-icon-wr {
       display: none;
     }
@@ -110,7 +111,7 @@ export const Item = styled(Link)<{ current: string }>`
     }
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1080px) {
     width: 100px;
     padding: 24px 0px;
     span {
@@ -118,7 +119,7 @@ export const Item = styled(Link)<{ current: string }>`
     }
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 720px) {
     width: 70px;
     i {
       font-size: 20px;
@@ -126,6 +127,17 @@ export const Item = styled(Link)<{ current: string }>`
     &:last-child {
       i {
         font-size: 20px;
+      }
+    }
+  }
+  @media (max-width: 480px) {
+    width: 50px;
+    i {
+      font-size: 18px;
+    }
+    &:last-child {
+      i {
+        font-size: 18px;
       }
     }
   }
@@ -142,7 +154,7 @@ export const Search = styled.div<{ current: string }>`
     font-size: 20px;
     transition: all 0.3s ease-in-out;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 1080px) {
     padding: 20px;
     i {
       font-size: 15px;

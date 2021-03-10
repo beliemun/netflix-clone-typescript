@@ -5,6 +5,9 @@ import Colors from "Components/Colors";
 export const Container = styled.div`
   position: relative;
   padding: 30px;
+  @media (max-width: 480px) {
+    padding: 20px;
+  }
 `;
 
 export const SliderContainer = styled.div`
@@ -20,8 +23,11 @@ export const Title = styled.h2`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  @media (max-width: 650px) {
+  @media (max-width: 720px) {
     font-size: 24px;
+  }
+  @media (max-width: 480px) {
+    font-size: 18px;
   }
 `;
 
@@ -30,8 +36,11 @@ export const Item = styled(Link)`
   @media (max-width: 1080px) {
     padding: 15px;
   }
-  @media (max-width: 650px) {
+  @media (max-width: 720px) {
     padding: 10px;
+  }
+  @media (max-width: 480px) {
+    padding: 5px;
   }
 `;
 
@@ -48,7 +57,21 @@ export const Poster = styled.div<{ bgUrl: string }>`
   border-radius: 0 20px 20px;
   overflow: hidden;
   transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    position: relative;
+    z-index: 10;
 
+    & > div:first-child {
+      opacity: 1;
+    }
+    & > div:nth-child(2) {
+      opacity: 0;
+    }
+    & > div:last-child {
+      opacity: 0;
+    }
+  }
   @media (max-width: 1740px) {
     height: 180px;
   }
@@ -67,21 +90,8 @@ export const Poster = styled.div<{ bgUrl: string }>`
   @media (max-width: 575px) {
     height: 120px;
   }
-
-  &:hover {
-    transform: scale(1.1);
-    position: relative;
-    z-index: 10;
-
-    & > div:first-child {
-      opacity: 1;
-    }
-    & > div:nth-child(2) {
-      opacity: 0;
-    }
-    & > div:last-child {
-      opacity: 0;
-    }
+  @media (max-width: 480px) {
+    height: 110px;
   }
 `;
 
@@ -141,26 +151,11 @@ export const VideoTitle = styled.h3`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-`;
-
-export const VideoOverview = styled.p`
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 1.5;
-  color: ${Colors.text.emphasis};
-  margin-top: 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
-  -webkit-box-orient: vertical;
-
-  @media (max-width: 1480px) {
-    font-size: 11px;
-    -webkit-line-clamp: 1;
+  @media (max-width: 720px) {
+    font-size: 14px;
   }
-  @media (max-width: 800px) {
-    display: none;
+  @media (max-width: 480px) {
+    font-size: 13px;
   }
 `;
 
@@ -181,6 +176,9 @@ export const PlayButtonSmall = styled.div`
   box-shadow: rgba(17, 17, 26, 0.3) 0px 4px 16px,
     rgba(17, 17, 26, 0.3) 0px 8px 24px, rgba(17, 17, 26, 0.3) 0px 16px 56px;
   transition: opacity 0.2s linear;
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 export const PlayButtonLarge = styled.div`
@@ -198,6 +196,11 @@ export const PlayButtonLarge = styled.div`
   box-shadow: rgba(17, 17, 26, 0.3) 0px 4px 16px,
     rgba(17, 17, 26, 0.3) 0px 8px 24px, rgba(17, 17, 26, 0.3) 0px 16px 56px;
   transition: opacity 0.2s linear;
+  @media (max-width: 480px) {
+    width: 40%;
+    border-radius: 0 6px 6px;
+    height: 24px;
+  }
 `;
 
 export const PlayButtonText = styled.span`
@@ -205,6 +208,12 @@ export const PlayButtonText = styled.span`
   font-weight: 300;
   margin-left: 10px;
   color: ${Colors.text.emphasis};
+  @media (max-width: 720px) {
+    font-size: 12px;
+  }
+  @media (max-width: 480px) {
+    font-size: 11px;
+  }
 `;
 
 export const SeeMoreButton = styled(Link)`
@@ -219,13 +228,15 @@ export const SeeMoreButton = styled(Link)`
   margin: 10px;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
-
-  @media (max-width: 720px) {
-    font-size: 14px;
-  }
-
   &:hover {
     transform: scale(1.1);
     color: ${Colors.text.emphasis};
+  }
+  @media (max-width: 720px) {
+    font-size: 14px;
+  }
+  @media (max-width: 480px) {
+    top: 50px;
+    font-size: 12px;
   }
 `;

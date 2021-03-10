@@ -9,9 +9,9 @@ export const Container = styled.div`
 `;
 
 export const VideoPoster = styled.div<{ bgUrl: string }>`
-  min-width: 180px;
+  min-width: 160px;
   height: 320px;
-  margin: 0 20px;
+  margin-right: 20px;
   border-radius: 0 30px 30px;
   background-image: url(${(props) => props.bgUrl});
   background-position: center center;
@@ -19,6 +19,16 @@ export const VideoPoster = styled.div<{ bgUrl: string }>`
   box-shadow: rgba(0, 0, 0, 0.5) 0px 54px 55px,
     rgba(0, 0, 0, 0.24) 0px -12px 30px, rgba(0, 0, 0, 0.24) 0px 4px 6px,
     rgba(0, 0, 0, 0.34) 0px 12px 13px, rgba(0, 0, 0, 0.18) 0px -3px 5px;
+  @media (max-width: 720px) {
+    min-width: 120px;
+    height: 240px;
+    border-radius: 0 20px 20px;
+  }
+  @media (max-width: 480px) {
+    min-width: 80px;
+    height: 160px;
+    border-radius: 0 10px 10px;
+  }
 `;
 
 export const VideoDetailContainer = styled.div`

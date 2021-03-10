@@ -37,7 +37,7 @@ export const Title = styled.h2`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  @media (max-width: 650px) {
+  @media (max-width: 720px) {
     font-size: 24px;
   }
 `;
@@ -45,7 +45,6 @@ export const Title = styled.h2`
 export const Item = styled(Link)`
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   width: 140px;
   padding: 10px;
@@ -60,9 +59,13 @@ export const Item = styled(Link)`
       color: ${Colors.secondary};
     }
   }
-  @media (max-width: 650px) {
-    padding: 5px;
-    margin: 5px;
+  @media (max-width: 720px) {
+    padding: 6px;
+    margin: 6px;
+  }
+  @media (max-width: 480px) {
+    padding: 3px;
+    margin: 3px;
   }
 `;
 
@@ -75,10 +78,15 @@ export const Poster = styled.img<{ bgUrl: string }>`
   background-size: cover;
   border: 3px solid ${Colors.text.emphasis};
   transition: all 0.2s ease-in-out;
-
-  @media (max-width: 650px) {
+  @media (max-width: 720px) {
     width: 80px;
     height: 80px;
+    border: 2px solid ${Colors.text.emphasis};
+  }
+  @media (max-width: 480px) {
+    width: 60px;
+    height: 60px;
+    border: 1px solid ${Colors.text.emphasis};
   }
 `;
 
@@ -89,8 +97,11 @@ export const Name = styled.h4`
   color: ${Colors.text.primary};
   text-align: center;
   transition: all 0.2s ease-in-out;
-  @media (max-width: 650px) {
+  @media (max-width: 720px) {
     font-size: 13px;
+  }
+  @media (max-width: 480px) {
+    font-size: 12px;
   }
 `;
 
@@ -99,7 +110,10 @@ export const Character = styled.h5`
   font-weight: 300;
   color: ${Colors.text.secondary};
   text-align: center;
-  @media (max-width: 650px) {
+  @media (max-width: 720px) {
     font-size: 11px;
+  }
+  @media (max-width: 480px) {
+    font-size: 10px;
   }
 `;

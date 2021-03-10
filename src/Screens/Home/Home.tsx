@@ -3,6 +3,7 @@ import { RouteComponentProps } from "react-router-dom";
 import {
   HomeContainer,
   MovieContainer,
+  MovieContainerCover,
   GradientCover,
   DetailContainer,
   Title,
@@ -96,33 +97,35 @@ const Home: React.FunctionComponent<RouteComponentProps> = () => {
               : require("assets/no-image.jpg").default
           }
         >
-          <GradientCover />
-          {mainMovie.tagline.length > 0 && (
-            <TagLine bgUrl={require("assets/texture.jpg").default}>
-              {mainMovie.tagline.length < 36
-                ? `"${mainMovie.tagline.replace(".", "")}"`
-                : `"${
-                    mainMovie.tagline.slice(0, 36).replace(".", "") + "..."
-                  }"`}
-            </TagLine>
-          )}
-          <DetailContainer>
-            <Title>{mainMovie.title}</Title>
-            <Genres genre_ids={convertGenres(mainMovie.genres)} />
-            <Info>{`${mainMovie.release_date.slice(0, 4)}  • ${
-              mainMovie.runtime
-            }m`}</Info>
-            <StarsContainer>
-              <RatingStars rate={mainMovie.vote_average} />
-            </StarsContainer>
-            <Overview>{mainMovie.overview}</Overview>
-          </DetailContainer>
-          <PlayButtonContainer>
-            <PlayButton to={`/movie/${mainMovie.id}`}>
-              <i className="fas fa-play"></i>
-              <PlayButtonText>Play</PlayButtonText>
-            </PlayButton>
-          </PlayButtonContainer>
+          <MovieContainerCover>
+            <GradientCover />
+            {mainMovie.tagline.length > 0 && (
+              <TagLine bgUrl={require("assets/texture.jpg").default}>
+                {mainMovie.tagline.length < 36
+                  ? `"${mainMovie.tagline.replace(".", "")}"`
+                  : `"${
+                      mainMovie.tagline.slice(0, 36).replace(".", "") + "..."
+                    }"`}
+              </TagLine>
+            )}
+            <DetailContainer>
+              <Title>{mainMovie.title}</Title>
+              <Genres genre_ids={convertGenres(mainMovie.genres)} />
+              <Info>{`${mainMovie.release_date.slice(0, 4)}  • ${
+                mainMovie.runtime
+              }m`}</Info>
+              <StarsContainer>
+                <RatingStars rate={mainMovie.vote_average} />
+              </StarsContainer>
+              <Overview>{mainMovie.overview}</Overview>
+            </DetailContainer>
+            <PlayButtonContainer>
+              <PlayButton to={`/movie/${mainMovie.id}`}>
+                <i className="fas fa-play"></i>
+                <PlayButtonText>Play</PlayButtonText>
+              </PlayButton>
+            </PlayButtonContainer>
+          </MovieContainerCover>
         </MovieContainer>
       )}
       <VideoSlider

@@ -19,6 +19,9 @@ export const Item = styled(Link)<{ index: number }>`
   &:first-child {
     animation-delay: 0;
   }
+  @media (max-width: 720px) {
+    margin: 10px;
+  }
 `;
 
 export const Poster = styled.div<{ bgUrl: string }>`
@@ -34,11 +37,20 @@ export const Poster = styled.div<{ bgUrl: string }>`
     box-shadow: rgba(136, 165, 191, 0.2) 6px 2px 16px 0px,
       rgba(255, 255, 255, 0.2) -6px -2px 16px 0px;
   }
-  @media (max-width: 700px) {
+  @media (max-width: 1440px) {
     &:hover {
       transform: scale(1.05);
     }
   }
+  @media (max-width: 1080px) {
+    height: 300px;
+  }
+  @media (max-width: 720px) {
+    height: 240px;
+  }
+  /* @media (max-width: 480px) {
+    height: 210px;
+  } */
 `;
 
 export const PosterCover = styled.div`
@@ -65,6 +77,12 @@ export const HoverTitle = styled.h2`
   text-align: center;
   color: ${Colors.text.emphasis};
   overflow: hidden;
+  @media (max-width: 720px) {
+    font-size: 18px;
+  }
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
 
 export const HoverYear = styled.h2`
@@ -76,6 +94,12 @@ export const HoverYear = styled.h2`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  @media (max-width: 720px) {
+    font-size: 14px;
+  }
+  @media (max-width: 480px) {
+    font-size: 13px;
+  }
 `;
 
 export const Title = styled.h3`
@@ -88,6 +112,12 @@ export const Title = styled.h3`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  @media (max-width: 720px) {
+    font-size: 14px;
+  }
+  @media (max-width: 480px) {
+    font-size: 13px;
+  }
 `;
 
 export const GenresContainer = styled.div`

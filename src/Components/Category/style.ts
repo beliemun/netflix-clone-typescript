@@ -3,10 +3,10 @@ import styled from "styled-components";
 import Colors from "Components/Colors";
 
 export const Menu = styled.div`
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(min-content, 110px));
-  place-content: center center;
 `;
 
 export const Item = styled(Link)<{ current: string }>`
@@ -15,22 +15,19 @@ export const Item = styled(Link)<{ current: string }>`
     props.current === "true" ? Colors.text.emphasis : Colors.text.secondary};
   margin: 0 5px;
   padding: 12px;
-  width: 130px;
   border: 1px solid
     ${(props) =>
       props.current === "true" ? Colors.text.emphasis : "transparent"};
   border-radius: 12px;
   transition: all 0.3s ease-in-out;
   text-align: center;
-  @media (max-width: 1000px) {
+  @media (max-width: 1080px) {
     padding: 8px;
-    width: 115px;
     border-radius: 8px;
     font-size: 13px;
   }
-  @media (max-width: 575px) {
+  @media (max-width: 480px) {
     padding: 6px;
-    width: 100px;
     border-radius: 6px;
     font-size: 12px;
   }

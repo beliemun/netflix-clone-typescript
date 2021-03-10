@@ -8,7 +8,6 @@ import {
   PostCover,
   DetailContainer,
   VideoTitle,
-  VideoOverview,
   PlayButtonSmall,
   PlayButtonLarge,
   PlayButtonText,
@@ -69,6 +68,14 @@ const VideoSlider: React.FunctionComponent<IProps> = ({
           slidesToScroll: 2,
         },
       },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          dots: false,
+        },
+      },
     ],
   };
   return (
@@ -102,7 +109,6 @@ const VideoSlider: React.FunctionComponent<IProps> = ({
                           {mediaType === "movie" ? video.title : video.name}
                         </VideoTitle>
                         <RatingStars rate={video.vote_average} />
-                        <VideoOverview>{video.overview}</VideoOverview>
                       </OverviewContainer>
                       <PlayButtonLarge>
                         <i className="fas fa-play"></i>

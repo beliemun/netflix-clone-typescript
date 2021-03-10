@@ -31,10 +31,15 @@ export const Poster = styled.img`
     height: 180px;
     margin-right: 20px;
   }
-  @media (max-width: 650px) {
+  @media (max-width: 720px) {
     width: 120px;
     min-width: 120px;
     height: 120px;
+  }
+  @media (max-width: 480px) {
+    width: 80px;
+    min-width: 80px;
+    height: 80px;
   }
 `;
 
@@ -53,8 +58,11 @@ export const Name = styled.h2`
   @media (max-width: 1080px) {
     font-size: 28px;
   }
-  @media (max-width: 650px) {
+  @media (max-width: 720px) {
     font-size: 24px;
+  }
+  @media (max-width: 480px) {
+    font-size: 18px;
   }
 `;
 
@@ -69,8 +77,11 @@ export const Info = styled.h5`
   @media (max-width: 1080px) {
     font-size: 12px;
   }
-  @media (max-width: 650px) {
+  @media (max-width: 720px) {
     font-size: 11px;
+  }
+  @media (max-width: 480px) {
+    font-size: 10px;
   }
 `;
 
@@ -84,8 +95,11 @@ export const Subtitle = styled.h4`
   @media (max-width: 1080px) {
     font-size: 15px;
   }
-  @media (max-width: 650px) {
+  @media (max-width: 720px) {
     font-size: 14px;
+  }
+  @media (max-width: 480px) {
+    font-size: 13px;
   }
 `;
 
@@ -99,8 +113,11 @@ export const Biography = styled.p`
   @media (max-width: 1080px) {
     font-size: 15px;
   }
-  @media (max-width: 650px) {
+  @media (max-width: 720px) {
     font-size: 14px;
+  }
+  @media (max-width: 480px) {
+    font-size: 13px;
   }
 `;
 

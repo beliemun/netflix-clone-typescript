@@ -18,7 +18,7 @@ export const Content = styled.div`
   @media (max-width: 1080px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  @media (max-width: 575px) {
+  @media (max-width: 580px) {
     grid-template-columns: 1fr;
   }
 `;
@@ -26,7 +26,7 @@ export const Content = styled.div`
 export const Terms = styled.div`
   grid-column: 1 / span 2;
   padding: 10px;
-  @media (max-width: 575px) {
+  @media (max-width: 580px) {
     grid-column: 1;
     display: flex;
     flex-direction: column;
@@ -34,20 +34,50 @@ export const Terms = styled.div`
   }
 `;
 
-export const Title = styled.h3`
+export const GridTitle = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
   font-size: 16px;
   font-weight: 500;
   color: ${Colors.text.emphasis};
   margin: 20px 0;
   span {
+    display: block;
+    padding: 10px;
+    text-align: center;
     &:hover {
       transform: scale(1.1);
       color: ${Colors.primary};
     }
   }
-  @media (max-width: 575px) {
-    font-size: 14px;
-    margin: 10px 0;
+`;
+
+export const LeftTitle = styled.div`
+  display: flex;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  color: ${Colors.text.emphasis};
+  margin: 20px 0;
+  @media (max-width: 580px) {
+    justify-content: center;
+  }
+`;
+
+export const RightTitle = styled.div`
+  display: flex;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  color: ${Colors.text.emphasis};
+  margin: 20px 0;
+  @media (max-width: 1080px) {
+    justify-content: flex-end;
+  }
+  @media (max-width: 580px) {
+    justify-content: center;
   }
 `;
 
@@ -56,7 +86,7 @@ export const SubTitle = styled.p`
   font-weight: 300;
   color: ${Colors.text.secondary};
   line-height: 1.5;
-  @media (max-width: 575px) {
+  @media (max-width: 580px) {
     font-size: 11px;
     text-algin: center;
   }
@@ -64,7 +94,7 @@ export const SubTitle = styled.p`
 
 export const Follow = styled.div`
   padding: 10px;
-  @media (max-width: 575px) {
+  @media (max-width: 580px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,7 +131,7 @@ export const Store = styled.div`
     flex-direction: column;
     align-items: flex-end;
   }
-  @media (max-width: 575px) {
+  @media (max-width: 580px) {
     align-items: center;
   }
 `;

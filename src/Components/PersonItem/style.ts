@@ -33,6 +33,9 @@ export const Item = styled(Link)<{ index: number }>`
       display: none;
     }
   }
+  @media (max-width: 720px) {
+    margin: 15px;
+  }
 `;
 
 export const ItemCover = styled.div`
@@ -70,10 +73,14 @@ export const Poster = styled.div<{ bgUrl: string }>`
   border-radius: 30px;
   border-top-left-radius: 0;
   transition: transform 0.3s ease-in-out;
-  @media (max-width: 700px) {
+  @media (max-width: 720px) {
+    height: 240px;
     &:hover {
       transform: scale(1.05);
     }
+  }
+  @media (max-width: 480px) {
+    height: 220px;
   }
 `;
 
@@ -95,6 +102,12 @@ export const Title = styled.h2`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  @media (max-width: 720px) {
+    font-size: 18px;
+  }
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
 
 export const Department = styled.h5`
@@ -128,6 +141,10 @@ export const VideoPoster = styled.img`
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+  @media (max-width: 480px) {
+    width: 30px;
+    height: 30px;
+  }
 `;
 
 export const VideoDetail = styled.div`
@@ -137,13 +154,19 @@ export const VideoDetail = styled.div`
 `;
 
 export const VideoTitle = styled.h4`
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   margin-bottom: 5px;
   color: ${Colors.text.emphasis};
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  @media (max-width: 720px) {
+    font-size: 13px;
+  }
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 `;
 
 export const VideoCreatedAt = styled.span`
@@ -151,4 +174,7 @@ export const VideoCreatedAt = styled.span`
   font-weight: 300;
   margin-bottom: 5px;
   color: ${Colors.text.secondary};
+  @media (max-width: 480px) {
+    font-size: 10px;
+  }
 `;

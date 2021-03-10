@@ -34,24 +34,24 @@ const Company: React.FunctionComponent<IProps> = ({ company }) => {
                         ? `https://image.tmdb.org/t/p/w154${item.logo_path}`
                         : require("assets/no-image-company.png").default
                     }
-                  />
-                  {item.origin_country && (
-                    <Flag
-                      countryCode={item.origin_country}
-                      svg
-                      style={{
-                        position: "absolute",
-                        top: "6px",
-                        left: "6px",
-                        fontSize: "28px",
-                        lineHeight: "28px",
-                        borderRadius: "50%",
-                        objectFit: "cover",
-                        border: "1px solid white",
-                      }}
-                    />
-                  )}
-
+                  >
+                    {item.origin_country && (
+                      <Flag
+                        countryCode={item.origin_country}
+                        svg
+                        style={{
+                          position: "absolute",
+                          top: "-5px",
+                          left: "-5px",
+                          fontSize: "28px",
+                          lineHeight: "28px",
+                          borderRadius: "50%",
+                          objectFit: "cover",
+                          border: "1px solid white",
+                        }}
+                      />
+                    )}
+                  </Poster>
                   <DetailContainer>
                     <Name>{item.name}</Name>
                     <Country>

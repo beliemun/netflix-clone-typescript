@@ -21,16 +21,21 @@ export const MovieContainer = styled.div<{ bgUrl: string }>`
   @media (max-width: 1080px) {
     height: 400px;
   }
+
   @media (max-width: 720px) {
-    height: 320px;
-  }
-  @media (max-width: 720px) {
-    margin: 20px 40px 0;
+    height: auto;
+    margin: 20px 20px 0;
     border-radius: 20px;
     background-image: url(${(props) => props.bgUrl});
     background-position: center center;
     background-size: cover;
   }
+`;
+
+export const MovieContainerCover = styled.div`
+  padding: 20px 0;
+  border-radius: 20px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
 `;
 
 export const GradientCover = styled.div`
@@ -50,7 +55,7 @@ export const DetailContainer = styled.div`
   margin-top: 30px;
   margin-left: 50px;
   @media (max-width: 720px) {
-    margin: 0 20px 20px;
+    margin: 0 20px;
   }
 `;
 
@@ -96,6 +101,9 @@ export const Title = styled.h1`
   @media (max-width: 720px) {
     font-size: 32px;
   }
+  @media (max-width: 480px) {
+    font-size: 24px;
+  }
 `;
 
 export const Info = styled.h1`
@@ -111,6 +119,9 @@ export const Info = styled.h1`
   @media (max-width: 720px) {
     font-size: 11px;
   }
+  @media (max-width: 480px) {
+    font-size: 10px;
+  }
 `;
 
 export const Overview = styled.p`
@@ -123,8 +134,11 @@ export const Overview = styled.p`
     font-size: 15px;
   }
   @media (max-width: 720px) {
-    line-height: 1.3;
     font-size: 14px;
+  }
+  @media (max-width: 480px) {
+    font-size: 12px;
+    margin-bottom: 10px;
   }
 `;
 
@@ -162,7 +176,10 @@ export const PlayButton = styled(Link)`
     padding: 10px 50px;
   }
   @media (max-width: 720px) {
-    padding: 10px 50px;
+    padding: 10px 30px;
+  }
+  @media (max-width: 480px) {
+    padding: 10px 20px;
   }
 `;
 
@@ -171,6 +188,12 @@ export const PlayButtonText = styled.span`
   font-weight: 300;
   margin-left: 10px;
   color: ${Colors.text.emphasis};
+  @media (max-width: 720px) {
+    font-size: 13px;
+  }
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 `;
 
 export const YoutubeContainer = styled.div`

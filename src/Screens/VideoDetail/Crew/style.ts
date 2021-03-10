@@ -9,7 +9,7 @@ export const Container = styled.div`
   max-width: 1080px;
   margin: 10px;
   margin-bottom: 30px;
-  @media (max-width: 650px) {
+  @media (max-width: 720px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
@@ -23,8 +23,11 @@ export const Title = styled.h2`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  @media (max-width: 650px) {
+  @media (max-width: 720px) {
     font-size: 24px;
+  }
+  @media (max-width: 480px) {
+    font-size: 18px;
   }
 `;
 
@@ -45,7 +48,7 @@ export const Item = styled(Link)`
       color: ${Colors.secondary};
     }
   }
-  @media (max-width: 650px) {
+  @media (max-width: 720px) {
     width: 100%;
     padding: 6px;
     margin: 6px;
@@ -61,8 +64,7 @@ export const Poster = styled.img<{ bgUrl: string }>`
   background-size: cover;
   border: 2px solid ${Colors.text.emphasis};
   transition: all 0.2s ease-in-out;
-
-  @media (max-width: 650px) {
+  @media (max-width: 720px) {
     min-width: 40px;
     width: 40px;
     height: 40px;
@@ -74,6 +76,9 @@ export const DetailContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   margin: 0 10px;
+  @media (max-width: 720px) {
+    margin: 0 5px;
+  }
 `;
 
 export const Job = styled.h4`
@@ -82,8 +87,11 @@ export const Job = styled.h4`
   line-height: 1.5;
   color: ${Colors.secondary};
   transition: all 0.2s ease-in-out;
-  @media (max-width: 650px) {
+  @media (max-width: 720px) {
     font-size: 13px;
+  }
+  @media (max-width: 480px) {
+    font-size: 12px;
   }
 `;
 
@@ -92,7 +100,10 @@ export const Name = styled.h5`
   font-weight: 300;
   line-height: 1.5;
   color: ${Colors.text.primary};
-  @media (max-width: 650px) {
+  @media (max-width: 720px) {
     font-size: 11px;
+  }
+  @media (max-width: 480px) {
+    font-size: 10px;
   }
 `;

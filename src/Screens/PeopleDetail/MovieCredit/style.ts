@@ -10,8 +10,11 @@ export const VideoItemContainer = styled.div`
   max-width: 1080px;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   padding: 20px;
-  @media (max-width: 534px) {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  @media (max-width: 720px) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   }
 `;
 
@@ -24,8 +27,11 @@ export const Title = styled.h2`
   text-overflow: ellipsis;
   white-space: nowrap;
   text-align: center;
-  @media (max-width: 650px) {
+  @media (max-width: 720px) {
     font-size: 24px;
+  }
+  @media (max-width: 480px) {
+    font-size: 18px;
   }
 `;
 
