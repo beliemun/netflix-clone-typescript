@@ -43,7 +43,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://nicoflix.netlify.app",
+  "homepage": "https://beliemun.github.io/nicoflix-typescript/",
   "browserslist": {
     "production": [
       ">0.2%",
