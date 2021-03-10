@@ -55,7 +55,6 @@ const Home: React.FunctionComponent<RouteComponentProps> = () => {
         console.log(e);
       }
     };
-
     loadMoives();
   }, []);
 
