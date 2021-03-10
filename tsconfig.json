@@ -18,5 +18,5 @@
     "jsx": "react-jsx",
     "baseUrl": "src"
   },
-  "include": ["src", "node_modules/react-country-flag/**/*.ts"]
+  "include": ["src"]
 }
