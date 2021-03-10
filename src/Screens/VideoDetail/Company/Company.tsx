@@ -7,10 +7,11 @@ import {
   DetailContainer,
   Name,
   Country,
+  Flag,
 } from "./style";
 import { ICompany } from "types";
 import Base from "Components/Base";
-import Flag from "react-country-flag";
+import getFlagIcon from "country-flag-icons/unicode";
 
 interface IProps {
   company: ICompany[] | null;
@@ -36,20 +37,7 @@ const Company: React.FunctionComponent<IProps> = ({ company }) => {
                     }
                   >
                     {item.origin_country && (
-                      <Flag
-                        countryCode={item.origin_country}
-                        svg
-                        style={{
-                          position: "absolute",
-                          top: "-5px",
-                          left: "-5px",
-                          fontSize: "28px",
-                          lineHeight: "28px",
-                          borderRadius: "50%",
-                          objectFit: "cover",
-                          border: "1px solid white",
-                        }}
-                      />
+                      <Flag>{getFlagIcon(item.origin_country)}</Flag>
                     )}
                   </Poster>
                   <DetailContainer>

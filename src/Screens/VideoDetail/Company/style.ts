@@ -100,3 +100,13 @@ export const Country = styled.h5`
     font-size: 11px;
   }
 `;
+
+export const Flag = styled.div`
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  font-size: 28px;
+  @media (max-width: 720px) {
+    font-size: 20px;
+  }
+`;

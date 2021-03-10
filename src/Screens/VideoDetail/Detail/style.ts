@@ -9,6 +9,7 @@ export const Container = styled.div`
 `;
 
 export const VideoPoster = styled.div<{ bgUrl: string }>`
+  position: relative;
   min-width: 160px;
   height: 320px;
   margin-right: 20px;
@@ -86,4 +87,20 @@ export const VideoOverview = styled.p`
 
 export const RateContainer = styled.div`
   margin-top: 5px;
+`;
+
+export const Flag = styled.div`
+  position: absolute;
+  top: -18px;
+  left: -12px;
+  font-size: 60px;
+  transition: font-size 0.2s ease-in-out;
+  @media (max-width: 720px) {
+    top: -9px;
+    left: -6px;
+    font-size: 40px;
+  }
+  @media (max-width: 480px) {
+    font-size: 30px;
+  }
 `;

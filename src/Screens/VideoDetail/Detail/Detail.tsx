@@ -8,6 +8,7 @@ import {
   VideoTagLine,
   VideoOverview,
   RateContainer,
+  Flag,
 } from "./style";
 import { MediaType, IDetailVideo, IKeyword, IGenre } from "types";
 import { convertGenres } from "functions/common";
@@ -15,7 +16,7 @@ import Genres from "Components/Genres";
 import RatingStars from "Components/RatingStars";
 import Videos from "../Videos";
 import Keywords from "../Keywords";
-import Flag from "react-country-flag";
+import getFlagIcon from "country-flag-icons/unicode";
 
 interface IProps {
   video: IDetailVideo;
@@ -36,22 +37,14 @@ const Detail: React.FunctionComponent<IProps> = ({
             ? `https://image.tmdb.org/t/p/w300${video.poster_path}`
             : require("assets/no-image.jpg").default
         }
-      />
-
+      >
+        {video.production_countries[0] && (
+          <Flag>{getFlagIcon(video.production_countries[0].iso_3166_1)}</Flag>
+        )}
+      </VideoPoster>
       <VideoDetailContainer>
         <VideoTitle>
           {mediaType === "movie" ? video.title : video.name}
-          {video.production_countries[0] && (
-            <Flag
-              countryCode={video.production_countries[0].iso_3166_1}
-              style={{
-                fontSize: "40px",
-                lineHeight: "40px",
-                objectFit: "cover",
-                marginLeft: "10px",
-              }}
-            />
-          )}
         </VideoTitle>
         <Genres genre_ids={convertGenres(video.genres)} />
         <VideoSubTitle>
