@@ -16,6 +16,24 @@ const GlobalStyles = createGlobalStyle`
         color: ${Colors.text.primary};
         background-color:${Colors.bg.primary};
         padding-top: 80px;
+        &::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.15);
+    &:hover {
+      height: 12px;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    &:active {
+      height: 12px;
+      background-color: ${Colors.secondary};
+    }
+  }
     }
     a {
         text-decoration:none;

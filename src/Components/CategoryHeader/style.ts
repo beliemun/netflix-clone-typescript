@@ -15,7 +15,7 @@ export const Title = styled.h1`
   font-weight: 500;
   margin-bottom: 15px;
   transition: all 0.2s ease-in-out;
-  @media (max-width: 700px) {
+  @media (max-width: 720px) {
     font-size: 24px;
   }
 `;
@@ -27,7 +27,7 @@ export const Description = styled.p`
   line-height: 1.5;
   margin: 0px 30px 15px;
   transition: all 0.2s ease-in-out;
-  @media (max-width: 700px) {
+  @media (max-width: 720px) {
     display: none;
   }
 `;

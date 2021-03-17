@@ -137,7 +137,7 @@ const Home: React.FunctionComponent<RouteComponentProps> = () => {
         mediaType="movie"
         link="/movie"
       />
-      <Base.Height height={-40} />
+      <Base.Height height={-30} />
       <VideoSlider
         title={"TOP 20 TV Shows"}
         videos={tvShows}

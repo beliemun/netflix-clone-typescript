@@ -14,7 +14,7 @@ export const SliderContainer = styled.div`
   width: inherit;
   margin: 20px 10px;
 
-  /* opacity: 0;
+  opacity: 0;
   transform: translateY(20px) scale(1.05);
   animation: FadeIn 2s ease-in-out forwards;
   animation-delay: 0s;
@@ -27,7 +27,7 @@ export const SliderContainer = styled.div`
       transform: translateY(0px) scale(1);
       opacity: 1;
     }
-  } */
+  }
 `;
 
 export const Title = styled.h2`
