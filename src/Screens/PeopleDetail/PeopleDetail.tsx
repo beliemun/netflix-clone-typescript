@@ -37,6 +37,8 @@ const PeopleDetail: React.FunctionComponent<
           data: { cast: moiveCredit },
         } = await peopleApi.getMoiveCredits(id);
         setMovieCredit(moiveCredit);
+
+        // Set fake loading time
         setTimeout(() => {
           setLoading(false);
         }, getRandomInt(500, 2000));

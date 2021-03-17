@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "./style";
+import { Container, Title } from "./style";
 import { useLottie } from "lottie-react";
 import data from "Components/Lottie";
 
@@ -16,10 +16,14 @@ const LottieView = () => {
   return Lottie.View;
 };
 
-const Loader = () => {
+interface Props {
+  message?: string;
+}
+const Loader: React.FunctionComponent<Props> = ({ message }) => {
   return (
     <Container>
       <LottieView />
+      {message && <Title>{message}</Title>}
     </Container>
   );
 };

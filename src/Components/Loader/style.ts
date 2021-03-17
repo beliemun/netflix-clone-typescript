@@ -16,3 +16,8 @@ export const Container = styled.div`
   padding-top: 50px;
   background: blur(10px);
 `;
+
+export const Title = styled.h3`
+  font-size: 18px;
+  color: ${Colors.primary};
+`;

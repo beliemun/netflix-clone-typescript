@@ -57,13 +57,6 @@ const VideoDetail: React.FunctionComponent<
             : await tvApi.tvDetail(id);
         setVideo(data);
         const {
-          data: { keywords },
-        } =
-          mediaType === "movie"
-            ? await movieApi.getKeywords(id)
-            : await tvApi.getKeywords(id);
-        setKeywords(keywords);
-        const {
           data: { cast, crew },
         } =
           mediaType === "movie"
@@ -79,12 +72,21 @@ const VideoDetail: React.FunctionComponent<
             : await tvApi.getTvReviews(id);
         setReviews(reviews);
         const {
+          data: { keywords },
+        } =
+          mediaType === "movie"
+            ? await movieApi.getKeywords(id)
+            : await tvApi.getKeywords(id);
+        setKeywords(keywords);
+        const {
           data: { results: similar },
         } =
           mediaType === "movie"
             ? await movieApi.getSimilar(id)
             : await tvApi.getSimilar(id);
         setSimilar(similar);
+
+        // Set fake loading time
         setTimeout(() => {
           setLoading(false);
         }, getRandomInt(500, 2000));
