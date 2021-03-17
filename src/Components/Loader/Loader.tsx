@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Title } from "./style";
+import { Container } from "./style";
 import { useLottie } from "lottie-react";
 import data from "Components/Lottie";
 
@@ -20,7 +20,6 @@ const Loader = () => {
   return (
     <Container>
       <LottieView />
-      <Title>Loading...</Title>
     </Container>
   );
 };
