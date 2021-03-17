@@ -4,21 +4,10 @@ import { Link } from "react-router-dom";
 
 export const HomeContainer = styled.div`
   background-color: black;
-  opacity: 0;
+  opacity: 1;
   @media (max-width: 720px) {
     background-color: ${Colors.bg.primary};
   }
-  @keyframes FadeIn {
-    from {
-      transform: translateY(30px) scale(1.05);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0px) scale(1);
-      opacity: 1;
-    }
-  }
-  animation: FadeIn 1s ease-in-out forwards;
 `;
 
 export const MovieContainer = styled.div<{ bgUrl: string }>`
@@ -70,6 +59,20 @@ export const DetailContainer = styled.div`
   @media (max-width: 720px) {
     margin: 0 20px;
   }
+  transition: font-size 0.5s ease-in-out;
+  transform: translateX(-100px);
+  animation: MoveToRight 1s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+  @keyframes MoveToRight {
+    from {
+      transform: translateX(-100px);
+    }
+    to {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
 `;
 
 export const TagLine = styled.h1<{ bgUrl: string }>`
@@ -91,6 +94,7 @@ export const TagLine = styled.h1<{ bgUrl: string }>`
   letter-spacing: -2px;
   text-shadow: 0px 3px 10px rgba(255, 255, 255, 0.5);
   transition: font-size 0.5s ease-in-out;
+
   @media (max-width: 1080px) {
     font-size: 48px;
   }
@@ -100,6 +104,20 @@ export const TagLine = styled.h1<{ bgUrl: string }>`
   @media (max-width: 720px) {
     display: none;
   }
+
+  transform: translateX(-100px);
+  animation: MoveToRight 1s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+  @keyframes MoveToRight {
+    from {
+      transform: translateX(-100px);
+    }
+    to {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
 `;
 
 export const Title = styled.h1`
@@ -108,6 +126,7 @@ export const Title = styled.h1`
   line-height: 1.2;
   color: ${Colors.text.primary};
   transition: font-size 0.5s ease-in-out;
+
   @media (max-width: 1080px) {
     font-size: 26px;
   }
@@ -164,6 +183,20 @@ export const PlayButtonContainer = styled.div`
   margin-left: 50px;
   @media (max-width: 720px) {
     margin-left: 20px;
+  }
+  transition: font-size 0.5s ease-in-out;
+  transform: translateX(-100px);
+  animation: MoveToRight 1s ease-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+  @keyframes MoveToRight {
+    from {
+      transform: translateX(-100px);
+    }
+    to {
+      transform: translateX(0px);
+      opacity: 1;
+    }
   }
 `;
 
