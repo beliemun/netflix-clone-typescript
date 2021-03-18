@@ -6,15 +6,15 @@ export const Contaniner = styled.div`
   place-content: center;
   padding: 20px;
   opacity: 0;
-  transform: translateY(20px) scale(1.05);
+  transform: translateY(20px);
   animation: FadeIn 2s ease-in-out forwards;
   @keyframes FadeIn {
     from {
-      transform: translateY(20px) scale(1.05);
+      transform: translateY(20px);
       opacity: 0;
     }
     to {
-      transform: translateY(0px) scale(1);
+      transform: translateY(0px);
       opacity: 1;
     }
   }

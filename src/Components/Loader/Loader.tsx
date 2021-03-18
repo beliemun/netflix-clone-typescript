@@ -23,7 +23,7 @@ const Loader: React.FunctionComponent<Props> = ({ message }) => {
   return (
     <Container>
       <LottieView />
-      {message && <Title>{message}</Title>}
+      <Title>{message ? message : "Loading.."}</Title>
     </Container>
   );
 };

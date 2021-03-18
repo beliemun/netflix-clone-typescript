@@ -12,12 +12,13 @@ export const Container = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  font-size: 50px;
+  font-size: 40px;
   padding-top: 50px;
   background: blur(10px);
 `;
 
 export const Title = styled.h3`
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: 500;
   color: ${Colors.primary};
 `;
