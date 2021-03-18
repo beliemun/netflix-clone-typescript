@@ -41,12 +41,16 @@ const Detail: React.FunctionComponent<IProps> = ({ person }) => {
               person.known_for_department
             }`}
           </Info>
-          <Info>
-            {`${person.birthday} (${
-              person.birthday &&
-              new Date().getFullYear() - Number(person.birthday.slice(0, 4)) + 1
-            } years old)`}
-          </Info>
+          {person.birthday && (
+            <Info>
+              {`${person.birthday} (${
+                person.birthday &&
+                new Date().getFullYear() -
+                  Number(person.birthday.slice(0, 4)) +
+                  1
+              } years old)`}
+            </Info>
+          )}
           <Info>{person.place_of_birth}</Info>
           {person.biography.length > 0 && <Subtitle>Biagraphy</Subtitle>}
           <Biography>

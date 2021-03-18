@@ -15,7 +15,7 @@ const Keywords: React.FunctionComponent<IProps> = ({ keywords }) => (
           {keywords
             .filter((_, i) => i < 12)
             .map((keyword, index) => (
-              <Item to="#" key={index}>
+              <Item to={`/search/${keyword.name}`} key={index}>
                 # {keyword.name}
               </Item>
             ))}

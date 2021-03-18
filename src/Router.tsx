@@ -15,7 +15,8 @@ const Router = () => (
       <Route path="/tv" component={Video} />
       <Route path="/person" component={People} />
       <Route path="/about" component={About} />
-      <Route path="/search" component={Search} />
+      <Route path="/search/" component={Search} exact />
+      <Route path="/search/:keyword" component={Search} />
       <Redirect from="*" to="/" />
     </Switch>
   </HashRouter>

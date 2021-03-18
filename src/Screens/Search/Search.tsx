@@ -15,9 +15,25 @@ import { MediaType, IVideo, IPerson } from "types";
 import VideoList from "Screens/VideoList/List";
 import PeopleList from "Screens/PeopleList/List";
 import useScrollTop from "hooks/useScollTop";
+import Loader from "Components/Loader";
 
-const Search: React.FunctionComponent<RouteComponentProps> = (props) => {
-  const [term, setTerm] = useState("");
+interface IProps {
+  match: {
+    params: {
+      keyword: string;
+    };
+  };
+}
+
+const Search: React.FunctionComponent<RouteComponentProps & IProps> = (
+  props
+) => {
+  const {
+    match: {
+      params: { keyword },
+    },
+  } = props;
+  const [term, setTerm] = useState(keyword ? keyword : "");
   const [videos, setVideos] = useState<Array<IVideo>>([]);
   const [people, setPeople] = useState<Array<IPerson>>([]);
   const [mediaType, setMediaType] = useState<MediaType>("movie");
@@ -134,8 +150,9 @@ const Search: React.FunctionComponent<RouteComponentProps> = (props) => {
       </MenuContainer>
     );
   };
-
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <>
       <Container>
         <Title>Search</Title>
