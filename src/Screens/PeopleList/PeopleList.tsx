@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "./style";
 import useScrollTop from "hooks/useScollTop";
 import { RouteComponentProps } from "react-router-dom";
 import Base from "Components/Base";
-import ApiLoader from "Components/ApiLoader";
-import PersonItem from "Components/PersonItem";
-import CategoryHeader from "Components/CategoryHeader";
+import ApiVideoParser from "Components/ApiVideoParser";
+import CategoryHeader from "Components/Category/Header";
+import List from "./List";
 import { IPerson } from "types";
 
 const PeopleList: React.FunctionComponent<RouteComponentProps> = ({
@@ -22,7 +21,7 @@ const PeopleList: React.FunctionComponent<RouteComponentProps> = ({
         setLoading(true);
         const {
           data: { results },
-        } = await ApiLoader(pathname, page);
+        } = await ApiVideoParser(pathname, page);
         setPeople((prev) => prev.concat(results));
       } catch (e) {
         console.log(e);
@@ -59,11 +58,7 @@ const PeopleList: React.FunctionComponent<RouteComponentProps> = ({
         title={"Popular People"}
         description={"The list of popular people. This list updates daily."}
       />
-      <Container>
-        {people.map((person, index) => (
-          <PersonItem key={index} index={index} person={person} />
-        ))}
-      </Container>
+      <List people={people} />
       <Base.ScrollUpButton ref={elementRef} onClick={onClick}>
         <i className="fas fa-angle-double-up"></i>
       </Base.ScrollUpButton>

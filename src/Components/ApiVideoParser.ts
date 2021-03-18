@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 import { movieApi, tvApi, peopleApi } from "Components/Api";
 
-const ApiLoader = async (
+const ApiVideoParser = async (
   pathname: string,
   page: number
 ): Promise<AxiosResponse<any | []>> => {
@@ -31,4 +31,4 @@ const ApiLoader = async (
   return [] as any;
 };
 
-export default ApiLoader;
+export default ApiVideoParser;

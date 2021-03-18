@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { RouteComponentProps } from "react-router-dom";
-import { VideoItemContainer } from "./style";
-import ApiLoader from "Components/ApiLoader";
-import VideoItem from "Components/VideoItem";
+import ApiVideoParser from "Components/ApiVideoParser";
 import useScrollTop from "hooks/useScollTop";
 import Base from "Components/Base";
 import { IVideo, MediaType } from "types";
+import List from "./List";
 
 const VideoList: React.FunctionComponent<RouteComponentProps> = ({
   location: { pathname },
@@ -22,7 +21,7 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
         setLoading(true);
         const {
           data: { results },
-        } = await ApiLoader(pathname, page);
+        } = await ApiVideoParser(pathname, page);
         setVideos((prev) => prev.concat(results));
       } catch (e) {
         console.log(e);
@@ -54,16 +53,7 @@ const VideoList: React.FunctionComponent<RouteComponentProps> = ({
 
   return (
     <>
-      <VideoItemContainer>
-        {videos.map((video: IVideo, index: number) => (
-          <VideoItem
-            key={index}
-            index={index}
-            video={video}
-            mediaType={mediaType}
-          />
-        ))}
-      </VideoItemContainer>
+      <List videos={videos} mediaType={mediaType} />
       <Base.ScrollUpButton ref={elementRef} onClick={onClick}>
         <i className="fas fa-angle-double-up"></i>
       </Base.ScrollUpButton>

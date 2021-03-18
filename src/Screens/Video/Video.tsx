@@ -35,7 +35,7 @@ const Video: React.FunctionComponent<RouteComponentProps> = (props) => {
 
   return (
     <>
-      {hasVideo() && <Category items={category} {...props} />}
+      {hasVideo() && <Category items={category} props={props} />}
       <Switch>
         <Route path="/movie" component={VideoList} exact />
         <Route path="/movie/now-playing" component={VideoList} />

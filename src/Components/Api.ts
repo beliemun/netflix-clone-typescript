@@ -20,10 +20,11 @@ export const movieApi = {
         append_to_response: "videos",
       },
     }),
-  search: (term: string) =>
+  search: (term: string, page: number) =>
     api.get("/search/movie", {
       params: {
         query: encodeURIComponent(term),
+        page,
       },
     }),
   getGenres: () => api.get("/genre/movie/list"),
@@ -45,10 +46,11 @@ export const tvApi = {
         append_to_response: "videos",
       },
     }),
-  search: (term: string) =>
+  search: (term: string, page: number) =>
     api.get("/search/tv", {
       params: {
         query: encodeURIComponent(term),
+        page,
       },
     }),
   getGenres: () => api.get("/genre/tv/list"),
@@ -61,10 +63,11 @@ export const tvApi = {
 export const peopleApi = {
   popular: (page: number) => api.get("/person/popular", { params: { page } }),
   poepleDetail: (person_id: string) => api.get(`/person/${person_id}`),
-  search: (term: string) =>
+  search: (term: string, page: number) =>
     api.get("/search/person", {
       params: {
         query: encodeURIComponent(term),
+        page,
       },
     }),
   getMoiveCredits: (person_id: string) =>

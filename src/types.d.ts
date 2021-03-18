@@ -1,6 +1,6 @@
 import {} from "react";
 
-type MediaType = "movie" | "tv";
+type MediaType = "movie" | "tv" | "person";
 
 interface IVideo {
   id: number;

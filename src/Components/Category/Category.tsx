@@ -1,38 +1,31 @@
 import React from "react";
 import { RouteComponentProps } from "react-router-dom";
-import { Menu, Item } from "./style";
-import CategoryHeader from "Components/CategoryHeader";
+import CategoryHeader from "Components/Category/Header";
+import Menu from "Components/Category/Menu";
 import { ICategory } from "types";
 
 interface IProps {
   items: ICategory[];
+  props: RouteComponentProps;
 }
 
-const Category: React.FunctionComponent<IProps & RouteComponentProps> = ({
-  items,
-  location: { pathname },
-}) => (
-  <>
-    {items.map((item, index) => (
-      <CategoryHeader
-        key={index}
-        current={(pathname === item.pathname).toString()}
-        title={item.title}
-        description={item.description}
-      />
-    ))}
-    <Menu>
+const Category: React.FunctionComponent<IProps> = ({ items, props }) => {
+  const {
+    location: { pathname },
+  } = props;
+  return (
+    <>
       {items.map((item, index) => (
-        <Item
+        <CategoryHeader
           key={index}
-          to={item.pathname}
           current={(pathname === item.pathname).toString()}
-        >
-          {item.title}
-        </Item>
+          title={item.title}
+          description={item.description}
+        />
       ))}
-    </Menu>
-  </>
-);
+      <Menu items={items} {...props} />
+    </>
+  );
+};
 
 export default Category;
