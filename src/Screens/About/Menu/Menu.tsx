@@ -35,7 +35,7 @@ const Menu: React.FunctionComponent<RouteComponentProps> = ({
       </Item>
       <Base.GradientLine />
       <Item current={pathname === "/about/review"} to="/about/review">
-        개발후기
+        개발 후기
       </Item>
       <Footer>burngrit @ icloud.com</Footer>
     </MenuContainer>
