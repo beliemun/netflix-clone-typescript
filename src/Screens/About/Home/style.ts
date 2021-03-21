@@ -14,7 +14,7 @@ export const Container = styled.div`
 `;
 
 export const Section = styled.div`
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 `;
 
 export const Title = styled.h1<{ bgUrl: string; isHeader: boolean }>`
@@ -38,11 +38,12 @@ export const Title = styled.h1<{ bgUrl: string; isHeader: boolean }>`
   @media (max-width: 480px) {
     font-size: ${(props) => (props.isHeader ? "20px" : "16px")};
   }
+  margin-bottom: 20px;
 `;
 
 export const ProfileContainer = styled.div`
   display: flex;
-  margin: 30px 15px;
+  margin-bottom: 50px;
 `;
 
 export const Poster = styled.img`
@@ -86,4 +87,17 @@ export const Message = styled.h3`
     border-radius: 0 8px 8px;
     margin-left: 10px;
   }
+`;
+
+export const ImageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+`;
+
+export const Image = styled.img`
+  width: 100%;
+  border-radius: 10px;
 `;

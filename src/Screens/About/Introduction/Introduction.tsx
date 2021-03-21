@@ -7,6 +7,8 @@ import {
   ProfileContainer,
   Poster,
   Message,
+  ImageContainer,
+  Image,
 } from "../Home/style";
 
 const Introduction: React.FunctionComponent = () => (
@@ -20,6 +22,9 @@ const Introduction: React.FunctionComponent = () => (
       <Title bgUrl={require("assets/texture.jpg").default} isHeader={false}>
         #타입스크립트(TypeScript)
       </Title>
+      <ImageContainer>
+        <Image src={require("assets/about_01.png").default} />
+      </ImageContainer>
       <ProfileContainer>
         <Poster src={require("assets/profile.jpeg").default} />
         <Message>
@@ -38,6 +43,9 @@ const Introduction: React.FunctionComponent = () => (
       <Title bgUrl={require("assets/texture.jpg").default} isHeader={false}>
         #반응형 레이아웃(Response Layout)
       </Title>
+      <ImageContainer>
+        <Image src={require("assets/about_02.png").default} />
+      </ImageContainer>
       <ProfileContainer>
         <Poster src={require("assets/profile.jpeg").default} />
         <Message>
@@ -47,6 +55,9 @@ const Introduction: React.FunctionComponent = () => (
           이용이 불편해지지 않도록 신경썼습니다.
         </Message>
       </ProfileContainer>
+      <ImageContainer>
+        <Image src={require("assets/about_03.gif").default} />
+      </ImageContainer>
       <ProfileContainer>
         <Poster src={require("assets/profile.jpeg").default} />
         <Message>
@@ -63,6 +74,9 @@ const Introduction: React.FunctionComponent = () => (
       <Title bgUrl={require("assets/texture.jpg").default} isHeader={false}>
         #무한 스크롤링(Inifite Scrolliing)
       </Title>
+      <ImageContainer>
+        <Image src={require("assets/about_04.gif").default} />
+      </ImageContainer>
       <ProfileContainer>
         <Poster src={require("assets/profile.jpeg").default} />
         <Message>
@@ -81,6 +95,9 @@ const Introduction: React.FunctionComponent = () => (
       <Title bgUrl={require("assets/texture.jpg").default} isHeader={false}>
         #세부정보 확장(Expand Details)
       </Title>
+      <ImageContainer>
+        <Image src={require("assets/about_05.gif").default} />
+      </ImageContainer>
       <ProfileContainer>
         <Poster src={require("assets/profile.jpeg").default} />
         <Message>
@@ -98,6 +115,9 @@ const Introduction: React.FunctionComponent = () => (
       <Title bgUrl={require("assets/texture.jpg").default} isHeader={false}>
         #리엑트 훅스(React Hooks)
       </Title>
+      <ImageContainer>
+        <Image src={require("assets/about_06.png").default} />
+      </ImageContainer>
       <ProfileContainer>
         <Poster src={require("assets/profile.jpeg").default} />
         <Message>
@@ -118,12 +138,16 @@ const Introduction: React.FunctionComponent = () => (
       <Title bgUrl={require("assets/texture.jpg").default} isHeader={false}>
         #메타데이타(Metadata)
       </Title>
+      <ImageContainer>
+        <Image src={require("assets/about_07.png").default} />
+      </ImageContainer>
       <ProfileContainer>
         <Poster src={require("assets/profile.jpeg").default} />
         <Message>
-          강의에는 없는 내용이지만, 디테일을 상승(?) 시키는 목적으로 고유한
-          Favicon과 웹 페이지를 설명하는 텍스트와 이미지를 추가하였습니다. 이로
-          인해 카톡으로 링크를 줄 때에도 제법 예쁘게(?) 표현됩니다.
+          디테일을 상승(?)시키는 목적으로 고유한 Favicon과 웹 페이지를 설명하는
+          텍스트와 이미지를 추가하였습니다. 노마드코더 홈페이지의 코드를
+          복사하여 니코플릭스에 적용해보았습니다. 이로 인해 카톡으로 링크를 줄
+          때에도 제법 예쁘게(?) 표현됩니다.
         </Message>
       </ProfileContainer>
       <Base.GradientLine />
@@ -132,6 +156,9 @@ const Introduction: React.FunctionComponent = () => (
       <Title bgUrl={require("assets/texture.jpg").default} isHeader={false}>
         #Standard 1320px Grid Design
       </Title>
+      <ImageContainer>
+        <Image src={require("assets/about_08.png").default} />
+      </ImageContainer>
       <ProfileContainer>
         <Poster src={require("assets/profile.jpeg").default} />
         <Message>
