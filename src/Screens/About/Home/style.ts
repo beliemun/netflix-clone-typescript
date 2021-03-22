@@ -101,3 +101,106 @@ export const Image = styled.img`
   width: 100%;
   border-radius: 10px;
 `;
+
+export const LectureContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+  align-items: flex-end;
+  padding-top: 20px 0;
+  margin-top: -60px;
+  margin-right: 20px;
+  margin-bottom: 80px;
+
+  @media (max-width: 720px) {
+    margin-top: -40px;
+    margin-right: 0px;
+  }
+  @media (max-width: 480px) {
+  }
+  &:hover {
+    & > img {
+      filter: grayscale(0.8);
+      box-shadow: rgba(136, 165, 191, 0.2) 6px 2px 16px 0px,
+        rgba(255, 255, 255, 0.2) -6px -2px 16px 0px;
+    }
+    & > div:last-child {
+      transform: translateY(-10px) scale(1.05);
+    }
+  }
+`;
+
+export const Lecture = styled.img`
+  width: 320px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  @media (max-width: 720px) {
+    width: 240px;
+  }
+  @media (max-width: 480px) {
+    width: 200px;
+  }
+`;
+
+export const LectureTitleContainer = styled.div`
+  width: 280px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  bottom: -40px;
+  right: 20px;
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px 0;
+  transition: transform 0.3s ease-in-out;
+  @media (max-width: 720px) {
+    width: 200px;
+  }
+  @media (max-width: 480px) {
+    width: 160px;
+  }
+`;
+
+export const LectureTitle = styled.h3`
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  color: black;
+  margin-top: 5px;
+  @media (max-width: 720px) {
+    font-size: 14px;
+  }
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+`;
+
+export const LectureButton = styled.div`
+  width: 100%;
+  background: linear-gradient(to left, #8a2387, #e94057, #f27121);
+  border-radius: 10px;
+  padding: 15px 10px;
+  margin-top: 15px;
+  color: white;
+  @media (max-width: 720px) {
+    font-size: 12px;
+    padding: 12px 8px;
+    margin-top: 12px;
+  }
+  @media (max-width: 480px) {
+    font-size: 11px;
+    padding: 10px 5px;
+    margin-top: 10px;
+  }
+`;
+
+export const A = styled.a`
+  display: flex;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`;
