@@ -94,7 +94,7 @@ export const ImageContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
+  padding-bottom: 20px;
 `;
 
 export const Image = styled.img`
@@ -106,7 +106,6 @@ export const LectureContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-end; */
   align-items: flex-end;
   padding-top: 20px 0;
   margin-top: -60px;
@@ -197,10 +196,35 @@ export const LectureButton = styled.div`
 `;
 
 export const A = styled.a`
+  position: relative;
   display: flex;
   width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+`;
+
+export const AlertText = styled.h2`
+  font-size: 16px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.2;
+  color: ${Colors.primary};
+  margin-top: 20px;
+  @media (max-width: 720px) {
+    font-size: 14px;
+  }
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+`;
+
+export const SeriesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50px;
+  padding-bottom: 50px;
 `;

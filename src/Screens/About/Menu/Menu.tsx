@@ -31,11 +31,11 @@ const Menu: React.FunctionComponent<RouteComponentProps> = ({
         current={pathname === "/about/recommendation"}
         to="/about/recommendation"
       >
-        도움이 된 다른 강의
+        도움이 된 핵심 강의
       </Item>
       <Base.GradientLine />
-      <Item current={pathname === "/about/review"} to="/about/review">
-        개발 후기
+      <Item current={pathname === "/about/series"} to="/about/series">
+        니꼬시리즈 소개
       </Item>
       <Footer>burngrit @ icloud.com</Footer>
     </MenuContainer>

@@ -9,6 +9,7 @@ import {
   Message,
   ImageContainer,
   Image,
+  AlertText,
 } from "../Home/style";
 import useScrollTop from "hooks/useScollTop";
 
@@ -62,6 +63,10 @@ const Introduction: React.FunctionComponent = () => {
         </ProfileContainer>
         <ImageContainer>
           <Image src={require("assets/about_03.gif").default} />
+          <AlertText>
+            ⚠️ GIF 용량이 커서 로드될 때까지 재생이 느려질 수 있습니다. 잠시만
+            기다려주세요.
+          </AlertText>
         </ImageContainer>
         <ProfileContainer>
           <Poster src={require("assets/profile.jpeg").default} />
@@ -82,6 +87,10 @@ const Introduction: React.FunctionComponent = () => {
         </Title>
         <ImageContainer>
           <Image src={require("assets/about_04.gif").default} />
+          <AlertText>
+            ⚠️ GIF 용량이 커서 로드될 때까지 재생이 느려질 수 있습니다. 잠시만
+            기다려주세요.
+          </AlertText>
         </ImageContainer>
         <ProfileContainer>
           <Poster src={require("assets/profile.jpeg").default} />
@@ -103,6 +112,10 @@ const Introduction: React.FunctionComponent = () => {
         </Title>
         <ImageContainer>
           <Image src={require("assets/about_05.gif").default} />
+          <AlertText>
+            ⚠️ GIF 용량이 커서 로드될 때까지 재생이 느려질 수 있습니다. 잠시만
+            기다려주세요.
+          </AlertText>
         </ImageContainer>
         <ProfileContainer>
           <Poster src={require("assets/profile.jpeg").default} />

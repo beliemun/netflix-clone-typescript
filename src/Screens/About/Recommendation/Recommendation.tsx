@@ -23,7 +23,7 @@ const Recommendation: React.FunctionComponent = () => {
     <Container>
       <Section>
         <Title bgUrl={require("assets/texture.jpg").default} isHeader={true}>
-          도움이 된 다른 강의
+          도움이 된 핵심 강의
         </Title>
       </Section>
       <Section>

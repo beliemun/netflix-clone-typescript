@@ -5,7 +5,7 @@ import Menu from "./Menu";
 import Home from "./Home";
 import Introduction from "./Introduction";
 import Recommendation from "./Recommendation";
-import Review from "./Review";
+import Series from "./Series";
 import Footer from "Components/Footer";
 
 const About: React.FunctionComponent<RouteComponentProps> = (props) => (
@@ -17,7 +17,7 @@ const About: React.FunctionComponent<RouteComponentProps> = (props) => (
         <Route path="/about" component={Home} exact />
         <Route path="/about/introduction" component={Introduction} />
         <Route path="/about/recommendation" component={Recommendation} />
-        <Route path="/about/review" component={Review} />
+        <Route path="/about/series" component={Series} />
       </Switch>
     </GridContainer>
     <Footer />
