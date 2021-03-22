@@ -7,10 +7,12 @@ import Introduction from "./Introduction";
 import Recommendation from "./Recommendation";
 import Series from "./Series";
 import Footer from "Components/Footer";
+import Base from "Components/Base";
 
 const About: React.FunctionComponent<RouteComponentProps> = (props) => (
   <Container>
     <Banner bgUrl={require("assets/title.png").default} />
+    <Base.GradientLine />
     <GridContainer>
       <Menu {...props} />
       <Switch>

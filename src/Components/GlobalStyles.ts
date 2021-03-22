@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
         font-size: 14px;
         color: ${Colors.text.primary};
         background-color:${Colors.bg.primary};
-        padding-top: 80px;
+        padding-top: 90px;
         &::-webkit-scrollbar {
     width: 12px;
     height: 12px;

@@ -25,8 +25,8 @@ export const GridContainer = styled.div`
 `;
 
 export const Banner = styled.div<{ bgUrl: string }>`
-  width: 320px;
-  height: 160px;
+  width: 240px;
+  height: 120px;
   max-width: 1080px;
   background: url(${(props) => props.bgUrl});
   background-size: contain;
@@ -34,14 +34,13 @@ export const Banner = styled.div<{ bgUrl: string }>`
   background-repeat: no-repeat;
   /* margin-bottom: 10px; */
   @media (max-width: 1080px) {
-    width: 240px;
-    height: 120px;
-    margin-bottom: 0px;
-  }
-  @media (max-width: 720px) {
     width: 180px;
     height: 90px;
-    margin-bottom: -10px;
+    margin-bottom: 10px;
+  }
+  @media (max-width: 720px) {
+    width: 120px;
+    height: 60px;
   }
   @media (max-width: 480px) {
     height: 0;

@@ -4,7 +4,7 @@ import { useLottie } from "lottie-react";
 import data from "Components/Lottie";
 
 const LottieView = () => {
-  const style = { height: 100 };
+  const style = { height: 120 };
   const options = {
     animationData: data.Loader,
     loop: true,
@@ -23,7 +23,7 @@ const Loader: React.FunctionComponent<Props> = ({ message }) => {
   return (
     <Container>
       <LottieView />
-      <Title>{message ? message : "Loading.."}</Title>
+      <Title>{message ? message : ""}</Title>
     </Container>
   );
 };

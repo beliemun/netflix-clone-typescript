@@ -1,5 +1,6 @@
 import Colors from "Components/Colors";
 import { LeftTitle } from "Components/Footer/style";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -221,10 +222,39 @@ export const AlertText = styled.h2`
 `;
 
 export const SeriesContainer = styled.div`
+  position: relative;
+  display: grid;
+  place-content: center center;
+  grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 720px) {
+    grid-template-columns: 1fr;
+  }
+  gap: 20px;
+`;
+
+export const SeriesButtonContainer = styled.a`
+  position: relative;
+  width: 100%;
+  top: -20px;
+  left: -10px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: -50px;
-  padding-bottom: 50px;
+  justify-content: flex-end;
+  transition: transform 0.2s ease-in-out;
+`;
+
+export const SeriesButton = styled.div`
+  font-size: 16px;
+  font-weight: 500;
+  padding: 15px;
+  color: white;
+  border-radius: 0 10px 10px;
+  background: linear-gradient(to left, #8a2387, #e94057, #f27121);
+`;
+
+export const SeriesText = styled.h4`
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: ${Colors.secondary};
 `;
