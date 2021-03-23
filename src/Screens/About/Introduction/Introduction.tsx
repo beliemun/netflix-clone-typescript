@@ -31,7 +31,7 @@ const Introduction: React.FunctionComponent = () => {
           <Image src={require("assets/about_01.png").default} />
         </ImageContainer>
         <ProfileContainer>
-          <Poster src={require("assets/profile.jpeg").default} />
+          <Poster src={require("assets/profile.jpg").default} />
           <Message>
             모든 스크립트가 Typescript로 작성되었습니다. 재사용되는
             인터페이스들은 Types.d.ts 파일에 정의하여 재사용될 수 있도록
@@ -52,7 +52,7 @@ const Introduction: React.FunctionComponent = () => {
           <Image src={require("assets/about_02.png").default} />
         </ImageContainer>
         <ProfileContainer>
-          <Poster src={require("assets/profile.jpeg").default} />
+          <Poster src={require("assets/profile.jpg").default} />
           <Message>
             모든 페이지가 모든 해상도에 대응하도록 반응형 레이아웃을
             구현하였습니다. 노마드코더의 CSS 레이아웃 마스터 강의가 큰 도움이
@@ -69,7 +69,7 @@ const Introduction: React.FunctionComponent = () => {
           </AlertText>
         </ImageContainer>
         <ProfileContainer>
-          <Poster src={require("assets/profile.jpeg").default} />
+          <Poster src={require("assets/profile.jpg").default} />
           <Message>
             일반적으로 해상도가 작아지면 주 메뉴를 햄버거(☰) 아이콘으로 압축하여
             뎁스를 늘리지만, NICOFLIX에서는 개별 아이콘으로 축소 표현하여 기존
@@ -93,7 +93,7 @@ const Introduction: React.FunctionComponent = () => {
           </AlertText>
         </ImageContainer>
         <ProfileContainer>
-          <Poster src={require("assets/profile.jpeg").default} />
+          <Poster src={require("assets/profile.jpg").default} />
           <Message>
             기존 강의에서는 API 요청 기본값인 1페이지에 대한 값만 가져오지만 이
             부분을 infinite Scrolling으로 구현하여 페이지를 아래로 스크롤하면
@@ -118,7 +118,7 @@ const Introduction: React.FunctionComponent = () => {
           </AlertText>
         </ImageContainer>
         <ProfileContainer>
-          <Poster src={require("assets/profile.jpeg").default} />
+          <Poster src={require("assets/profile.jpg").default} />
           <Message>
             API에서 제공하는 정보를 최대한 사용하고 싶었습니다. 영화와 티비쇼의
             기본적인 정보 뿐만 아니라 검색 키워드, 출연 배우, 제작 인물을 비롯해
@@ -138,7 +138,7 @@ const Introduction: React.FunctionComponent = () => {
           <Image src={require("assets/about_06.png").default} />
         </ImageContainer>
         <ProfileContainer>
-          <Poster src={require("assets/profile.jpeg").default} />
+          <Poster src={require("assets/profile.jpg").default} />
           <Message>
             올드한 클래식 컴포넌트를 사용하지 않고, 니꼬 선생님을 따라 섹시한(?)
             ES6 문법을 사용하였습니다. 함수형 컴포넌트로 작성함에 따라
@@ -162,7 +162,7 @@ const Introduction: React.FunctionComponent = () => {
           <Image src={require("assets/about_07.png").default} />
         </ImageContainer>
         <ProfileContainer>
-          <Poster src={require("assets/profile.jpeg").default} />
+          <Poster src={require("assets/profile.jpg").default} />
           <Message>
             디테일을 상승(?)시키는 목적으로 고유한 Favicon과 웹 페이지를
             설명하는 텍스트와 이미지를 추가하였습니다. 노마드코더 홈페이지의
@@ -180,7 +180,7 @@ const Introduction: React.FunctionComponent = () => {
           <Image src={require("assets/about_08.png").default} />
         </ImageContainer>
         <ProfileContainer>
-          <Poster src={require("assets/profile.jpeg").default} />
+          <Poster src={require("assets/profile.jpg").default} />
           <Message>
             제대로 된 웹 페이지를 제작하는 것은 처음이었기 때문에 Adobe XD를
             이용해 기초 설계를 먼저 진행했습니다. XD 초보자였기 때문에 별도로

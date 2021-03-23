@@ -7,7 +7,7 @@ const Home: React.FunctionComponent = () => (
       너는 누구냐?
     </Title>
     <ProfileContainer>
-      <Poster src={require("assets/profile.jpeg").default} />
+      <Poster src={require("assets/profile.jpg").default} />
       <Message>
         안녕하세요! 노마드코더 수강생 @beliemun 입니다. <br /> <br />
         NICOFLIX는 노마드코더의 ReactJS 강의 졸업작품입니다. ReactJS 강의 내용을

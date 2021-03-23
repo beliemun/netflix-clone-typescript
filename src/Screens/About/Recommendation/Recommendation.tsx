@@ -31,7 +31,7 @@ const Recommendation: React.FunctionComponent = () => {
           #유튜브 클론 코딩
         </Title>
         <ProfileContainer>
-          <Poster src={require("assets/profile.jpeg").default} />
+          <Poster src={require("assets/profile.jpg").default} />
           <Message>
             HTML, CSS, JS 초보 코스를 끝내고 도전했던 최초의 풀스택 강의로 웹
             개발에 전반적인 능력을 상승시킬 수 있는 강의였습니다. React와 같은
@@ -62,7 +62,7 @@ const Recommendation: React.FunctionComponent = () => {
           #CSS Layout 마스터 클래스
         </Title>
         <ProfileContainer>
-          <Poster src={require("assets/profile.jpeg").default} />
+          <Poster src={require("assets/profile.jpg").default} />
           <Message>
             유튜브 클론코딩의 졸업작품으로 NicoTube를 제작할 때 가장 많이 느꼈던
             아쉬움은 레이아웃이었습니다. 웹 개발은 앱 개발과 다르게 스크린에서
@@ -97,7 +97,7 @@ const Recommendation: React.FunctionComponent = () => {
           #실전형 React Hooks 10개
         </Title>
         <ProfileContainer>
-          <Poster src={require("assets/profile.jpeg").default} />
+          <Poster src={require("assets/profile.jpg").default} />
           <Message>
             앞서 소개한 내용대로 NICOFLIX는 Class를 사용하지 않고, 모든
             스크립트를 함수형 컴포넌트로 작성하였습니다. 6개월 전만해도 저는
@@ -134,7 +134,7 @@ const Recommendation: React.FunctionComponent = () => {
           #Typescript로 블록체인 만들기
         </Title>
         <ProfileContainer>
-          <Poster src={require("assets/profile.jpeg").default} />
+          <Poster src={require("assets/profile.jpg").default} />
           <Message>
             저는 ReactJS의 졸업작품을 반드시 Typescript로 개발하고 싶었습니다.
             이 강의에서 Typescript로 제작하지 않으면 다른 강의에서 작성할 기회가
