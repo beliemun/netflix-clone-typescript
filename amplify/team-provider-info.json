@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-nicoflixtypescript-dev-142851-authRole",
+      "UnauthRoleArn": "arn:aws:iam::080996277360:role/amplify-nicoflixtypescript-dev-142851-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::080996277360:role/amplify-nicoflixtypescript-dev-142851-authRole",
+      "Region": "ap-northeast-2",
+      "DeploymentBucketName": "amplify-nicoflixtypescript-dev-142851-deployment",
+      "UnauthRoleName": "amplify-nicoflixtypescript-dev-142851-unauthRole",
+      "StackName": "amplify-nicoflixtypescript-dev-142851",
+      "StackId": "arn:aws:cloudformation:ap-northeast-2:080996277360:stack/amplify-nicoflixtypescript-dev-142851/ac185de0-8b98-11eb-94f4-0a824c5a07dc",
+      "AmplifyAppId": "d3c3qfhu7z8kmh"
+    },
+    "categories": {
+      "auth": {
+        "nicoflixtypescript30e28559": {}
+      }
+    }
+  }
+}
