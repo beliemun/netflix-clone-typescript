@@ -7,7 +7,6 @@ import GlobalStyle from "Components/GlobalStyles";
 
 // const username = "burngrit@icloud.com";
 // const password = "1234qwer";
-
 // Auth.signIn(username, password)
 //   .then((success) => console.log("successful sign in"))
 //   .catch((err) => console.log("err:", err));
