@@ -25,7 +25,7 @@ const Series: React.FunctionComponent = () => (
           #니꼬튜브(NicoTube)
         </Title>
         <ImageContainer>
-          <Image src={require("assets/nicotube.png").default} />
+          <Image src={require("assets/nicotube.jpg").default} />
           <SeriesButtonContainer
             href="https://stormy-hollows-56478.herokuapp.com/"
             target="_blank"
@@ -51,7 +51,7 @@ const Series: React.FunctionComponent = () => (
           #니꼬플릭스(NICOFLIC)
         </Title>
         <ImageContainer>
-          <Image src={require("assets/nicoflix.png").default} />
+          <Image src={require("assets/nicoflix.jpg").default} />
           <SeriesButtonContainer
             href="https://nicoflix.netlify.app/"
             target="_blank"
