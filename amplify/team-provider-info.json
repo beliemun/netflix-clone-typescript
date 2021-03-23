@@ -10,6 +10,11 @@
       "StackName": "amplify-nicoflix-dev-122856",
       "StackId": "arn:aws:cloudformation:ap-northeast-2:080996277360:stack/amplify-nicoflix-dev-122856/e80b90d0-8b87-11eb-91af-02f54286f988",
       "AmplifyAppId": "dv7v38hz8qf2t"
+    },
+    "categories": {
+      "auth": {
+        "nicoflix45570f01": {}
+      }
     }
   }
 }
