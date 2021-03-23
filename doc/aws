@@ -1,0 +1,6 @@
+- aws 에서 앱을 등록한다.(웹호스팅)
+
+- aws cli로 aws config를 생성한다.
+1. npm install -g @aws-amplify/cli
+2. amplify configure
+

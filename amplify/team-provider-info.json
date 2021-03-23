@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-nicoflix-dev-122856-authRole",
+      "UnauthRoleArn": "arn:aws:iam::080996277360:role/amplify-nicoflix-dev-122856-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::080996277360:role/amplify-nicoflix-dev-122856-authRole",
+      "Region": "ap-northeast-2",
+      "DeploymentBucketName": "amplify-nicoflix-dev-122856-deployment",
+      "UnauthRoleName": "amplify-nicoflix-dev-122856-unauthRole",
+      "StackName": "amplify-nicoflix-dev-122856",
+      "StackId": "arn:aws:cloudformation:ap-northeast-2:080996277360:stack/amplify-nicoflix-dev-122856/e80b90d0-8b87-11eb-91af-02f54286f988",
+      "AmplifyAppId": "dv7v38hz8qf2t"
+    }
+  }
+}
