@@ -33,25 +33,28 @@ const Menu: React.FunctionComponent<RouteComponentProps> = ({
       <LottieView />
       <MenuContainer>
         <Header>ABOUT NICOFLIX</Header>
-        <Item current={pathname === "/about"} to="/about">
+        <Item current={(pathname === "/about").toString()} to="/about">
           너는 누구냐?
         </Item>
         <Base.GradientLine />
         <Item
-          current={pathname === "/about/introduction"}
+          current={(pathname === "/about/introduction").toString()}
           to="/about/introduction"
         >
           적용기술 소개
         </Item>
         <Base.GradientLine />
         <Item
-          current={pathname === "/about/recommendation"}
+          current={(pathname === "/about/recommendation").toString()}
           to="/about/recommendation"
         >
           도움이 된 핵심 강의
         </Item>
         <Base.GradientLine />
-        <Item current={pathname === "/about/series"} to="/about/series">
+        <Item
+          current={(pathname === "/about/series").toString()}
+          to="/about/series"
+        >
           니꼬시리즈 소개
         </Item>
         <Footer>burngrit @ icloud.com</Footer>

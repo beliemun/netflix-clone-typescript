@@ -52,14 +52,15 @@ export const Footer = styled.div`
   }
 `;
 
-export const Item = styled(Link)<{ current: boolean }>`
+export const Item = styled(Link)<{ current: string }>`
   text-align: center;
   padding: 20px 0;
-  color: ${(props) => (props.current ? Colors.primary : Colors.text.primary)};
+  color: ${(props) =>
+    props.current === "true" ? Colors.primary : Colors.text.primary};
   border-left: 4px solid
-    ${(props) => (props.current ? Colors.primary : "transparent")};
+    ${(props) => (props.current === "true" ? Colors.primary : "transparent")};
   border-right: 4px solid
-    ${(props) => (props.current ? Colors.primary : "transparent")};
+    ${(props) => (props.current === "true" ? Colors.primary : "transparent")};
   transition: all 0.2s ease-in-out;
   @media (max-width: 720px) {
     font-size: 12px;

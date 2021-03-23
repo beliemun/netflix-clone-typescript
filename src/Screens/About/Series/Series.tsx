@@ -52,10 +52,7 @@ const Series: React.FunctionComponent = () => (
         </Title>
         <ImageContainer>
           <Image src={require("assets/nicoflix.jpg").default} />
-          <SeriesButtonContainer
-            href="https://nicoflix.netlify.app/"
-            target="_blank"
-          >
+          <SeriesButtonContainer href="https://nicoflix.net" target="_blank">
             <SeriesButton>NICOFLIX</SeriesButton>
           </SeriesButtonContainer>
         </ImageContainer>

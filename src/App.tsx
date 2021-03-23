@@ -5,8 +5,8 @@ import Amplify, { Auth } from "aws-amplify";
 import awsconfig from "./aws-exports";
 Amplify.configure(awsconfig);
 
-const username = "burngrit@icloud.comm";
-const password = "qwer12344";
+const username = "burngrit@icloud.com";
+const password = "qwer1234";
 Auth.signIn(username, password)
   .then((success) => console.log(success))
   .catch((err) => console.log("err:", err));
