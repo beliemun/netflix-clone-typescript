@@ -83,7 +83,7 @@ const Introduction: React.FunctionComponent = () => {
       </Section>
       <Section>
         <Title bgUrl={require("assets/texture.jpg").default} isHeader={false}>
-          #무한 스크롤링(Inifite Scrolliing)
+          #무한 스크롤링(Infinite Scrolliing)
         </Title>
         <ImageContainer>
           <Image src={require("assets/about_04.gif").default} />
