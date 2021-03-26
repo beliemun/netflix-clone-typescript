@@ -1,6 +1,16 @@
-- aws 에서 앱을 등록한다.(웹호스팅)
+<중요>튜토리얼 : https://aws.amazon.com/ko/getting-started/hands-on/build-react-app-amplify-graphql/
 
-- aws cli로 aws config를 생성한다.
+aws 에서 앱을 등록한다.(웹호스팅)
+aws cli로 aws config를 생성한다.
 1. npm install -g @aws-amplify/cli
 2. amplify configure
 
+<중요>asw-export.js는 백엔드 빌드시 생성되는 파일. 기값을 가지고 있기 때문에 깃에 업로드하면 안됨. 
+따라서 AWS amplify console에서 프론트엔드 페이지에서 [앱 설정] >[일반]에서 Service role을 정해줘야 함.
+Service role은 처음에 None으로 설정되어 있음. 설정한 이후 [빌드 설정]으로 이동해서 아래 코드를 프론트엔드 빌드 전에 실행되도록 추가.
+
+backend:
+  phases:
+    build:
+      commands:
+        - amplifyPush --simple
