@@ -8,7 +8,7 @@ export const Container = styled.div`
   left: 0;
   width: 100%;
   display: grid;
-  grid-template-columns: min-content minmax(min-content, 1fr) min-content;
+  grid-template-columns: min-content minmax(min-content, 1fr) min-content max-content;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(7px);
   z-index: 100;
@@ -160,5 +160,23 @@ export const Search = styled.div<{ current: string }>`
       font-size: 15px;
       transition: all 0.3s ease-in-out;
     }
+  }
+`;
+
+export const Auth = styled.div`
+  display: felx;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 10px;
+  @media (max-width: 850px) {
+    display: none;
+  }
+`;
+
+export const AuthItem = styled(Link)`
+  padding: 10px;
+  @media (max-width: 1080px) {
+    font-size: 12px;
   }
 `;

@@ -22,7 +22,7 @@ export const Form = styled.form`
     margin-right: 20px;
   }
   margin-top: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   padding: 10px;
   @media (max-width: 720px) {
     i {
@@ -107,5 +107,15 @@ export const MenuItem = styled.div<{ current: boolean }>`
     padding: 6px;
     border-radius: 6px;
     font-size: 12px;
+  }
+`;
+
+export const SubTitle = styled.h1`
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 40px;
+  color: ${Colors.secondary};
+  @media (max-width: 720px) {
+    font-size: 14px;
   }
 `;

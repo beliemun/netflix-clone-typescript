@@ -48,7 +48,7 @@ const Series: React.FunctionComponent = () => (
 
       <Section>
         <Title bgUrl={require("assets/texture.jpg").default} isHeader={false}>
-          #니꼬플릭스(NICOFLIC)
+          #니꼬플릭스(NICOFLIX)
         </Title>
         <ImageContainer>
           <Image src={require("assets/nicoflix.jpg").default} />

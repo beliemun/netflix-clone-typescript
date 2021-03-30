@@ -44,6 +44,13 @@ const GlobalStyles = createGlobalStyle`
             outline: none;
         }
     }
+    input {
+      background:none;
+      border-style:none;
+      border:0;
+      padding:0;
+      margin:0;
+    }
 `;
 
 export default GlobalStyles;

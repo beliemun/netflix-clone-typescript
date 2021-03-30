@@ -1,6 +1,15 @@
 import React from "react";
 import { Link, withRouter, RouteComponentProps } from "react-router-dom";
-import { Container, Item, List, Logo, Menu, Search } from "./style";
+import {
+  Auth,
+  Container,
+  Item,
+  List,
+  Logo,
+  Menu,
+  Search,
+  AuthItem,
+} from "./style";
 import { useLottie } from "lottie-react";
 import data from "Components/Lottie";
 
@@ -67,6 +76,12 @@ const Header: React.FunctionComponent<RouteComponentProps> = ({
           <i className="fas fa-search"></i>
         </Link>
       </Search>
+
+      <Auth>
+        <AuthItem to="/signin">Sign In</AuthItem>
+        {" | "}
+        <AuthItem to="/signup">Sign Up</AuthItem>
+      </Auth>
     </Container>
   );
 };

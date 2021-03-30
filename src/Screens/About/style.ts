@@ -32,7 +32,6 @@ export const Banner = styled.div<{ bgUrl: string }>`
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
-  /* margin-bottom: 10px; */
   @media (max-width: 1080px) {
     width: 180px;
     height: 90px;

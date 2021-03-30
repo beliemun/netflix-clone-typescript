@@ -8,6 +8,7 @@ import {
   Description,
   MenuContainer,
   MenuItem,
+  SubTitle,
 } from "./style";
 import Base from "Components/Base";
 import ApiSearchParser from "Components/ApiSearchParser";
@@ -167,6 +168,9 @@ const Search: React.FunctionComponent<RouteComponentProps & IProps> = (
             placeholder="Search by term"
           ></Input>
         </Form>
+        <SubTitle>
+          * Do not include Empty characters in the search term!
+        </SubTitle>
         <Base.GradientLine />
       </Container>
       <Menu />
