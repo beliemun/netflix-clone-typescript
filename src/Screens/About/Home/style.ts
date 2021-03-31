@@ -7,6 +7,20 @@ export const Container = styled.div`
   width: 100%;
   min-height: 70vh;
   padding-left: 30px;
+  opacity: 0;
+  animation: FadeIn 1s ease-in-out forwards;
+
+  @keyframes FadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
   @media (max-width: 720px) {
   }
   @media (max-width: 480px) {

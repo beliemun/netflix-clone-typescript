@@ -1,8 +1,87 @@
-import React from "react";
-import { Container } from "./style";
+import React, { useState } from "react";
+import {
+  Container,
+  BannerContainer,
+  Banner,
+  Form,
+  Section,
+  Title,
+  Description,
+  ProfileContainer,
+  Poster,
+  Message,
+  InputTitle,
+  Input,
+  Label,
+  RadioContainer,
+  Radio,
+  Submit,
+  Alert,
+} from "./style";
+import Base from "Components/Base";
+import Footer from "Components/Footer";
+import { auth } from "fb";
+import { Redirect, useHistory } from "react-router";
 
 const SignIn: React.FunctionComponent = () => {
-  return <Container>Sign In</Container>;
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  let history = useHistory();
+
+  const onSubmit = (e: React.SyntheticEvent): void => {
+    e.preventDefault();
+    signIn();
+  };
+
+  const signIn = () => {
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        history.push("/");
+      })
+      .catch((e) => {
+        window.alert(e.message);
+      });
+  };
+
+  return (
+    <Container>
+      <Form onSubmit={onSubmit}>
+        <BannerContainer>
+          <Banner bgUrl={require("assets/title.png").default} />
+          <Title>Login</Title>
+          <Description>Please enter your email and password.</Description>
+        </BannerContainer>
+        <Base.GradientLine />
+        <Base.Height height={50} />
+
+        <Section>
+          <InputTitle htmlFor="email">Email</InputTitle>
+          <Input
+            type="email"
+            id="email"
+            name="email"
+            required
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </Section>
+
+        <Section>
+          <InputTitle htmlFor="password">Password</InputTitle>
+          <Input
+            type="password"
+            id="password"
+            name="password"
+            required
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Alert>⚠️ Please enter at least 6 characters.</Alert>
+        </Section>
+
+        <Submit type="submit" value="Login" />
+      </Form>
+    </Container>
+  );
 };
 
 export default SignIn;

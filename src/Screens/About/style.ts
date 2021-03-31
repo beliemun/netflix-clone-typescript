@@ -4,6 +4,19 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 0;
+  animation: FadeIn 1s ease-in-out forwards;
+
+  @keyframes FadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
 `;
 
 export const GridContainer = styled.div`

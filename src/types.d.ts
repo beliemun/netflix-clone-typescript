@@ -1,6 +1,10 @@
-import {} from "react";
+import firebase from "firebase";
 
 type MediaType = "movie" | "tv" | "person";
+
+interface IUser {
+  user: firebase.User | null;
+}
 
 interface IVideo {
   id: number;

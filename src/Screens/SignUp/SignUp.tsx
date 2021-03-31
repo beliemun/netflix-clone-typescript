@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Container,
+  BannerContainer,
   Banner,
   Form,
   Section,
@@ -19,6 +20,7 @@ import {
 } from "./style";
 import Base from "Components/Base";
 import Footer from "Components/Footer";
+import { auth } from "fb";
 
 const SignUp: React.FunctionComponent = () => {
   const [email, setEmail] = useState("");
@@ -40,10 +42,6 @@ const SignUp: React.FunctionComponent = () => {
       window.alert("비밀번호가 일치하지 않습니다. 다시 입력해주세요.");
       clearPassword();
       return false;
-    } else if (password.length < 8) {
-      window.alert("비밀번호는 8글자입니다. 다시 입력해주세요.");
-      clearPassword();
-      return false;
     }
     return true;
   };
@@ -56,37 +54,62 @@ const SignUp: React.FunctionComponent = () => {
 
   const onSubmit = (e: React.SyntheticEvent): void => {
     e.preventDefault();
+
     if (checkPassword()) {
-      // 비번 일치 확인
-      console.log(
-        `email:${email}, password:${password}, confirm:${confirm}, name:${name}, gender:${gender}`
-      );
+      createAccount();
     }
   };
+
+  const createAccount = async () => {
+    try {
+      const user = await auth.createUserWithEmailAndPassword(email, password);
+      console.log(user);
+    } catch (e) {
+      console.log(e);
+      if (e.code == "auth/email-already-in-use") {
+        window.alert("이미 사용중인 이메일입니다. 다시 입력해주세요.");
+        clearEmail();
+      } else if (e.code == "auth/invalid-email") {
+        window.alert("이메일 형식이 올바르지 않습니다. 다시 입력해주세요.");
+        clearEmail();
+      } else if (e.code == "auth/operation-not-allowed") {
+        window.alert(
+          "이메일/비밀번호 가입이 불가합니다. 관리자에게 문의하세요."
+        );
+      } else if (e.code == "auth/weak-password") {
+        window.alert("비밀번호는 6글자 이상입니다. 다시 입력해주세요.");
+        clearPassword();
+      } else {
+        window.alert(e.message);
+      }
+    }
+  };
+
   return (
     <Container>
-      <Banner bgUrl={require("assets/title.png").default} />
-      <Base.GradientLine />
       <ProfileContainer>
         <Poster src={require("assets/profile.jpg").default} />
         <Message>
           회원 가입은 필수가 아닙니다.
           <br />
-          본래 노마드코더의 ReactJS 강의에서는 회원가입 기능이 없지만, 회원 전용
-          방명록 기능을 넣기 위해서 추가하였습니다. 가입 후 ABOUT 화면에서
-          회원만 글을 작성할 수 있습니다. 이것 역시 노마드코더에서 무료로
-          제공하는 트위터 클론 강의로 도움을 받았고, Google Firebase가 아닌 AWS
-          Amplify를 사용해보았습니다.
+          본래 노마드코더의 ReactJS 강의에서는 회원가입 기능이 없지만,
+          방문자들이 간단히 글을 작성할 수 있는 공간을 만들고 싶어서
+          추가하였습니다. 가입된 사용자만이 ABOUT 화면에서 글을 작성할 수
+          있습니다. 이 부분은 노마드코더에서 무료로 제공하는 트위터 클론 강의로
+          도움을 받았으며 Google Firebase를 사용하였습니다.
         </Message>
       </ProfileContainer>
       <Form onSubmit={onSubmit}>
-        <Title>신규 계정 만들기</Title>
-        <Description>모든 입력란은 필수 항목입니다.</Description>
+        <BannerContainer>
+          <Banner bgUrl={require("assets/title.png").default} />
+          <Title>Create a new acccount</Title>
+          <Description>All fields are required.</Description>
+        </BannerContainer>
         <Base.GradientLine />
-        <Base.Height height={30} />
+        <Base.Height height={50} />
 
         <Section>
-          <InputTitle htmlFor="email">이메일</InputTitle>
+          <InputTitle htmlFor="email">Email</InputTitle>
           <Input
             type="email"
             id="email"
@@ -94,14 +117,10 @@ const SignUp: React.FunctionComponent = () => {
             required
             onChange={(e) => setEmail(e.target.value)}
           />
-          <Alert>
-            ⚠️ 가입 인증번호가 전송됩니다. 실제로 사용하는 이메일을
-            입력해주세요.
-          </Alert>
         </Section>
 
         <Section>
-          <InputTitle htmlFor="password">비밀번호</InputTitle>
+          <InputTitle htmlFor="password">Password</InputTitle>
           <Input
             type="password"
             id="password"
@@ -109,10 +128,11 @@ const SignUp: React.FunctionComponent = () => {
             required
             onChange={(e) => setPassword(e.target.value)}
           />
+          <Alert>⚠️ Please enter at least 6 characters.</Alert>
         </Section>
 
         <Section>
-          <InputTitle htmlFor="confirm">비밀번호 확인</InputTitle>
+          <InputTitle htmlFor="confirm">Confirm Password</InputTitle>
           <Input
             type="password"
             id="confirm"
@@ -123,7 +143,7 @@ const SignUp: React.FunctionComponent = () => {
         </Section>
 
         <Section>
-          <InputTitle htmlFor="name">닉네임</InputTitle>
+          <InputTitle htmlFor="name">Name</InputTitle>
           <Input
             type="text"
             id="name"
@@ -131,13 +151,14 @@ const SignUp: React.FunctionComponent = () => {
             required
             onChange={(e) => setName(e.target.value)}
           />
+          <Alert>⚠️ When you create a comment, it appears as the author.</Alert>
         </Section>
 
         <Section>
-          <InputTitle>성별</InputTitle>
+          <InputTitle>Gender</InputTitle>
           <RadioContainer>
             <Label htmlFor="male">
-              남성
+              Male
               <Radio
                 type="radio"
                 id="male"
@@ -147,7 +168,7 @@ const SignUp: React.FunctionComponent = () => {
               />
             </Label>
             <Label htmlFor="female">
-              여성
+              Female
               <Radio
                 type="radio"
                 name="gender"
@@ -159,7 +180,7 @@ const SignUp: React.FunctionComponent = () => {
           </RadioContainer>
         </Section>
 
-        <Submit type="submit" value="계정 생성" />
+        <Submit type="submit" value="Create a new account" />
       </Form>
       <Footer />
     </Container>

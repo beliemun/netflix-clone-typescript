@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, withRouter, RouteComponentProps } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import {
   Auth,
   Container,
@@ -9,13 +9,21 @@ import {
   Menu,
   Search,
   AuthItem,
+  SignOutButton,
 } from "./style";
 import { useLottie } from "lottie-react";
 import data from "Components/Lottie";
+import { IUser } from "types";
+import { auth } from "fb";
 
-const Header: React.FunctionComponent<RouteComponentProps> = ({
-  location: { pathname },
-}) => {
+const Header: React.FunctionComponent<IUser> = ({ user }) => {
+  const [pathname, setPathname] = useState("");
+  let location = useLocation();
+
+  useEffect(() => {
+    setPathname(location.pathname);
+  }, [location]);
+
   const LottieView = () => {
     const style = { height: 30 };
     const options = {
@@ -28,6 +36,10 @@ const Header: React.FunctionComponent<RouteComponentProps> = ({
 
     return Lottie.View;
   };
+
+  useEffect(() => {
+    console.log(user);
+  }, []);
 
   return (
     <Container>
@@ -78,12 +90,22 @@ const Header: React.FunctionComponent<RouteComponentProps> = ({
       </Search>
 
       <Auth>
-        <AuthItem to="/signin">Sign In</AuthItem>
-        {" | "}
-        <AuthItem to="/signup">Sign Up</AuthItem>
+        {user ? (
+          <>
+            <AuthItem to="/my-profile">Profile</AuthItem>
+            {" | "}
+            <SignOutButton onClick={() => auth.signOut()}>Logout</SignOutButton>
+          </>
+        ) : (
+          <>
+            <AuthItem to="/signin">Login</AuthItem>
+            {" | "}
+            <AuthItem to="/signup">Join</AuthItem>
+          </>
+        )}
       </Auth>
     </Container>
   );
 };
 
-export default withRouter(Header);
+export default Header;

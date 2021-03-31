@@ -41,7 +41,7 @@ const PeopleDetail: React.FunctionComponent<
         // Set fake loading time
         setTimeout(() => {
           setLoading(false);
-        }, getRandomInt(500, 2000));
+        }, getRandomInt(300, 1000));
       } catch (e) {
         console.log(e);
       }

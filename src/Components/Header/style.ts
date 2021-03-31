@@ -180,3 +180,11 @@ export const AuthItem = styled(Link)`
     font-size: 12px;
   }
 `;
+
+export const SignOutButton = styled.div`
+  padding: 10px;
+  @media (max-width: 1080px) {
+    font-size: 12px;
+  }
+  cursor: pointer;
+`;

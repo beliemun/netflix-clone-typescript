@@ -13,10 +13,11 @@ import Search from "Screens/Search";
 import About from "Screens/About";
 import SignUp from "Screens/SignUp";
 import SignIn from "Screens/SignIn";
+import { IUser } from "types";
 
-const Router: React.FunctionComponent = () => (
+const Router: React.FunctionComponent<IUser> = ({ user }) => (
   <HashRouter>
-    <Header />
+    <Header user={user} />
     <Switch>
       <Route path="/" component={Home} exact />
       <Route path="/movie" component={Video} />
