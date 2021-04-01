@@ -9,6 +9,7 @@ import {
   LinkText,
 } from "./style";
 import Base from "Components/Base";
+import GuestBook from "Components/GuestBook";
 import { IUser } from "types";
 
 const Home: React.FunctionComponent<IUser> = ({ user }) => (
@@ -49,6 +50,7 @@ const Home: React.FunctionComponent<IUser> = ({ user }) => (
         </>
       )}
     </Description>
+    <GuestBook user={user} />
   </Container>
 );
 

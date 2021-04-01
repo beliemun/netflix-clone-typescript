@@ -1,5 +1,4 @@
 import Colors from "Components/Colors";
-import { LeftTitle } from "Components/Footer/style";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 

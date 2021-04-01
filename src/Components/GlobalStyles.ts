@@ -46,6 +46,7 @@ const GlobalStyles = createGlobalStyle`
         border-style:none;
     }
     input {
+      color:inherit;
       background:none;
       border-style:none;
       border:0;
