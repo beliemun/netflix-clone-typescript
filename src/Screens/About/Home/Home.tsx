@@ -34,9 +34,9 @@ const Home: React.FunctionComponent<IUser> = ({ user }) => (
     </ProfileContainer>
     <Base.GradientLine />
     <Base.Height height={30} />
-    <Title bgUrl={require("assets/texture.jpg").default} isHeader={true}>
+    {/* <Title bgUrl={require("assets/texture.jpg").default} isHeader={true}>
       방명록 남기기
-    </Title>
+    </Title> */}
     <Description>
       방문자들이 글을 남길 수 있는 공간입니다. 간단한 회원 가입후 글을
       남겨보세요.

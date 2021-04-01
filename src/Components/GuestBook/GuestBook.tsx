@@ -17,12 +17,19 @@ const GuestBook: React.FunctionComponent<IUser> = ({ user }) => {
   const onSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     console.log(text);
+    const input = document.getElementById("input-text") as HTMLInputElement;
+    input.value = "";
   };
   return (
     <Container>
       <Form onSubmit={onSubmit}>
-        <TextInput type="text" onChange={(e) => setText(e.target.value)} />
-        <SubmitInput type="submit" />
+        <TextInput
+          id="input-text"
+          type="text"
+          onChange={(e) => setText(e.target.value)}
+          placeholder="여기에 글을 남겨보세요."
+        />
+        <SubmitInput type="submit" value="작성하기" />
       </Form>
     </Container>
   );
