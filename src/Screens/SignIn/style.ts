@@ -64,10 +64,9 @@ export const Description = styled.p`
   font-size: 14px;
   font-weight: 300;
   line-height: 1.5;
-  margin: 0px 30px 15px;
+  margin: 0px 30px 50px;
   text-align: center;
   transition: all 0.2s ease-in-out;
-  margin-bottom: 50px;
   @media (max-width: 720px) {
     font-size: 13px;
     margin-bottom: 30px;
@@ -78,66 +77,14 @@ export const Description = styled.p`
   }
 `;
 
-export const ProfileContainer = styled.div`
-  display: flex;
-  max-width: 720px;
-  margin: 30px;
-  @media (max-width: 720px) {
-    margin: 20px;
-  }
-`;
-
-export const Poster = styled.img`
-  min-width: 60px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  @media (max-width: 720px) {
-    min-width: 40px;
-    width: 40px;
-    height: 40px;
-  }
-  @media (max-width: 480px) {
-    min-width: 30px;
-    width: 30px;
-    height: 30px;
-  }
-`;
-
-export const Message = styled.h3`
-  flex: auto;
-  width: 100%;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.5;
-  letter-spacing: 1px;
-  color: ${Colors.text.primary};
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 15px;
-  border-radius: 0 15px 15px;
-  margin-left: 10px;
-  @media (max-width: 720px) {
-    font-size: 14px;
-    padding: 12px;
-    border-radius: 0 12px 12px;
-    margin-left: 10px;
-  }
-  @media (max-width: 480px) {
-    font-size: 13px;
-    padding: 8px;
-    border-radius: 0 8px 8px;
-    margin-left: 10px;
-  }
-`;
-
 export const Form = styled.form`
   width: 100%;
   max-width: 720px;
   padding: 30px;
-  margin-bottom: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.3);
-  margin-top: 30px;
   @media (max-width: 720px) {
     padding: 20px;
   }
@@ -196,21 +143,6 @@ export const Input = styled.input`
   }
 `;
 
-export const Label = styled.label`
-  font-size: 16px;
-  padding: 10px;
-`;
-
-export const RadioContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-`;
-
-export const Radio = styled.input`
-  margin-left: 10px;
-`;
-
 export const Submit = styled.input`
   width: 100%;
   font-size: 16px;
@@ -219,6 +151,7 @@ export const Submit = styled.input`
   margin-top: 40px;
   background: linear-gradient(to left, #8a2387, #e94057, #f27121);
   border-radius: 0 20px 20px;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
   @media (max-width: 720px) {
     font-size: 15px;
@@ -229,6 +162,9 @@ export const Submit = styled.input`
     font-size: 14px;
     padding: 12px;
     border-radius: 0 12px 12px;
+  }
+  &:hover {
+    transform: scale(1.05);
   }
 `;
 

@@ -20,6 +20,7 @@ import {
 } from "./style";
 import Base from "Components/Base";
 import Footer from "Components/Footer";
+import SocialLogin from "Components/SocialLogin";
 import { auth } from "fb";
 import { useHistory } from "react-router";
 
@@ -88,104 +89,110 @@ const SignUp: React.FunctionComponent = () => {
   };
 
   return (
-    <Container>
-      <ProfileContainer>
-        <Poster src={require("assets/profile.jpg").default} />
-        <Message>
-          회원 가입은 필수가 아닙니다.
-          <br />
-          본래 노마드코더의 ReactJS 강의에서는 회원가입 기능이 없지만,
-          방문자들이 간단히 글을 작성할 수 있는 공간을 만들고 싶어서
-          추가하였습니다. 가입된 사용자만이 ABOUT 화면에서 글을 작성할 수
-          있습니다. 이 부분은 노마드코더에서 무료로 제공하는 트위터 클론 강의로
-          도움을 받았으며 Google Firebase를 사용하였습니다.
-        </Message>
-      </ProfileContainer>
-      <Form onSubmit={onSubmit}>
-        <BannerContainer>
-          <Banner bgUrl={require("assets/title.png").default} />
-          <Title>Create a new acccount</Title>
-          <Description>All fields are required.</Description>
-        </BannerContainer>
-        <Base.GradientLine />
-        <Base.Height height={50} />
+    <>
+      <Container>
+        <ProfileContainer>
+          <Poster src={require("assets/profile.jpg").default} />
+          <Message>
+            회원 가입은 필수가 아닙니다.
+            <br />
+            본래 노마드코더의 ReactJS 강의에서는 회원가입 기능이 없지만,
+            방문자들이 간단히 글을 작성할 수 있는 공간을 만들고 싶어서
+            추가하였습니다. 가입된 사용자만이 ABOUT 화면에서 글을 작성할 수
+            있습니다. 이 부분은 노마드코더에서 무료로 제공하는 트위터 클론
+            강의로 도움을 받았으며 Google Firebase를 사용하였습니다.
+          </Message>
+        </ProfileContainer>
+        <Form onSubmit={onSubmit}>
+          <BannerContainer>
+            <Banner bgUrl={require("assets/title.png").default} />
+            <Title>Create a new acccount</Title>
+            <Description>All fields are required.</Description>
+          </BannerContainer>
+          <Base.GradientLine />
+          <Base.Height height={50} />
 
-        <Section>
-          <InputTitle htmlFor="email">Email</InputTitle>
-          <Input
-            type="email"
-            id="email"
-            name="email"
-            required
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Section>
+          <Section>
+            <InputTitle htmlFor="email">Email</InputTitle>
+            <Input
+              type="email"
+              id="email"
+              name="email"
+              required
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Section>
 
-        <Section>
-          <InputTitle htmlFor="password">Password</InputTitle>
-          <Input
-            type="password"
-            id="password"
-            name="password"
-            required
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <Alert>⚠️ Please enter at least 6 characters.</Alert>
-        </Section>
+          <Section>
+            <InputTitle htmlFor="password">Password</InputTitle>
+            <Input
+              type="password"
+              id="password"
+              name="password"
+              required
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <Alert>⚠️ Please enter at least 6 characters.</Alert>
+          </Section>
 
-        <Section>
-          <InputTitle htmlFor="confirm">Confirm Password</InputTitle>
-          <Input
-            type="password"
-            id="confirm"
-            name="confirm"
-            required
-            onChange={(e) => setConfirm(e.target.value)}
-          />
-        </Section>
+          <Section>
+            <InputTitle htmlFor="confirm">Confirm Password</InputTitle>
+            <Input
+              type="password"
+              id="confirm"
+              name="confirm"
+              required
+              onChange={(e) => setConfirm(e.target.value)}
+            />
+          </Section>
 
-        <Section>
-          <InputTitle htmlFor="name">Name</InputTitle>
-          <Input
-            type="text"
-            id="name"
-            name="name"
-            required
-            onChange={(e) => setName(e.target.value)}
-          />
-          <Alert>⚠️ When you create a comment, it appears as the author.</Alert>
-        </Section>
+          <Section>
+            <InputTitle htmlFor="name">Name</InputTitle>
+            <Input
+              type="text"
+              id="name"
+              name="name"
+              required
+              onChange={(e) => setName(e.target.value)}
+            />
+            <Alert>
+              ⚠️ When you create a comment, it appears as the author.
+            </Alert>
+          </Section>
 
-        <Section>
-          <InputTitle>Gender</InputTitle>
-          <RadioContainer>
-            <Label htmlFor="male">
-              Male
-              <Radio
-                type="radio"
-                id="male"
-                name="gender"
-                required
-                onChange={(e) => setGender("Male")}
-              />
-            </Label>
-            <Label htmlFor="female">
-              Female
-              <Radio
-                type="radio"
-                name="gender"
-                id="female"
-                required
-                onChange={(e) => setGender("Female")}
-              />
-            </Label>
-          </RadioContainer>
-        </Section>
+          <Section>
+            <InputTitle>Gender</InputTitle>
+            <RadioContainer>
+              <Label htmlFor="male">
+                Male
+                <Radio
+                  type="radio"
+                  id="male"
+                  name="gender"
+                  required
+                  onChange={(e) => setGender("Male")}
+                />
+              </Label>
+              <Label htmlFor="female">
+                Female
+                <Radio
+                  type="radio"
+                  name="gender"
+                  id="female"
+                  required
+                  onChange={(e) => setGender("Female")}
+                />
+              </Label>
+            </RadioContainer>
+          </Section>
 
-        <Submit type="submit" value="Create a new account" />
-      </Form>
+          <Submit type="submit" value="Create a new account" />
+        </Form>
+      </Container>
+      <Base.GradientLine />
+      <SocialLogin />
       <Footer />
-    </Container>
+    </>
   );
 };
 

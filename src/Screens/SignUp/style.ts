@@ -50,7 +50,6 @@ export const Title = styled.h1`
   font-size: 32px;
   font-weight: 500;
   margin-bottom: 15px;
-  text-align: center;
   transition: all 0.2s ease-in-out;
   @media (max-width: 720px) {
     font-size: 24px;
@@ -66,7 +65,6 @@ export const Description = styled.p`
   font-weight: 300;
   line-height: 1.5;
   margin: 0px 30px 15px;
-  text-align: center;
   transition: all 0.2s ease-in-out;
   margin-bottom: 50px;
   @media (max-width: 720px) {
@@ -135,7 +133,7 @@ export const Form = styled.form`
   width: 100%;
   max-width: 720px;
   padding: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.3);
   @media (max-width: 720px) {
@@ -214,6 +212,7 @@ export const Submit = styled.input`
   margin-top: 40px;
   background: linear-gradient(to left, #8a2387, #e94057, #f27121);
   border-radius: 0 20px 20px;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
   @media (max-width: 720px) {
     font-size: 15px;
@@ -224,6 +223,10 @@ export const Submit = styled.input`
     font-size: 14px;
     padding: 12px;
     border-radius: 0 12px 12px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
   }
 `;
 

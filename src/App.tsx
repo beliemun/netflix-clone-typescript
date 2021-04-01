@@ -3,7 +3,6 @@ import Router from "./Router";
 import GlobalStyle from "Components/GlobalStyles";
 import firebase from "firebase";
 import { auth } from "fb";
-import { IUser, AuthType } from "types";
 
 const App = () => {
   const [user, setUser] = useState<firebase.User | null>(null);

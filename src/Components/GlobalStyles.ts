@@ -43,6 +43,7 @@ const GlobalStyles = createGlobalStyle`
         &:focus {
             outline: none;
         }
+        border-style:none;
     }
     input {
       background:none;
