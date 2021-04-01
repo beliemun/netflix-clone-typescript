@@ -1,5 +1,5 @@
-import React from "react";
-import { RouteComponentProps } from "react-router";
+import React, { useEffect, useState } from "react";
+import { RouteComponentProps, useLocation } from "react-router";
 import {
   Conainter,
   MenuContainer,
@@ -12,9 +12,13 @@ import Base from "Components/Base";
 import { useLottie } from "lottie-react";
 import data from "Components/Lottie";
 
-const Menu: React.FunctionComponent<RouteComponentProps> = ({
-  location: { pathname },
-}) => {
+const Menu: React.FunctionComponent = () => {
+  const [pathname, setPathname] = useState("");
+  let location = useLocation();
+  useEffect(() => {
+    setPathname(location.pathname);
+  }, [location]);
+
   const LottieView = () => {
     const style = { height: 130, marginBottom: -20 };
     const options = {

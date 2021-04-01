@@ -3,7 +3,7 @@ import Colors from "Components/Colors";
 import { AuthType } from "types";
 
 export const Container = styled.div<{ authType: AuthType }>`
-  position: absolute;
+  position: fixed;
   z-index: 200;
   top: 0px;
   left: 0;

@@ -13,6 +13,7 @@ import Search from "Screens/Search";
 import About from "Screens/About";
 import SignUp from "Screens/SignUp";
 import SignIn from "Screens/SignIn";
+import Profile from "Screens/Profile";
 import { IUser } from "types";
 
 const Router: React.FunctionComponent<IUser> = ({ user }) => (
@@ -23,11 +24,12 @@ const Router: React.FunctionComponent<IUser> = ({ user }) => (
       <Route path="/movie" component={Video} />
       <Route path="/tv" component={Video} />
       <Route path="/person" component={People} />
-      <Route path="/about" component={About} />
       <Route path="/search" component={Search} exact />
       <Route path="/search/:keyword" component={Search} />
+      <Route path="/about" render={() => <About user={user} />} />
       <Route path="/signup" component={SignUp} />
       <Route path="/signin" component={SignIn} />
+      <Route path="/profile" component={Profile} />
       <Redirect from="*" to="/" />
     </Switch>
   </HashRouter>

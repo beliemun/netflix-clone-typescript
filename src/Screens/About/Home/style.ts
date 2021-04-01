@@ -5,7 +5,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  min-height: 70vh;
   padding-left: 30px;
   opacity: 0;
   animation: FadeIn 1s ease-in-out forwards;
@@ -271,4 +270,28 @@ export const SeriesText = styled.h4`
   line-height: 1.2;
   margin-bottom: 10px;
   color: ${Colors.secondary};
+`;
+
+export const Description = styled.p`
+  color: ${Colors.secondary};
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0px 30px 15px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  @media (max-width: 720px) {
+    font-size: 13px;
+    margin-bottom: 30px;
+  }
+  @media (max-width: 480px) {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+`;
+
+export const LinkText = styled(Link)`
+  font-weight: 500;
+  text-decoration: underline;
+  margin: 5px;
 `;

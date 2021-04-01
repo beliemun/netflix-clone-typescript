@@ -42,7 +42,7 @@ const Header: React.FunctionComponent<IUser> = ({ user }) => {
   return (
     <>
       {user && (
-        <FlashMessage authType="sign-in" text={`Hello, {displayName}!`} />
+        <FlashMessage authType="sign-in" text={`Hello, ${user.displayName}!`} />
       )}
       {signedOut && (
         <FlashMessage
@@ -103,7 +103,7 @@ const Header: React.FunctionComponent<IUser> = ({ user }) => {
         <Auth>
           {user ? (
             <>
-              <AuthItem to="/my-profile">Profile</AuthItem>
+              <AuthItem to="/profile">Profile</AuthItem>
               {" | "}
               <SignOutButton
                 onClick={() => {

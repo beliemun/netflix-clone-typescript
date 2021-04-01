@@ -8,15 +8,16 @@ import Recommendation from "./Recommendation";
 import Series from "./Series";
 import Footer from "Components/Footer";
 import Base from "Components/Base";
+import { IUser } from "types";
 
-const About: React.FunctionComponent<RouteComponentProps> = (props) => (
+const About: React.FunctionComponent<IUser> = ({ user }) => (
   <Container>
     <Banner bgUrl={require("assets/title.png").default} />
     <Base.GradientLine />
     <GridContainer>
-      <Menu {...props} />
+      <Menu />
       <Switch>
-        <Route path="/about" component={Home} exact />
+        <Route path="/about" render={() => <Home user={user} />} exact />
         <Route path="/about/introduction" component={Introduction} />
         <Route path="/about/recommendation" component={Recommendation} />
         <Route path="/about/series" component={Series} />
