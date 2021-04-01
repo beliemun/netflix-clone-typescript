@@ -1,6 +1,7 @@
 import firebase from "firebase";
 
 type MediaType = "movie" | "tv" | "person";
+type AuthType = "sign-in" | "signed-out" | "un-ahth";
 
 interface IUser {
   user: firebase.User | null;

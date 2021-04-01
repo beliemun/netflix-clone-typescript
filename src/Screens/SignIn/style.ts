@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Colors from "Components/Colors";
 
@@ -191,8 +190,7 @@ export const Input = styled.input`
   color: ${Colors.text.primary};
   font-size: 16px;
   padding: 10px 0;
-  &:focus,
-  :hover {
+  &:focus {
     border-bottom: 3px solid ${Colors.primary};
     color: ${Colors.primary};
   }

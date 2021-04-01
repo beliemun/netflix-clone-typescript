@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Colors from "Components/Colors";
+import { AuthType } from "types";
 
 export const Container = styled.div`
   position: fixed;

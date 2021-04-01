@@ -21,6 +21,7 @@ import {
 import Base from "Components/Base";
 import Footer from "Components/Footer";
 import { auth } from "fb";
+import { useHistory } from "react-router";
 
 const SignUp: React.FunctionComponent = () => {
   const [email, setEmail] = useState("");
@@ -28,6 +29,7 @@ const SignUp: React.FunctionComponent = () => {
   const [confirm, setConfirm] = useState("");
   const [name, setName] = useState("");
   const [gender, setGender] = useState("");
+  let history = useHistory();
 
   const clearPassword = () => {
     const password = document.getElementById("password") as HTMLInputElement;
@@ -63,7 +65,7 @@ const SignUp: React.FunctionComponent = () => {
   const createAccount = async () => {
     try {
       const user = await auth.createUserWithEmailAndPassword(email, password);
-      console.log(user);
+      history.push("/");
     } catch (e) {
       console.log(e);
       if (e.code == "auth/email-already-in-use") {
