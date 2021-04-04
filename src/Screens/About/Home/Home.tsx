@@ -12,7 +12,11 @@ import Base from "Components/Base";
 import GuestBook from "Components/GuestBook";
 import { IUser } from "types";
 
-const Home: React.FunctionComponent<IUser> = ({ user }) => (
+interface IProps {
+  user: IUser | null;
+}
+
+const Home: React.FunctionComponent<IProps> = ({ user }) => (
   <Container>
     <Title bgUrl={require("assets/texture.jpg").default} isHeader={true}>
       너는 누구냐?

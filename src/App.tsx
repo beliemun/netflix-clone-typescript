@@ -1,16 +1,28 @@
 import React, { useEffect, useState } from "react";
 import Router from "./Router";
 import GlobalStyle from "Components/GlobalStyles";
-import firebase from "firebase";
-import { auth } from "fb";
+import { auth, fs } from "fb";
+import { IUser } from "types";
 
 const App = () => {
-  const [user, setUser] = useState<firebase.User | null>(null);
+  const [user, setUser] = useState<IUser | null>(null);
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
-        setUser(user);
+        fs.doc(`users/${user.uid}`)
+          .get()
+          .then((doc) => {
+            const data = doc.data() as IUser;
+            setUser({
+              uid: data.uid,
+              name: data.name,
+              gender: data.gender,
+              createdAt: data.createdAt,
+              photoURL: data.photoURL,
+              isAdmin: data.isAdmin,
+            });
+          });
       } else {
         setUser(null);
       }

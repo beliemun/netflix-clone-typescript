@@ -10,7 +10,11 @@ import Footer from "Components/Footer";
 import Base from "Components/Base";
 import { IUser } from "types";
 
-const About: React.FunctionComponent<IUser> = ({ user }) => (
+interface IProps {
+  user: IUser | null;
+}
+
+const About: React.FunctionComponent<IProps> = ({ user }) => (
   <Container>
     <Banner bgUrl={require("assets/title.png").default} />
     <Base.GradientLine />

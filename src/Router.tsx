@@ -16,7 +16,11 @@ import SignIn from "Screens/SignIn";
 import Profile from "Screens/Profile";
 import { IUser } from "types";
 
-const Router: React.FunctionComponent<IUser> = ({ user }) => (
+interface IProps {
+  user: IUser | null;
+}
+
+const Router: React.FunctionComponent<IProps> = ({ user }) => (
   <HashRouter>
     <Header user={user} />
     <Switch>

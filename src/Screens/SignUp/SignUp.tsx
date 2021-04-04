@@ -21,8 +21,9 @@ import {
 import Base from "Components/Base";
 import Footer from "Components/Footer";
 import SocialLogin from "Components/SocialLogin";
-import { auth } from "fb";
+import { auth, fs } from "fb";
 import { useHistory } from "react-router";
+import firebase from "firebase";
 
 const SignUp: React.FunctionComponent = () => {
   const [email, setEmail] = useState("");
@@ -63,9 +64,25 @@ const SignUp: React.FunctionComponent = () => {
     }
   };
 
+  const createUserDB = async (user: firebase.User) => {
+    fs.collection("users").doc(user.uid).set({
+      uid: user.uid,
+      name,
+      gender,
+      createdAt: Date.now(),
+      isAdmin: false,
+    });
+  };
+
   const createAccount = async () => {
     try {
-      const user = await auth.createUserWithEmailAndPassword(email, password);
+      const userCredential = await auth.createUserWithEmailAndPassword(
+        email,
+        password
+      );
+      if (userCredential.user) {
+        createUserDB(userCredential.user);
+      }
       history.push("/");
     } catch (e) {
       console.log(e);
@@ -170,7 +187,7 @@ const SignUp: React.FunctionComponent = () => {
                   id="male"
                   name="gender"
                   required
-                  onChange={(e) => setGender("Male")}
+                  onChange={() => setGender("Male")}
                 />
               </Label>
               <Label htmlFor="female">
@@ -180,7 +197,7 @@ const SignUp: React.FunctionComponent = () => {
                   name="gender"
                   id="female"
                   required
-                  onChange={(e) => setGender("Female")}
+                  onChange={() => setGender("Female")}
                 />
               </Label>
             </RadioContainer>

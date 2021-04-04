@@ -17,7 +17,11 @@ import FlashMessage from "Components/FlashMessage";
 import { IUser } from "types";
 import { auth } from "fb";
 
-const Header: React.FunctionComponent<IUser> = ({ user }) => {
+interface IProps {
+  user: IUser | null;
+}
+
+const Header: React.FunctionComponent<IProps> = ({ user }) => {
   const [pathname, setPathname] = useState("");
   const [signedOut, setSignedOut] = useState(false);
   let location = useLocation();
@@ -42,7 +46,10 @@ const Header: React.FunctionComponent<IUser> = ({ user }) => {
   return (
     <>
       {user && (
-        <FlashMessage authType="sign-in" text={`Hello, ${user.displayName}!`} />
+        <FlashMessage
+          authType="sign-in"
+          text={`Hello, ${user.name ? user.name : "Welcome"}!`}
+        />
       )}
       {signedOut && (
         <FlashMessage

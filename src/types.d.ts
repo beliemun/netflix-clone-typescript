@@ -2,9 +2,22 @@ import firebase from "firebase";
 
 type MediaType = "movie" | "tv" | "person";
 type AuthType = "sign-in" | "signed-out" | "un-ahth";
+type Gender = "Male" | "Female";
 
 interface IUser {
-  user: firebase.User | null;
+  uid: string;
+  name: string;
+  gender?: Gender;
+  createdAt: number;
+  photoURL?: string;
+  isAdmin: boolean;
+}
+
+interface IComment {
+  id: string;
+  text: string;
+  createdAt: number;
+  creatorId: string;
 }
 
 interface IVideo {
