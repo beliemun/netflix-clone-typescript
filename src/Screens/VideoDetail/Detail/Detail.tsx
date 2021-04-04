@@ -49,7 +49,7 @@ const Detail: React.FunctionComponent<IProps> = ({
         <Genres genre_ids={convertGenres(video.genres)} />
         <VideoSubTitle>
           {mediaType === "movie"
-            ? `${video.release_date.slice(0, 4)} • ${video.runtime}`
+            ? `${video.release_date.slice(0, 4)} • ${video.runtime}m`
             : `${video.first_air_date.slice(0, 4)} • ${
                 video.number_of_seasons
               } Seasons • ${video.number_of_episodes} Episodes`}
