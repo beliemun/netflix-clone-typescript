@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import {
   Auth,
   Container,
@@ -25,6 +25,7 @@ const Header: React.FunctionComponent<IProps> = ({ user }) => {
   const [pathname, setPathname] = useState("");
   const [signedOut, setSignedOut] = useState(false);
   let location = useLocation();
+  let history = useHistory();
 
   useEffect(() => {
     setPathname(location.pathname);
@@ -117,6 +118,9 @@ const Header: React.FunctionComponent<IProps> = ({ user }) => {
                   auth.signOut();
                   setSignedOut(true);
                   setTimeout(() => setSignedOut(false), 4000);
+                  if (pathname === "/profile") {
+                    history.push("/");
+                  }
                 }}
               >
                 Logout

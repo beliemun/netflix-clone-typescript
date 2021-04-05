@@ -4,6 +4,8 @@ import GlobalStyle from "Components/GlobalStyles";
 import { auth, fs } from "fb";
 import { IUser } from "types";
 
+// auth.signOut();
+
 const App = () => {
   const [user, setUser] = useState<IUser | null>(null);
 

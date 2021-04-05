@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Colors from "Components/Colors";
-import { isPropertySignature } from "typescript";
+import { Gender } from "types";
 
 export const Container = styled.div`
   display: grid;
@@ -23,6 +23,31 @@ export const Poster = styled.img`
     min-width: 30px;
     width: 30px;
     height: 30px;
+  }
+`;
+
+export const PosterWithPhoto = styled.div<{ gender: Gender }>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 60px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 36px;
+  background-color: ${(props) =>
+    props.gender === "Male" ? "#2980b9" : "#eb3b5a"};
+  @media (max-width: 720px) {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+  @media (max-width: 480px) {
+    min-width: 30px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
   }
 `;
 

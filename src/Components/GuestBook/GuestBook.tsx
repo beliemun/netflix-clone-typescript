@@ -47,15 +47,17 @@ const GuestBook: React.FunctionComponent<IProps> = ({ user }) => {
   };
   return (
     <Container>
-      <Form onSubmit={onSubmit}>
-        <TextInput
-          id="input-text"
-          type="text"
-          onChange={(e) => setText(e.target.value)}
-          placeholder="여기에 글을 남겨보세요."
-        />
-        <SubmitInput type="submit" value="작성하기" />
-      </Form>
+      {user && (
+        <Form onSubmit={onSubmit}>
+          <TextInput
+            id="input-text"
+            type="text"
+            onChange={(e) => setText(e.target.value)}
+            placeholder="여기에 글을 남겨보세요."
+          />
+          <SubmitInput type="submit" value="작성하기" />
+        </Form>
+      )}
       {comments.map((comment) => (
         <MessageItem key={comment.id} comment={comment} user={user} />
       ))}

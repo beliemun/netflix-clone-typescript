@@ -11,6 +11,13 @@ import {
 import { fb, auth, fs } from "fb";
 import { useHistory } from "react-router";
 
+interface IUserInfo {
+  additionalUserInfo: {
+    name: string;
+    email: string;
+  };
+}
+
 const SocialLogin: React.FunctionComponent = () => {
   let history = useHistory();
 
@@ -25,23 +32,29 @@ const SocialLogin: React.FunctionComponent = () => {
       provider = new fb.auth.GithubAuthProvider();
     }
     if (provider) {
-      auth
-        .signInWithPopup(provider)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          if (user) {
-            fs.doc(`users/${user.uid}`).set({
+      const userCredential = await auth.signInWithPopup(provider);
+      const user = userCredential.user;
+
+      if (user) {
+        const isNewUser = userCredential.additionalUserInfo?.isNewUser;
+        if (isNewUser) {
+          fs.doc(`users/${user.uid}`)
+            .set({
               uid: user.uid,
               email: user.email,
-              name: user.displayName ? user.displayName : "",
+              name: user.displayName
+                ? user.displayName
+                : userCredential.additionalUserInfo?.username,
               gender: "Male",
               createdAt: Date.now(),
               photoURL: user.photoURL,
               isAdmin: false,
-            });
-          }
-        })
-        .then(() => history.push("/"));
+            })
+            .then(() => history.push("/"));
+        } else {
+          history.push("/");
+        }
+      }
     }
   };
   return (

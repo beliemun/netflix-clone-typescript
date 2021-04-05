@@ -18,7 +18,8 @@ import {
 } from "./style";
 import Base from "Components/Base";
 import { IUser } from "types";
-import { fs } from "fb";
+import { auth, fs } from "fb";
+import { useHistory } from "react-router";
 
 interface IProps {
   user: IUser | null;
@@ -28,6 +29,7 @@ const Profile: React.FunctionComponent<IProps> = ({ user }) => {
   const [name, setName] = useState(user ? user.name : "");
   const [photoURL, setPhotoURL] = useState(user ? user.photoURL : "");
   const [gender, setGender] = useState(user ? user.gender : "");
+  let history = useHistory();
 
   useEffect(() => {
     if (user) {
@@ -50,8 +52,25 @@ const Profile: React.FunctionComponent<IProps> = ({ user }) => {
         })
         .then(() => {
           window.alert("Successfully changed.");
+          history.go(0);
         })
         .catch((e) => window.alert(e));
+    }
+  };
+
+  const changePassword = () => {
+    const confirm = window.confirm(
+      "Would you like to send a password change email?"
+    );
+    if (user && confirm) {
+      auth
+        .sendPasswordResetEmail(user.email)
+        .then(() => {
+          window.alert(
+            `Sent successfully. Please check your e-mail(${user.email}).`
+          );
+        })
+        .catch((e) => console.log(e));
     }
   };
 
@@ -59,7 +78,7 @@ const Profile: React.FunctionComponent<IProps> = ({ user }) => {
     <Container>
       <InputContainer>
         <TitleContainer>
-          <Title>Profile</Title>
+          <Title>Edit Profile</Title>
         </TitleContainer>
         <Base.Height height={30} />
         <Base.GradientLine />
@@ -129,14 +148,9 @@ const Profile: React.FunctionComponent<IProps> = ({ user }) => {
             </Label>
           </RadioContainer>
         </Section>
-        <Description>
-          If you have updated the photo URL, the previous picture will be shown
-          due to caching in the browser. Please refresh your browser after
-          updating.
-        </Description>
         <SubmitContainer>
           <Submit onClick={updateProfile}>Update</Submit>
-          <Submit>Change Password</Submit>
+          <Submit onClick={changePassword}>Change Password</Submit>
         </SubmitContainer>
       </InputContainer>
     </Container>
