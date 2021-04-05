@@ -3,7 +3,6 @@ import Router from "./Router";
 import GlobalStyle from "Components/GlobalStyles";
 import { auth, fs } from "fb";
 import { IUser } from "types";
-console.log(process.env.REACT_APP_API_KEY);
 
 const App = () => {
   const [user, setUser] = useState<IUser | null>(null);
