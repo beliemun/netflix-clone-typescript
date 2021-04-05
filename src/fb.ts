@@ -14,9 +14,10 @@ const firebaseConfig = {
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
+  firebase.firestore().settings({ experimentalForceLongPolling: true });
+} else {
+  console.log("firebase apps already running...");
 }
-
-console.log(firebase.apps.length);
 
 export const fb = firebase;
 export const auth = firebase.auth();
