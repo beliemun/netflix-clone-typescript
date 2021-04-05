@@ -73,6 +73,26 @@ export const Description = styled.p`
   }
 `;
 
+export const Avatar = styled.img`
+  min-width: 60px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 30px;
+  object-fit: cover;
+  background-color: ${Colors.bg.primary};
+  @media (max-width: 720px) {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+  }
+  @media (max-width: 480px) {
+    min-width: 30px;
+    width: 30px;
+    height: 30px;
+  }
+`;
+
 export const Section = styled.div`
   position: relative;
   display: flex;
@@ -107,6 +127,14 @@ export const InputTitle = styled.label`
   }
 `;
 
+export const Email = styled.h1`
+  flex: auto;
+  color: ${Colors.primary};
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 0;
+`;
+
 export const Input = styled.input`
   flex: auto;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -118,5 +146,51 @@ export const Input = styled.input`
   :hover {
     border-bottom: 3px solid ${Colors.primary};
     color: ${Colors.primary};
+  }
+`;
+
+export const Label = styled.label`
+  font-size: 16px;
+  padding: 10px;
+`;
+
+export const RadioContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+`;
+
+export const Radio = styled.input`
+  margin-left: 10px;
+`;
+
+export const SubmitContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+`;
+
+export const Submit = styled.button`
+  width: 100%;
+  font-size: 16px;
+  color: ${Colors.text.emphasis};
+  padding: 20px;
+  margin-top: 40px;
+  background: linear-gradient(to left, #8a2387, #e94057, #f27121);
+  border-radius: 0 20px 20px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  @media (max-width: 720px) {
+    font-size: 15px;
+    padding: 16px;
+    border-radius: 0 16px 16px;
+  }
+  @media (max-width: 480px) {
+    font-size: 14px;
+    padding: 12px;
+    border-radius: 0 12px 12px;
+  }
+  &:hover {
+    transform: scale(1.05);
   }
 `;

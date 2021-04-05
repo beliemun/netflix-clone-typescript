@@ -16,6 +16,7 @@ const App = () => {
             const data = doc.data() as IUser;
             setUser({
               uid: data.uid,
+              email: data.email,
               name: data.name,
               gender: data.gender,
               createdAt: data.createdAt,

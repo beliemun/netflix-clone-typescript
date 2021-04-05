@@ -11,11 +11,8 @@ import {
   Image,
   AlertText,
 } from "../Home/style";
-import useScrollTop from "hooks/useScollTop";
 
 const Introduction: React.FunctionComponent = () => {
-  const { elementRef, onClick } = useScrollTop();
-
   return (
     <Container>
       <Section>
@@ -190,9 +187,6 @@ const Introduction: React.FunctionComponent = () => {
           </Message>
         </ProfileContainer>
       </Section>
-      <Base.ScrollUpButton ref={elementRef} onClick={onClick}>
-        <i className="fas fa-angle-double-up"></i>
-      </Base.ScrollUpButton>
     </Container>
   );
 };

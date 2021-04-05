@@ -32,6 +32,7 @@ const SocialLogin: React.FunctionComponent = () => {
           if (user) {
             fs.doc(`users/${user.uid}`).set({
               uid: user.uid,
+              email: user.email,
               name: user.displayName ? user.displayName : "",
               gender: "Male",
               createdAt: Date.now(),

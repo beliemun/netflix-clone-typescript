@@ -13,6 +13,7 @@ export const Poster = styled.img`
   width: 60px;
   height: 60px;
   border-radius: 50%;
+  object-fit: cover;
   @media (max-width: 720px) {
     min-width: 40px;
     width: 40px;

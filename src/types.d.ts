@@ -6,6 +6,7 @@ type Gender = "Male" | "Female";
 
 interface IUser {
   uid: string;
+  email: string;
   name: string;
   gender?: Gender;
   createdAt: number;

@@ -9,7 +9,6 @@ import {
   EditText,
   Message,
   CreateAt,
-  Form,
   Input,
 } from "./style";
 import { IComment, IUser } from "types";
@@ -32,6 +31,7 @@ const MessageItem: React.FunctionComponent<IProps> = ({ comment, user }) => {
         const data = doc.data() as IUser;
         setAthor({
           uid: data.uid,
+          email: data.email,
           name: data.name,
           gender: data.gender,
           createdAt: data.createdAt,
@@ -45,8 +45,8 @@ const MessageItem: React.FunctionComponent<IProps> = ({ comment, user }) => {
   }, []);
 
   const deleteComment = () => {
-    const isOkay = window.confirm("Do you want to delete this comment?");
-    if (isOkay) {
+    const confirm = window.confirm("Do you want to delete this comment?");
+    if (confirm) {
       fs.doc(`comments/${comment.id}`)
         .delete()
         .then(() => {})

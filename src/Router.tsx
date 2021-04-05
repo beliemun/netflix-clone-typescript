@@ -1,10 +1,4 @@
-import {
-  HashRouter,
-  Redirect,
-  Route,
-  RouteComponentProps,
-  Switch,
-} from "react-router-dom";
+import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import Header from "Components/Header";
 import Home from "Screens/Home";
 import Video from "Screens/Video";
@@ -33,7 +27,7 @@ const Router: React.FunctionComponent<IProps> = ({ user }) => (
       <Route path="/about" render={() => <About user={user} />} />
       <Route path="/signup" component={SignUp} />
       <Route path="/signin" component={SignIn} />
-      <Route path="/profile" component={Profile} />
+      <Route path="/profile" render={() => <Profile user={user} />} />
       <Redirect from="*" to="/" />
     </Switch>
   </HashRouter>

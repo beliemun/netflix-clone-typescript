@@ -58,7 +58,6 @@ const SignUp: React.FunctionComponent = () => {
 
   const onSubmit = (e: React.SyntheticEvent): void => {
     e.preventDefault();
-
     if (checkPassword()) {
       createAccount();
     }
@@ -67,6 +66,7 @@ const SignUp: React.FunctionComponent = () => {
   const createUserDB = async (user: firebase.User) => {
     fs.collection("users").doc(user.uid).set({
       uid: user.uid,
+      email,
       name,
       gender,
       createdAt: Date.now(),
