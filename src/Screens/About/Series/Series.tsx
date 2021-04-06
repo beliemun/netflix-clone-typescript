@@ -60,13 +60,15 @@ const Series: React.FunctionComponent = () => (
         <SeriesText>- 1320px 표준 그리드 디자인 적용</SeriesText>
         <SeriesText>- 모든 해상도에 대응 가능한 반응형 레이아웃</SeriesText>
         <SeriesText>- 100% Typescript</SeriesText>
-        <SeriesText>- React Hooks / Custom Hooks</SeriesText>
+        <SeriesText>- React Hooks, Custom Hooks</SeriesText>
         <SeriesText>- Infinite Scrolling</SeriesText>
-        <SeriesText>- Web Metadata 추가</SeriesText>
-        <SeriesText>- Youtube iFrame API 적용</SeriesText>
-        <SeriesText>- Cast, Crew, Company, Review 추가</SeriesText>
-        <SeriesText>- People, People Detail 추가</SeriesText>
-        <SeriesText>- Similar Movies 추가</SeriesText>
+        <SeriesText>- Web Metadata</SeriesText>
+        <SeriesText>- Youtube iFrame API</SeriesText>
+        <SeriesText>- Cast, Crew, Company, Review</SeriesText>
+        <SeriesText>- People, People Detail</SeriesText>
+        <SeriesText>- Similar Movies</SeriesText>
+        <SeriesText>- Firebase auth/firestore</SeriesText>
+        <SeriesText>- Costom Domain, Amplify Deploy</SeriesText>
       </Section>
     </SeriesContainer>
   </Container>

@@ -22,6 +22,7 @@ const App = () => {
               createdAt: data.createdAt,
               photoURL: data.photoURL,
               isAdmin: data.isAdmin,
+              provider: data.provider,
             });
           });
       } else {

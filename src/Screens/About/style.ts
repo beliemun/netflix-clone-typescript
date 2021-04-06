@@ -55,7 +55,38 @@ export const Banner = styled.div<{ bgUrl: string }>`
     height: 60px;
   }
   @media (max-width: 480px) {
-    height: 0;
-    margin-bottom: -10px;
+    width: 100px;
+    height: 50px;
+  }
+`;
+
+export const IconContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -10px;
+  margin-bottom: 20px;
+`;
+
+export const Icon = styled.img`
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 50%;
+  border: 3px solid white;
+  @media (max-width: 1080px) {
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+  }
+  @media (max-width: 720px) {
+    width: 30px;
+    height: 30px;
+    margin: 3px;
+  }
+  @media (max-width: 480px) {
+    width: 24px;
+    height: 24px;
+    margin: 2px;
+    border-width: 2px;
   }
 `;

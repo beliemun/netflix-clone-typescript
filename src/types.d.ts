@@ -12,6 +12,7 @@ interface IUser {
   createdAt: number;
   photoURL?: string;
   isAdmin: boolean;
+  provider: string;
 }
 
 interface IComment {

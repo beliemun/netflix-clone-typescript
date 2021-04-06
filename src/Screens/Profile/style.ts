@@ -129,7 +129,7 @@ export const InputTitle = styled.label`
 
 export const Email = styled.h1`
   flex: auto;
-  color: ${Colors.primary};
+  color: rgba(255, 255, 255, 0.3);
   font-size: 16px;
   font-weight: 500;
   padding: 10px 0;

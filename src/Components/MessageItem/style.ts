@@ -6,6 +6,8 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: min-content 1fr;
   margin: 30px 0;
+  opacity: 0;
+  animation: FadeIn 1s ease-in-out forwards;
 `;
 
 export const Poster = styled.img`
@@ -81,32 +83,38 @@ export const EditText = styled.span<{ isEditing: boolean }>`
 
 export const Name = styled.h3<{ isAdmin: boolean }>`
   font-size: 16px;
-  font-weight: ${(props) => (props.isAdmin ? 900 : 500)};
+  font-weight: 500;
   line-height: 1.5;
   letter-spacing: 1px;
   margin-left: 15px;
-  color: ${Colors.secondary};
+  color: ${(props) => (props.isAdmin ? Colors.secondary : Colors.text.primary)};
   transition: all 0.3s ease-in-out;
-  animation: ${(props) =>
-    props.isAdmin ? "NameColor 0.5s ease-in-out infinite" : "none"};
+  span {
+    display: inline-flexbox;
+    margin-right: 5px;
+    font-size: 18px;
+    animation: ${(props) =>
+      props.isAdmin ? "RotateSpan 2s ease-in-out infinite" : "none"};
+  }
 
-  @keyframes NameColor {
+  i {
+    font-size: 14px;
+    margin-left: 5px;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  @keyframes RotateSpan {
     0% {
-      color: #ff6b81;
-    }
-    25% {
-      color: #7bed9f;
+      transform: rotateY(0deg);
     }
     50% {
-      color: #70a1ff;
-    }
-    75% {
-      color: #7bed9f;
+      transform: rotateY(180deg);
     }
     100% {
-      color: #ff6b81;
+      transform: rotateY(360deg);
     }
   }
+
   @media (max-width: 720px) {
     font-size: 14px;
   }

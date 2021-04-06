@@ -31,12 +31,13 @@ const Introduction: React.FunctionComponent = () => {
           <Poster src={require("assets/profile.jpg").default} />
           <Message>
             모든 스크립트가 Typescript로 작성되었습니다. 재사용되는
-            인터페이스들은 Types.d.ts 파일에 정의하여 재사용될 수 있도록
+            인터페이스들은 types.d.ts 파일에 정의하여 재사용될 수 있도록
             하였습니다. Typescript로 개발해 본적은 처음이었고, 계념이 전무해서
-            막히는 부분이 생각보다 많아서 고생을 했습니다. 타입스크립트를 머리로
-            이해하는 것과 실제로 프로젝트에 적용시키는 것은 완전히 다르더라고요.
-            타입 스크립트를 적용하기 위해서는 니꼬선생님께서 제공하시는
-            강좌만으로는 부족했기 때문에 별도로 학습 시간을 가지고 도전했습니다.
+            막히는 부분이 생각보다 많아서 고생을 했습니다. 타입 정의가
+            타입스크립트의 전부라는 말은 새빨간(?) 거짓말이었습니다. 타입
+            스크립트를 적용하기 위해서는 니꼬선생님께서 제공하시는 강좌를 비롯해
+            인터페이스, 타입, 템플릿의 계념을 더 명확히 학습할 시간이
+            필요했습니다.
           </Message>
         </ProfileContainer>
         <Base.GradientLine />
@@ -143,10 +144,10 @@ const Introduction: React.FunctionComponent = () => {
             제공되는 Hooks를 비롯해, 스스로 커스텀하게 Hook을 만들어
             사용해보았습니다. 예를 들어 무한 스크롤이 되는 곳에서 페이지마다
             상위를 올려주는 버튼이 필요한데 useScollTop를 만들어
-            재사용하였습니다. 추가로 Redux까지 사용해보고 싶었지만, API로 정보를
-            받아 표현만 해주는 NICOFLIX의 순수 기능과는 어울리지 않았고 오히려
-            상위 컴포넌트에서 Props를 계층적으로 전달하는 것이 타입스크립트를
-            이해하는데 큰 도움이 되었습니다.
+            재사용하였습니다. 추가로 Redux까지 사용해보려 했지만, 상위
+            컴포넌트에서 Props를 계층적으로 전달하면서 필요한 타입을 필수로
+            정의해야하는 타입스크립트의 특수성을 일부러 경험해봄으로써 얼마나
+            리덕스가 유용한지 경험해보았습니다.
           </Message>
         </ProfileContainer>
         <Base.GradientLine />
@@ -165,6 +166,45 @@ const Introduction: React.FunctionComponent = () => {
             설명하는 텍스트와 이미지를 추가하였습니다. 노마드코더 홈페이지의
             코드를 복사하여 니코플릭스에 적용해보았습니다. 이로 인해 카톡으로
             링크를 줄 때에도 제법 예쁘게(?) 표현됩니다.
+          </Message>
+        </ProfileContainer>
+        <Base.GradientLine />
+      </Section>
+      <Section>
+        <Title bgUrl={require("assets/texture.jpg").default} isHeader={false}>
+          #Google Firebase
+        </Title>
+        <ImageContainer>
+          <Image src={require("assets/about_09.png").default} />
+        </ImageContainer>
+        <ProfileContainer>
+          <Poster src={require("assets/profile.jpg").default} />
+          <Message>
+            리엑트 강의와는 상관없지만, 유튜브 클론에서 넣었던 댓글 기능처럼
+            방문자들이 의견을 남기는 방명록을 만들고 싶었습니다. 노마드코더 강의
+            중 트위터 클론 강의에서 Firebase를 배워 해당 기능을 완성할 수
+            있었습니다. Authentication과 Firestore로 회원정보를 생성/관리하고,
+            Analytics까지 연결하여 Firebase Dashboard에서 분석 데이터가
+            표시되도록 하였습니다.
+          </Message>
+        </ProfileContainer>
+        <Base.GradientLine />
+      </Section>
+      <Section>
+        <Title bgUrl={require("assets/texture.jpg").default} isHeader={false}>
+          #AWS Amplify
+        </Title>
+        <ImageContainer>
+          <Image src={require("assets/about_10.png").default} />
+        </ImageContainer>
+        <ProfileContainer>
+          <Poster src={require("assets/profile.jpg").default} />
+          <Message>
+            트위터 클론 강의에서 언급되었던 AWS Amplify를 사용해보고 싶었습니다.
+            Firebase에서도 호스팅을 지원하지만, 프론트엔드 배포만 Amplify에서
+            진행하기로 했습니다. 커스텀 도메인 세팅을 해보기 위해 기본 제공
+            호스팅 주소를 사용하지 않았고, AWS Route 53에서 Nicoflix.net
+            도메인을 구입해서 배포하였습니다.
           </Message>
         </ProfileContainer>
         <Base.GradientLine />

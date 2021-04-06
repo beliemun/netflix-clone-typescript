@@ -47,7 +47,7 @@ const Profile: React.FunctionComponent<IProps> = ({ user }) => {
       fs.doc(`users/${user.uid}`)
         .update({
           name,
-          photoURL,
+          photoURL: photoURL ? photoURL : "",
           gender,
         })
         .then(() => {

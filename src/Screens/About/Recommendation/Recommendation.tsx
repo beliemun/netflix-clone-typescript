@@ -161,6 +161,37 @@ const Recommendation: React.FunctionComponent = () => (
       </LectureContainer>
       <Base.GradientLine />
     </Section>
+    <Section>
+      <Title bgUrl={require("assets/texture.jpg").default} isHeader={false}>
+        #트위터 클론코딩
+      </Title>
+      <ProfileContainer>
+        <Poster src={require("assets/profile.jpg").default} />
+        <Message>
+          유튜브 클론 코딩을 끝냈지만 그 당시 몽고디비 설정부터 사용자 인증은
+          어떻게 했고, 디비는 어디에 두고 또 파일 저장은 어떻게 했는지 지금
+          생각해보면 사실 기억이 전혀 나질 않습니다(?). 인증, 디비, 스토리지
+          모두를 Firebase 하나로 해결할 수 있는 것은 정말 매력이 아닐 수 없다고
+          생각합니다. 트위터 클론 코딩에서는 이 위대한(?) 서비스를 무료로 배울
+          수 있습니다. 단순히 Firebase 사용법뿐만 아니라 디비보안 규칙과
+          키보안에 관한 정보도 아주 유용했습니다.
+        </Message>
+      </ProfileContainer>
+      <LectureContainer>
+        <Lecture
+          src="https://d1telmomo28umc.cloudfront.net/media/public/thumbnails/firebase.jpg
+
+"
+        ></Lecture>
+        <LectureTitleContainer>
+          <LectureTitle>트위터 클론코딩</LectureTitle>
+          <A href="https://nomadcoders.co/nwitter" target="_blank">
+            <LectureButton>강의 이동하기</LectureButton>
+          </A>
+        </LectureTitleContainer>
+      </LectureContainer>
+      <Base.GradientLine />
+    </Section>
   </Container>
 );
 

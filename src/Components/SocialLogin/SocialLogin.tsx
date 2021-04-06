@@ -34,7 +34,6 @@ const SocialLogin: React.FunctionComponent = () => {
     if (provider) {
       const userCredential = await auth.signInWithPopup(provider);
       const user = userCredential.user;
-
       if (user) {
         const isNewUser = userCredential.additionalUserInfo?.isNewUser;
         if (isNewUser) {
@@ -49,6 +48,7 @@ const SocialLogin: React.FunctionComponent = () => {
               createdAt: Date.now(),
               photoURL: user.photoURL,
               isAdmin: false,
+              provider: name,
             })
             .then(() => history.push("/"));
         } else {

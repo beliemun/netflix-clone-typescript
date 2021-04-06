@@ -38,6 +38,7 @@ const MessageItem: React.FunctionComponent<IProps> = ({ comment, user }) => {
           createdAt: data.createdAt,
           photoURL: data.photoURL,
           isAdmin: data.isAdmin,
+          provider: data.provider,
         });
       })
       .catch((e) => {
@@ -86,8 +87,11 @@ const MessageItem: React.FunctionComponent<IProps> = ({ comment, user }) => {
       <MessageContainer>
         <NameContainer>
           <Name isAdmin={author.isAdmin}>
-            {author.isAdmin && "👑"}
+            {author.isAdmin && <span>👑</span>}
             {author.name === "" ? "(이름 없음)" : author.name}
+            {author.provider === "google" && <i className="fab fa-google" />}
+            {author.provider === "github" && <i className="fab fa-github" />}
+            {author.provider === "email" && <i className="far fa-envelope" />}
           </Name>
           <EditContainer>
             {(author.uid === auth.currentUser?.uid || user?.isAdmin) && (
@@ -117,7 +121,7 @@ const MessageItem: React.FunctionComponent<IProps> = ({ comment, user }) => {
             )}
           </EditContainer>
         </NameContainer>
-        {!isEdting ? (
+        {!isEdting || !user ? (
           <Message>{comment.text}</Message>
         ) : (
           <Input onChange={(e) => setText(e.target.value)} value={text} />

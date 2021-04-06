@@ -71,6 +71,7 @@ const SignUp: React.FunctionComponent = () => {
       gender,
       createdAt: Date.now(),
       isAdmin: false,
+      provider: "email",
     });
   };
 
