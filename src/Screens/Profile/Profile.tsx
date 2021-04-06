@@ -32,6 +32,12 @@ const Profile: React.FunctionComponent<IProps> = ({ user }) => {
   let history = useHistory();
 
   useEffect(() => {
+    if (!auth.currentUser) {
+      history.push("/");
+    }
+  }, []);
+
+  useEffect(() => {
     if (user) {
       setName(user.name);
       setPhotoURL(user.photoURL);

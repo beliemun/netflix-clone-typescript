@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Container,
   BannerContainer,
@@ -22,6 +22,12 @@ const SignIn: React.FunctionComponent = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   let history = useHistory();
+
+  useEffect(() => {
+    if (auth.currentUser) {
+      history.push("/");
+    }
+  }, []);
 
   const onSubmit = (e: React.SyntheticEvent): void => {
     e.preventDefault();

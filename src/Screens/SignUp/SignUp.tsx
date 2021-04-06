@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Container,
   BannerContainer,
@@ -32,6 +32,12 @@ const SignUp: React.FunctionComponent = () => {
   const [name, setName] = useState("");
   const [gender, setGender] = useState("");
   let history = useHistory();
+
+  useEffect(() => {
+    if (auth.currentUser) {
+      history.push("/");
+    }
+  }, []);
 
   const clearPassword = () => {
     const password = document.getElementById("password") as HTMLInputElement;
