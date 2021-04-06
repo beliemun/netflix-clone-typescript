@@ -264,16 +264,22 @@ export const SeriesButton = styled.div`
 `;
 
 export const SeriesText = styled.h4`
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 300;
   line-height: 1.2;
   margin-bottom: 10px;
   color: ${Colors.secondary};
+
+  span {
+    font-size: 16px;
+    color: ${Colors.primary};
+    font-weight: 500;
+  }
 `;
 
 export const Description = styled.p`
   color: ${Colors.secondary};
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 300;
   line-height: 1.5;
   margin: 0px 30px 15px;

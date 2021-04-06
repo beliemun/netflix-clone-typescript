@@ -33,7 +33,7 @@ const Series: React.FunctionComponent = () => (
             <SeriesButton>NicoTube</SeriesButton>
           </SeriesButtonContainer>
         </ImageContainer>
-        <SeriesText>- Youtube Clone 6기 졸업작품</SeriesText>
+        <SeriesText>- Youtube Clone 6기 졸업작품(2020.11~)</SeriesText>
         <SeriesText>
           - 🏆 2020 노마드어워드 대상수상(부상: 에어팟프로)
         </SeriesText>
@@ -56,7 +56,7 @@ const Series: React.FunctionComponent = () => (
             <SeriesButton>NICOFLIX</SeriesButton>
           </SeriesButtonContainer>
         </ImageContainer>
-        <SeriesText>- React JS 8기 졸업작품</SeriesText>
+        <SeriesText>- React JS 8기 졸업작품(2021.04~)</SeriesText>
         <SeriesText>- 1320px 표준 그리드 디자인 적용</SeriesText>
         <SeriesText>- 모든 해상도에 대응 가능한 반응형 레이아웃</SeriesText>
         <SeriesText>- 100% Typescript</SeriesText>
@@ -68,7 +68,10 @@ const Series: React.FunctionComponent = () => (
         <SeriesText>- People, People Detail</SeriesText>
         <SeriesText>- Similar Movies</SeriesText>
         <SeriesText>- Firebase auth/firestore</SeriesText>
-        <SeriesText>- Costom Domain, Amplify Deploy</SeriesText>
+        <SeriesText>
+          - Costom Domain <span>( https://nicoflix.net )</span>
+        </SeriesText>
+        <SeriesText>- Amplify Deploy</SeriesText>
       </Section>
     </SeriesContainer>
   </Container>
