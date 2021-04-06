@@ -15,7 +15,7 @@ const firebaseConfig = {
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
-  console.log(window.location);
+  // 로컬 호스트에서 아날리틱스를 실행하면 오류가 나서 추가
   if (window.location.hostname !== "localhost") {
     firebase.analytics();
   }
