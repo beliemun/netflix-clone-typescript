@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, RouteComponentProps, Switch } from "react-router";
+import { Route, Switch } from "react-router";
 import { GridContainer, Container, Banner } from "./style";
 import Menu from "./Menu";
 import Home from "./Home";

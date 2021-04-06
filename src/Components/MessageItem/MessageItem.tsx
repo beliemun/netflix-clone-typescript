@@ -85,7 +85,7 @@ const MessageItem: React.FunctionComponent<IProps> = ({ comment, user }) => {
       )}
       <MessageContainer>
         <NameContainer>
-          <Name>
+          <Name isAdmin={author.isAdmin}>
             {author.isAdmin && "👑"}
             {author.name === "" ? "(이름 없음)" : author.name}
           </Name>

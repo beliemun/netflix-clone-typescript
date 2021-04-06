@@ -24,6 +24,7 @@ interface IProps {
 const Header: React.FunctionComponent<IProps> = ({ user }) => {
   const [pathname, setPathname] = useState("");
   const [signedOut, setSignedOut] = useState(false);
+  const [savedUser, setSavedUser] = useState<IUser | null>(user);
   let location = useLocation();
   let history = useHistory();
 
@@ -46,7 +47,7 @@ const Header: React.FunctionComponent<IProps> = ({ user }) => {
 
   return (
     <>
-      {user && (
+      {user && savedUser && user.uid !== savedUser.uid && (
         <FlashMessage
           authType="sign-in"
           text={`Hello, ${user.name ? user.name : "Welcome"}!`}
@@ -117,6 +118,7 @@ const Header: React.FunctionComponent<IProps> = ({ user }) => {
                 onClick={() => {
                   auth.signOut();
                   setSignedOut(true);
+                  setSavedUser(null);
                   setTimeout(() => setSignedOut(false), 4000);
                   if (pathname === "/profile") {
                     history.push("/");

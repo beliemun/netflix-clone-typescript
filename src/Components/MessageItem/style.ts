@@ -79,13 +79,34 @@ export const EditText = styled.span<{ isEditing: boolean }>`
   cursor: pointer;
 `;
 
-export const Name = styled.h3`
+export const Name = styled.h3<{ isAdmin: boolean }>`
   font-size: 16px;
-  font-weight: 500;
+  font-weight: ${(props) => (props.isAdmin ? 900 : 500)};
   line-height: 1.5;
   letter-spacing: 1px;
-  color: ${Colors.secondary};
   margin-left: 15px;
+  color: ${Colors.secondary};
+  transition: all 0.3s ease-in-out;
+  animation: ${(props) =>
+    props.isAdmin ? "NameColor 0.5s ease-in-out infinite" : "none"};
+
+  @keyframes NameColor {
+    0% {
+      color: #ff6b81;
+    }
+    25% {
+      color: #7bed9f;
+    }
+    50% {
+      color: #70a1ff;
+    }
+    75% {
+      color: #7bed9f;
+    }
+    100% {
+      color: #ff6b81;
+    }
+  }
   @media (max-width: 720px) {
     font-size: 14px;
   }

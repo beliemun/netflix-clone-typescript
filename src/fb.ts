@@ -15,7 +15,10 @@ const firebaseConfig = {
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+  console.log(window.location);
+  if (window.location.hostname !== "localhost") {
+    firebase.analytics();
+  }
 }
 
 export const fb = firebase;
