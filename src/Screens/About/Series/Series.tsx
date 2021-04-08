@@ -66,7 +66,9 @@ const Series: React.FunctionComponent = () => (
         <SeriesText>- Youtube iFrame API</SeriesText>
         <SeriesText>- Cast, Crew, Company, Review</SeriesText>
         <SeriesText>- People, People Detail</SeriesText>
+        <SeriesText>- About Page</SeriesText>
         <SeriesText>- Similar Movies</SeriesText>
+        <SeriesText>- Custom Flash Message</SeriesText>
         <SeriesText>- Firebase auth/firestore</SeriesText>
         <SeriesText>
           - Costom Domain <span>( https://nicoflix.net )</span>

@@ -26,7 +26,7 @@ export const Item = styled(Link)<{ index: number }>`
 
 export const Poster = styled.div<{ bgUrl: string }>`
   width: auto;
-  height: 320px;
+  height: 360px;
   background-image: url(${(props) => props.bgUrl});
   background-position: center center;
   background-size: cover;
@@ -41,6 +41,7 @@ export const Poster = styled.div<{ bgUrl: string }>`
     &:hover {
       transform: scale(1.05);
     }
+    height: 320px;
   }
   @media (max-width: 1080px) {
     height: 300px;
