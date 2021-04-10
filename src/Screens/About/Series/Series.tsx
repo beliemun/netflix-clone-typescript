@@ -35,7 +35,7 @@ const Series: React.FunctionComponent = () => (
         </ImageContainer>
         <SeriesText>- Youtube Clone 6기 졸업작품(2020.11~)</SeriesText>
         <SeriesText>
-          - 🏆 2020 노마드어워드 대상수상(부상: 에어팟프로)
+          - 🏆 <span>2020 노마드어워드 대상수상</span>
         </SeriesText>
         <SeriesText>- 동영상 등록시 썸네일 등록 추가 </SeriesText>
         <SeriesText>- 로그인 사용자만 댓글작성 추가 </SeriesText>
@@ -62,18 +62,19 @@ const Series: React.FunctionComponent = () => (
         <SeriesText>- 100% Typescript</SeriesText>
         <SeriesText>- React Hooks, Custom Hooks</SeriesText>
         <SeriesText>- Infinite Scrolling</SeriesText>
-        <SeriesText>- Web Metadata</SeriesText>
-        <SeriesText>- Youtube iFrame API</SeriesText>
-        <SeriesText>- Cast, Crew, Company, Review</SeriesText>
-        <SeriesText>- People, People Detail</SeriesText>
-        <SeriesText>- About Page</SeriesText>
-        <SeriesText>- Similar Movies</SeriesText>
+        <SeriesText>- Extends - Cast, Crew, Company, Review</SeriesText>
+        <SeriesText>- Extends - People, People Detail</SeriesText>
+        <SeriesText>- Extends - Similar Movies</SeriesText>
+        <SeriesText>- Use Youtube iFrame API</SeriesText>
+        <SeriesText>- Add Web Metadata</SeriesText>
         <SeriesText>- Custom Flash Message</SeriesText>
-        <SeriesText>- Firebase auth/firestore</SeriesText>
+        <SeriesText>- Protected Routes</SeriesText>
+        <SeriesText>- Authentication (firebase/auth)</SeriesText>
+        <SeriesText>- Guest book (firebase/firestore)</SeriesText>
+        <SeriesText>- Amplify Frontend Deploy</SeriesText>
         <SeriesText>
-          - Costom Domain <span>( https://nicoflix.net )</span>
+          - Use Custom Domain <span>(nicoflix.net)</span>
         </SeriesText>
-        <SeriesText>- Amplify Deploy</SeriesText>
       </Section>
     </SeriesContainer>
   </Container>

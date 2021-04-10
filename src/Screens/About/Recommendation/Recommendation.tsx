@@ -131,14 +131,18 @@ const Recommendation: React.FunctionComponent = () => (
       <ProfileContainer>
         <Poster src={require("assets/profile.jpg").default} />
         <Message>
-          저는 ReactJS의 졸업작품을 반드시 Typescript로 개발하고 싶었습니다. 이
-          강의에서 Typescript로 제작하지 않으면 다른 강의에서 작성할 기회가
-          없어보였거든요. 하지만 예상과 다르게 블록체인을 만드는 이 강의로는
-          NICOFLIX를 만들기에는 필요한 Typescript 정보가 부족했습니다.
-          Typescript로 작성할 때 나타나는 문제점들은 초보자인 저에게 해결하기
-          어려운 고난이었고, 다른 여러가지 유튜브 강의를 병행하면서 공부해야
-          해결할 수 있었습니다. 왜냐하면 React에는 여러분이 정의하지 않은 수많은
-          타입들이 있기 때문이죠. 하지만 이 강의는 꼭 들어야합니다. 그렇지
+          저는 ReactJS의 졸업작품을 반드시 TS(Typescript)로 개발하고 싶었습니다.
+          이 강의에서 TS로 제작하지 않으면 다른 강의에서 작성할 기회가
+          없어보였거든요. 하지만 니꼬샘이 제공해주는 TS 강의내용으로는
+          NICOFLIX를 완성할 수는 없었습니다. TS는 단순히 타입만 이해한다고
+          사용할 수 있는 것이 아니었습니다. TS 프로젝트를 생성한 뒤부터 문제가
+          터지기 시작했고 TS 초보자인 저에게 해결하기 어려운 고난이었지만, 다른
+          여러가지 유튜브 강의를 병행하면서 해결할 수 있었습니다. TS는 남들이
+          얘기하는 것처럼 절대 단순하고 간단하지 않습니다. 왜 많은 JS개발자가
+          장점만 있는 TS로 쉽게 전향하지 못하는지가 그 이유라 생각합니다. TS로
+          꼭 넘어가야 하는 이유는 JS는 문법을 배워도 사용할 수 있지만 TS를
+          접하면 문법을 넘어 구조를 이해하는 경험을 접하기 때문이라 생각합니다.
+          때문에 더 나은 코더가 되기 위해서는 이 강의는 꼭 들어야합니다. 그렇지
           않으면 여러분은 절대로, 절대로, 절대로 ReactJS의 졸업작품을
           Typescript로 도전하지 않게 될거라 생각합니다.
         </Message>
@@ -174,7 +178,8 @@ const Recommendation: React.FunctionComponent = () => (
           모두를 Firebase 하나로 해결할 수 있는 것은 정말 매력이 아닐 수 없다고
           생각합니다. 트위터 클론 코딩에서는 이 위대한(?) 서비스를 무료로 배울
           수 있습니다. 단순히 Firebase 사용법뿐만 아니라 디비보안 규칙과
-          키보안에 관한 정보도 아주 유용했습니다.
+          키보안에 관한 정보도 아주 유용했습니다. 방문자 의견 남기기 기능은
+          트위터 클론코딩을 수강하지 않았다면 구현할 수 없었습니다.
         </Message>
       </ProfileContainer>
       <LectureContainer>
@@ -190,7 +195,6 @@ const Recommendation: React.FunctionComponent = () => (
           </A>
         </LectureTitleContainer>
       </LectureContainer>
-      <Base.GradientLine />
     </Section>
   </Container>
 );
