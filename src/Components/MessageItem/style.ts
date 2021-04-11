@@ -91,8 +91,9 @@ export const Name = styled.h3<{ isAdmin: boolean }>`
   transition: all 0.3s ease-in-out;
   span {
     display: inline-flexbox;
-    margin-right: 5px;
     font-size: 18px;
+    text-align: center;
+    margin: 5px;
     animation: ${(props) =>
       props.isAdmin ? "RotateSpan 2s ease-in-out infinite" : "none"};
   }

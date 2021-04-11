@@ -1,3 +1,4 @@
+import Colors from "Components/Colors";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -67,12 +68,20 @@ export const IconContainer = styled.div`
   margin-bottom: 20px;
 `;
 
-export const Icon = styled.img`
+export const Icon = styled.div<{ bgUrl: string }>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   width: 50px;
   height: 50px;
   margin: 5px;
   border-radius: 50%;
   border: 3px solid white;
+  background-image: url(${(props) => props.bgUrl});
+  background-position: center center;
+  background-size: cover;
+  transition: all 0.2s ease-in-out;
   @media (max-width: 1080px) {
     width: 40px;
     height: 40px;
@@ -88,5 +97,36 @@ export const Icon = styled.img`
     height: 24px;
     margin: 2px;
     border-width: 2px;
+  }
+  &:hover {
+    transform: scale(1.2);
+    > div {
+      opacity: 1;
+      transform: translateY(10px);
+    }
+  }
+`;
+
+export const IconInfo = styled.div`
+  position: relative;
+  bottom: -15px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.2;
+  padding: 4px 8px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid white;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  @media (max-width: 1080px) {
+    font-size: 10px;
+    padding: 3px 6px;
+    border-radius: 3px;
+  }
+  @media (max-width: 720px) {
+    visibility: hidden;
   }
 `;

@@ -1,6 +1,13 @@
 import React from "react";
 import { Route, Switch } from "react-router";
-import { GridContainer, Container, Banner, IconContainer, Icon } from "./style";
+import {
+  GridContainer,
+  Container,
+  Banner,
+  IconContainer,
+  Icon,
+  IconInfo,
+} from "./style";
 import Menu from "./Menu";
 import Home from "./Home";
 import Introduction from "./Introduction";
@@ -22,26 +29,30 @@ const About: React.FunctionComponent<IProps> = ({ user }) => {
       <Container>
         <Banner bgUrl={require("assets/title.png").default} />
         <IconContainer>
-          <Icon src={require("assets/icon_html.png").default} alt={"HTML5"} />
-          <Icon src={require("assets/icon_css.png").default} alt={"CSS"} />
-          <Icon
-            src={require("assets/icon_ts.png").default}
-            alt={"TypeScript"}
-          />
-          <Icon src={require("assets/icon_es6.png").default} alt={"ES6"} />
-          <Icon
-            src={require("assets/icon_react.png").default}
-            alt={"ReactJS"}
-          />
-          <Icon
-            src={require("assets/icon_hooks.png").default}
-            alt={"React Hooks"}
-          />
-          <Icon src={require("assets/icon_fb.png").default} alt={"Firebase"} />
-          <Icon
-            src={require("assets/icon_amplify.png").default}
-            alt={"Amplify"}
-          />
+          <Icon bgUrl={require("assets/icon_html.png").default}>
+            <IconInfo>HTML</IconInfo>
+          </Icon>
+          <Icon bgUrl={require("assets/icon_css.png").default}>
+            <IconInfo>CSS</IconInfo>
+          </Icon>
+          <Icon bgUrl={require("assets/icon_es6.png").default}>
+            <IconInfo>ES6</IconInfo>
+          </Icon>
+          <Icon bgUrl={require("assets/icon_ts.png").default}>
+            <IconInfo>Typescript</IconInfo>
+          </Icon>
+          <Icon bgUrl={require("assets/icon_react.png").default}>
+            <IconInfo>React</IconInfo>
+          </Icon>
+          <Icon bgUrl={require("assets/icon_hooks.png").default}>
+            <IconInfo>React Hooks</IconInfo>
+          </Icon>
+          <Icon bgUrl={require("assets/icon_fb.png").default}>
+            <IconInfo>Firebase</IconInfo>
+          </Icon>
+          <Icon bgUrl={require("assets/icon_amplify.png").default}>
+            <IconInfo>Amplify</IconInfo>
+          </Icon>
         </IconContainer>
         <Base.GradientLine />
         <GridContainer>
