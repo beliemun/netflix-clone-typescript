@@ -8,7 +8,7 @@ import {
   SocialContainer,
   SocialButton,
 } from "./style";
-import { fb, auth, fs } from "fb";
+import { firebase, auth, db } from "fb";
 import { useHistory } from "react-router";
 
 interface IUserInfo {
@@ -27,9 +27,9 @@ const SocialLogin: React.FunctionComponent = () => {
     } = e;
     let provider;
     if (name === "google") {
-      provider = new fb.auth.GoogleAuthProvider();
+      provider = new firebase.auth.GoogleAuthProvider();
     } else if (name === "github") {
-      provider = new fb.auth.GithubAuthProvider();
+      provider = new firebase.auth.GithubAuthProvider();
     }
     if (provider) {
       const userCredential = await auth.signInWithPopup(provider);
@@ -37,7 +37,7 @@ const SocialLogin: React.FunctionComponent = () => {
       if (user) {
         const isNewUser = userCredential.additionalUserInfo?.isNewUser;
         if (isNewUser) {
-          fs.doc(`users/${user.uid}`)
+          db.doc(`users/${user.uid}`)
             .set({
               uid: user.uid,
               email: user.email,

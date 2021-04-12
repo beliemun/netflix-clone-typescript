@@ -21,7 +21,7 @@ import {
 import Base from "Components/Base";
 import Footer from "Components/Footer";
 import SocialLogin from "Components/SocialLogin";
-import { auth, fs } from "fb";
+import { auth, db } from "fb";
 import { useHistory } from "react-router";
 import firebase from "firebase";
 
@@ -70,7 +70,7 @@ const SignUp: React.FunctionComponent = () => {
   };
 
   const createUserDB = async (user: firebase.User) => {
-    fs.collection("users").doc(user.uid).set({
+    db.collection("users").doc(user.uid).set({
       uid: user.uid,
       email,
       name,

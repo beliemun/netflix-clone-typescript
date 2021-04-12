@@ -64,8 +64,8 @@ const About: React.FunctionComponent<IProps> = ({ user }) => {
             <Route path="/about/series" component={Series} />
           </Switch>
         </GridContainer>
-        <Footer />
       </Container>
+      <Footer />
       <Base.ScrollUpButton ref={elementRef} onClick={onClick}>
         <i className="fas fa-angle-double-up"></i>
       </Base.ScrollUpButton>

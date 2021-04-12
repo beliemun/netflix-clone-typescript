@@ -1,3 +1,4 @@
+import { Timestamp } from "@firebase/firestore-types";
 import firebase from "firebase";
 
 type MediaType = "movie" | "tv" | "person";
@@ -13,6 +14,7 @@ interface IUser {
   photoURL?: string;
   isAdmin: boolean;
   provider: string;
+  latestPostTime: number;
 }
 
 interface IComment {

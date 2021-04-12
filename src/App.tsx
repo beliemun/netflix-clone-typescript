@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Router from "./Router";
 import GlobalStyle from "Components/GlobalStyles";
-import { auth, fs } from "fb";
+import { auth, db } from "fb";
 import { IUser } from "types";
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
-        fs.doc(`users/${user.uid}`)
+        db.doc(`users/${user.uid}`)
           .get()
           .then((doc) => {
             const data = doc.data() as IUser;
@@ -23,6 +23,7 @@ const App = () => {
               photoURL: data.photoURL,
               isAdmin: data.isAdmin,
               provider: data.provider,
+              latestPostTime: data.latestPostTime,
             });
           });
       } else {

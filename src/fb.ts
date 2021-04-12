@@ -1,4 +1,4 @@
-import firebase from "firebase/app";
+import fb from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 import "firebase/analytics";
@@ -13,14 +13,14 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
-if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
+if (!fb.apps.length) {
+  fb.initializeApp(firebaseConfig);
   // 로컬 호스트에서 아날리틱스를 실행하면 오류가 나서 추가
   if (window.location.hostname !== "localhost") {
-    firebase.analytics();
+    fb.analytics();
   }
 }
 
-export const fb = firebase;
-export const auth = firebase.auth();
-export const fs = firebase.firestore();
+export const firebase = fb;
+export const auth = fb.auth();
+export const db = fb.firestore();

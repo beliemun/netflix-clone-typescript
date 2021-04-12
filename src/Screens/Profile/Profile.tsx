@@ -18,7 +18,7 @@ import {
 } from "./style";
 import Base from "Components/Base";
 import { IUser } from "types";
-import { auth, fs } from "fb";
+import { auth, db } from "fb";
 import { useHistory } from "react-router";
 
 interface IProps {
@@ -50,7 +50,7 @@ const Profile: React.FunctionComponent<IProps> = ({ user }) => {
       "Do you want to update your profile with this information?"
     );
     if (user && confirm) {
-      fs.doc(`users/${user.uid}`)
+      db.doc(`users/${user.uid}`)
         .update({
           name,
           photoURL: photoURL ? photoURL : "",

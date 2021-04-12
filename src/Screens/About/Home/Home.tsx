@@ -41,10 +41,17 @@ const Home: React.FunctionComponent<IProps> = ({ user }) => (
     <Title bgUrl={require("assets/texture.jpg").default} isHeader={true}>
       의견 남기기
     </Title>
-    <Description>
-      방문자들이 글을 남길 수 있는 공간입니다. 간단한 회원 가입후 글을
-      남겨보세요.
-    </Description>
+    {!user ? (
+      <Description>
+        방문자들이 글을 남길 수 있는 공간입니다. 간단한 회원 가입후 글을
+        남겨보세요.
+      </Description>
+    ) : (
+      <Description>
+        코멘트는 화면 스크롤이 하단에 닿을 때마다 5개씩 불러오도록 구현하여 서버
+        통신을 최소화하였습니다.
+      </Description>
+    )}
     <Base.Height height={-10} />
     {!user && (
       <>

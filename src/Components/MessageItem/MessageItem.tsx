@@ -13,20 +13,27 @@ import {
   Input,
 } from "./style";
 import { IComment, IUser } from "types";
-import { auth, fs } from "fb";
+import { auth, db } from "fb";
 import { getMomentFromNow } from "functions/moment";
 
 interface IProps {
   comment: IComment;
   user: IUser | null;
+  comments: IComment[];
+  setComments: (comment: React.SetStateAction<IComment[]>) => void;
 }
 
-const MessageItem: React.FunctionComponent<IProps> = ({ comment, user }) => {
+const MessageItem: React.FunctionComponent<IProps> = ({
+  comment,
+  user,
+  comments,
+  setComments,
+}) => {
   const [author, setAuthor] = useState<IUser>();
   const [isEdting, setIsEditing] = useState(false);
   const [text, setText] = useState(comment.text);
   useEffect(() => {
-    fs.doc(`users/${comment.creatorId}`)
+    db.doc(`users/${comment.creatorId}`)
       .get()
       .then((doc) => {
         const data = doc.data() as IUser;
@@ -39,6 +46,7 @@ const MessageItem: React.FunctionComponent<IProps> = ({ comment, user }) => {
           photoURL: data.photoURL,
           isAdmin: data.isAdmin,
           provider: data.provider,
+          latestPostTime: data.latestPostTime,
         });
       })
       .catch((e) => {
@@ -49,22 +57,48 @@ const MessageItem: React.FunctionComponent<IProps> = ({ comment, user }) => {
   const deleteComment = () => {
     const confirm = window.confirm("Do you want to delete this comment?");
     if (confirm) {
-      fs.doc(`comments/${comment.id}`)
+      // 1. db를 먼저 삭제하고
+      db.doc(`comments/${comment.id}`)
         .delete()
-        .then(() => {})
+        .then(() => {
+          // 2. 배열에서 삭제하여 화면 갱신
+          setComments((prev) => prev.filter((e) => e.id !== comment.id));
+        })
         .catch((e) => {
           console.log(e);
         });
     }
   };
+
   const toggleEditing = () =>
     setIsEditing((prev) => {
       setText(comment.text);
       return !prev;
     });
+
   const updateComment = () => {
-    fs.doc(`comments/${comment.id}`).update({ text });
-    toggleEditing();
+    // 1. db를 먼저 업데이트 하고
+    db.doc(`comments/${comment.id}`)
+      .update({ text })
+      .then(() => {
+        toggleEditing();
+        // 2-1. 갱신된 코멘트를 만들어서
+        const updatedComment = {
+          id: comment.id,
+          text: text,
+          createdAt: comment.createdAt,
+          creatorId: comment.creatorId,
+        };
+        // 2-2. 배열 요소를 변경시켜주고 업데이트 한다.
+        const filteredComments = comments.map((comment) => {
+          if (comment.id === updatedComment.id) {
+            return updatedComment;
+          } else {
+            return comment;
+          }
+        });
+        setComments(filteredComments);
+      });
   };
 
   return author ? (
