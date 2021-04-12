@@ -85,7 +85,6 @@ const VideoDetail: React.FunctionComponent<
             ? await movieApi.getSimilar(id)
             : await tvApi.getSimilar(id);
         setSimilar(similar);
-        console.log(similar);
 
         // Set fake loading time
         setTimeout(() => {
