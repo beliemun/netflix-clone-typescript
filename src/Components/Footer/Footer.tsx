@@ -61,11 +61,14 @@ const Footer = () => (
               <i className="fab fa-twitter"></i>
             </FollowIcon>
           </Link>
-          <Link to="#">
+          <a
+            href="https://github.com/beliemun/nicoflix-typescript"
+            target="_blank"
+          >
             <FollowIcon>
               <i className="fab fa-github"></i>
             </FollowIcon>
-          </Link>
+          </a>
         </FollowContainer>
       </Follow>
       <Store>
