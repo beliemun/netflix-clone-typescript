@@ -24,8 +24,8 @@ const Footer = () => (
           <Link to="#">
             <span>TERMS OF USE</span>
           </Link>
-          <Link to="#">
-            <span>RIVACY POLICY</span>
+          <Link to="/privacy-policy">
+            <span>PRIVACY POLICY</span>
           </Link>
           <Link to="#">
             <span>FAQ</span>

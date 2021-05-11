@@ -8,6 +8,7 @@ import About from "Screens/About";
 import SignUp from "Screens/SignUp";
 import SignIn from "Screens/SignIn";
 import Profile from "Screens/Profile";
+import PrivacyPolicy from "Screens/PrivacyPolicy";
 import { IUser } from "types";
 
 interface IProps {
@@ -28,6 +29,7 @@ const Router: React.FunctionComponent<IProps> = ({ user }) => (
       <Route path="/signup" component={SignUp} />
       <Route path="/signin" component={SignIn} />
       <Route path="/profile" render={() => <Profile user={user} />} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Redirect from="*" to="/" />
     </Switch>
   </HashRouter>
